@@ -1,0 +1,86 @@
+/*============================================================= Cover =============================================================*/
+
+.cover-parallax {
+	width: 100%;
+	height: 100vh;
+	color: $white;
+	padding: 50px 5%;
+	@include flexbox(center, flex-start, nowrap);
+	z-index: 1;
+	position: relative;
+
+	.cover-parallax-img {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		@extend %bgCenter;
+		z-index: 1;
+	}
+
+	.title-parallax {
+		position: relative;
+		z-index: 2;
+
+		h1,
+		h2 {
+			@extend %paMar;
+		}
+	}
+}
+
+.container-parallax {
+	width: 100%;
+	max-width: none;
+	background: $white;
+	position: relative;
+	z-index: 2;
+	@include flexbox(center, center, nowrap);
+}
+
+/*============================================================= Section =============================================================*/
+
+.wrapper-section-parallax {
+	width: 100%;
+	height: 50vh;
+	color: $white;
+	padding: 20px 5%;
+	@extend %flexCenter;
+	z-index: 1;
+	position: relative;
+
+	.section-parallax-img {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		@extend %bgCenter;
+		z-index: 1;
+	}
+
+	.title-section-parallax {
+		width: 100%;
+		position: relative;
+		z-index: 2;
+		text-align: center;
+	}
+}
+
+/*============================================================= Multi sections =============================================================*/
+
+.wrapper-section-parallax-multi {
+	width: 100%;
+	height: 50vh;
+	float: left;
+	@extend %bgCenter;
+	@extend %flexCenter;
+	background-attachment: fixed !important;
+
+	h1 {
+		padding: 5%;
+		color: $white;
+		text-align: center;
+	}
+}

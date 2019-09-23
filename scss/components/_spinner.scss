@@ -1,0 +1,58 @@
+/*============================================================= Spinner =============================================================*/
+
+.spinner {
+	border: 5px solid $transparent;
+	@include border-radius(50%);
+	width: 40px;
+	height: 40px;
+	@include animation(spin 2s linear infinite);
+	float: left;
+
+	&.primary {
+		border: {
+			top: 5px solid $primary;
+			right: 5px solid $primary;
+			bottom: 5px solid $primary;
+		}
+	}
+
+	&.secondary {
+		border: {
+			top: 5px solid $secondary;
+			right: 5px solid $secondary;
+			bottom: 5px solid $secondary;
+		}
+	}
+
+	&.danger {
+		border: {
+			top: 5px solid $danger;
+			right: 5px solid $danger;
+			bottom: 5px solid $danger;
+		}
+	}
+
+	&.success {
+		border: {
+			top: 5px solid $success;
+			right: 5px solid $success;
+			bottom: 5px solid $success;
+		}
+	}
+
+	&.warning {
+		border: {
+			top: 5px solid $warning;
+			right: 5px solid $warning;
+			bottom: 5px solid $warning;
+		}
+	}
+
+	&.disabled {
+		border: {
+			top: 5px solid $gray;
+			right: 5px solid $gray;
+			bottom: 5px solid $gray;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+  "name": "fajny-css",
+  "version": "1.0.4",
+  "description": "Fajny CSS Framework",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "latest",
+    "grunt": "1.0.4",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest"
+  }
+}

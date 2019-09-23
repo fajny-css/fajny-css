@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Fajny CSS | Navbar</title>
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<link rel="stylesheet" href="https://unpkg.com/fajny-css-icons/css/fajny-icons.min.css" />
+		<link rel="stylesheet" href="../css/fajny.min.css" />
+		<style>
+			.navbar {
+				position: relative;
+			}
+
+			.header-full .hamburger {
+				position: relative;
+				left: 0;
+				right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main class="container">
+			<h1 class="no-marg-top">Navbar</h1>
+			<section>
+				<h2>Navbar</h2>
+				<header class="navbar">
+					<nav>
+						<div class="logo">
+							<a href="#"><img src="../images/logo-fajny-css-white.svg" alt=""/></a>
+						</div>
+						<input type="checkbox" name="burger" id="burger" class="input-burger" />
+						<label for="burger" class="hamburger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</label>
+
+						<ul class="ul-nav">
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+							<li><a href="#">Link</a></li>
+							<li class="dropdown">
+								<a href="#" class="btn-dropdown">Dropdown</a>
+								<ul class="dropdown-content">
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</header>
+			</section>
+
+			<section>
+				<h2>Menu full page</h2>
+				<header class="header-full">
+					<input type="checkbox" name="burger" id="burger2" class="input-burger" />
+					<label for="burger2" class="hamburger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</label>
+
+					<nav>
+						<ul class="ul-nav">
+							<li>
+								<a href="#">Link</a>
+								<span></span>
+							</li>
+							<li>
+								<a href="#">Link</a>
+								<span></span>
+							</li>
+							<li>
+								<a href="#">Link</a>
+								<span></span>
+							</li>
+							<li>
+								<a href="#">Link</a>
+								<span></span>
+							</li>
+						</ul>
+						<div class="logo"><img src="../images/logo-<link rel="stylesheet" href="../css/fajny.min.css" />-white.svg" alt=""></div>
+					</nav>
+				</header>
+			</section>
+		</main>
+	</body>
+</html>

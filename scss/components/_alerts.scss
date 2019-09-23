@@ -1,0 +1,109 @@
+/*============================================================= Alerts =============================================================*/
+
+.alert {
+	width: 100%;
+	max-width: 400px;
+	position: relative;
+	@include flexbox(center, center, wrap);
+	padding: 50px 5%;
+	@include border-radius(5px);
+	overflow: hidden;
+	background: $white;
+	@include shadow-bottom($light-gray);
+
+	span {
+		width: 100%;
+		height: 5px;
+		float: left;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	i {
+		font-size: 40px;
+		margin-right: 10px;
+	}
+
+	p {
+		margin: 0;
+		width: auto;
+		clear: both;
+
+		&.title-alert {
+			@extend %titles;
+			margin-bottom: 10px;
+			font-size: $font-large;
+		}
+	}
+
+	.buttons {
+		width: 100%;
+		@include flexbox(center, center, wrap);
+		margin-top: 10px;
+
+		.btn:first-child {
+			margin-right: 10px;
+		}
+	}
+
+	&.alert-success {
+		i {
+			color: $success;
+		}
+
+		span {
+			background-color: $success;
+		}
+
+		&.alert-bg {
+			background: $success;
+			@include shadow-bottom($success);
+			color: $white;
+
+			i {
+				color: $white;
+			}
+		}
+	}
+
+	&.alert-danger {
+		i {
+			color: $danger;
+		}
+
+		span {
+			background-color: $danger;
+		}
+
+		&.alert-bg {
+			background: $danger;
+			@include shadow-bottom($danger);
+			color: $white;
+
+			i {
+				color: $white;
+			}
+		}
+	}
+
+	&.alert-warning {
+		i {
+			color: $warning;
+		}
+
+		span {
+			background-color: $warning;
+		}
+
+		&.alert-bg {
+			background: $warning;
+			@include shadow-bottom($warning);
+			color: $white;
+
+			i {
+				color: $white;
+			}
+		}
+	}
+}

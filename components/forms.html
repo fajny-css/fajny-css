@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Fajny CSS | Forms</title>
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+		<link rel="stylesheet" href="https://unpkg.com/fajny-css-icons/css/fajny-icons.min.css" />
+		<link rel="stylesheet" href="../css/fajny.min.css" />
+		<style>
+			.error {
+				display: none;
+			}
+
+			select:selected {
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main class="container">
+			<form action="" name="myForm">
+				<h1 class="no-marg-top">Forms</h1>
+				<section>
+					<h2>Radio buttons</h2>
+					<div class="radio-container">
+						<input type="radio" id="radio1" name="radio" checked />
+						<label for="radio1" class="radio-label"></label>
+						<label for="radio1" class="text-label">Label</label>
+					</div>
+
+					<div class="radio-container">
+						<input type="radio" id="radio2" name="radio" />
+						<label for="radio2" class="radio-label"></label>
+						<label for="radio2" class="text-label">Label</label>
+					</div>
+
+					<div class="radio-container">
+						<input type="radio" id="radio3" name="radio-disabled" disabled checked />
+						<label for="radio3" class="radio-label"></label>
+						<label for="radio3" class="text-label">Label</label>
+					</div>
+
+					<div class="radio-container">
+						<input type="radio" id="radio4" name="radio-disabled" disabled />
+						<label for="radio4" class="radio-label"></label>
+						<label for="radio4" class="text-label">Label</label>
+					</div>
+				</section>
+				<hr />
+				<section>
+					<h2>Checkboxes</h2>
+					<div class="checkbox-container">
+						<input type="checkbox" id="checkbox1" name="checkbox" checked />
+						<label for="checkbox1" class="checkbox-label"></label>
+						<label for="checkbox1" class="text-label">Label</label>
+					</div>
+					<div class="checkbox-container">
+						<input type="checkbox" id="checkbox2" name="checkbox" />
+						<label for="checkbox2" class="checkbox-label"></label>
+						<label for="checkbox2" class="text-label">Label</label>
+					</div>
+
+					<div class="checkbox-container">
+						<input type="checkbox" id="checkbox3" name="checkbox" disabled checked />
+						<label for="checkbox3" class="checkbox-label"></label>
+						<label for="checkbox3" class="text-label">Label</label>
+					</div>
+
+					<div class="checkbox-container">
+						<input type="checkbox" id="checkbox4" name="checkbox" disabled />
+						<label for="checkbox4" class="checkbox-label"></label>
+						<label for="checkbox4" class="text-label">Label</label>
+					</div>
+				</section>
+				<hr />
+				<section>
+					<h2>Toggle Switches</h2>
+					<div class="toggle-switch-container">
+						<input type="checkbox" id="toggle1" name="toggle" checked />
+						<label for="toggle1" class="toggle-label"></label>
+						<label for="toggle1" class="label-text">Label</label>
+					</div>
+					<div class="toggle-switch-container">
+						<input type="checkbox" id="toggle2" name="toggle" />
+						<label for="toggle2" class="toggle-label"></label>
+						<label for="toggle2" class="label-text">Label</label>
+					</div>
+					<div class="toggle-switch-container">
+						<input type="checkbox" id="toggle3" name="toggle" disabled checked />
+						<label for="toggle3" class="toggle-label"></label>
+						<label for="toggle3" class="label-text">Label</label>
+					</div>
+					<div class="toggle-switch-container">
+						<input type="checkbox" id="toggle4" name="toggle" disabled />
+						<label for="toggle4" class="toggle-label"></label>
+						<label for="toggle4" class="label-text">Label</label>
+					</div>
+				</section>
+				<hr />
+				<section>
+					<h2>Inputs</h2>
+					<div class="input-container">
+						<input type="text" id="input1" name="input" required />
+						<span class="bar"></span>
+						<label for="input1">Email</label>
+						<div class="error">
+							<div>Email is required</div>
+							<div>Email must be a valid email address</div>
+						</div>
+					</div>
+				</section>
+				<hr />
+				<section>
+					<h2>Inputs with Icon</h2>
+					<div class="input-container input-icon-container">
+						<input type="text" id="input2" name="input" required />
+						<span class="bar"></span>
+						<label for="input2">Search</label>
+					</div>
+				</section>
+				<hr />
+				<section>
+					<h2>Inputs with Two Icons</h2>
+					<div class="input-container input-double-icon-container">
+						<input type="text" id="input3" name="input" required />
+						<span class="bar"></span>
+						<label for="input3">Search</label>
+					</div>
+				</section>
+				<hr />
+				<section>
+					<h2>Inputs Disabled</h2>
+					<div class="input-container">
+						<input type="text" id="input4" required disabled />
+						<span class="bar"></span>
+						<label for="input4">Email</label>
+					</div>
+				</section>
+				<hr />
+				<section>
+					<h2>Textarea</h2>
+					<div class="input-container">
+						<textarea name="" id="textarea" name="" required></textarea>
+						<span class="bar"></span>
+						<label for="textarea">Your message</label>
+						<div class="error">
+							<div>Message is required</div>
+						</div>
+					</div>
+				</section>
+				<hr />
+				<section>
+					<h2>Select</h2>
+					<div class="select-container">
+						<select>
+							<option value="value1">Label 1</option>
+							<option value="value2">Label 2</option>
+							<option value="value3">Label 3</option>
+							<option value="value4">Label 4</option>
+						</select>
+					</div>
+				</section>
+			</form>
+		</main>
+	</body>
+</html>

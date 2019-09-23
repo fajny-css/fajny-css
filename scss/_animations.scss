@@ -1,0 +1,237 @@
+/*============================================================= Animations =============================================================*/
+
+/*====================================== Mixins ======================================*/
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($keyframe) {
+	-webkit-animation: #{$keyframe};
+	-moz-animation: #{$keyframe};
+	-ms-animation: #{$keyframe};
+	-o-animation: #{$keyframe};
+	animation: #{$keyframe};
+}
+
+/*====================================== Width Grow ======================================*/
+
+@include keyframes(width-grow-5) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 5%;
+	}
+}
+
+@include keyframes(width-grow-10) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 10%;
+	}
+}
+
+@include keyframes(width-grow-15) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 15%;
+	}
+}
+
+@include keyframes(width-grow-20) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 20%;
+	}
+}
+
+@include keyframes(width-grow-25) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 25%;
+	}
+}
+
+@include keyframes(width-grow-30) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 30%;
+	}
+}
+
+@include keyframes(width-grow-35) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 35%;
+	}
+}
+
+@include keyframes(width-grow-40) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 40%;
+	}
+}
+
+@include keyframes(width-grow-45) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 45%;
+	}
+}
+
+@include keyframes(width-grow-50) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 50%;
+	}
+}
+
+@include keyframes(width-grow-55) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 55%;
+	}
+}
+
+@include keyframes(width-grow-60) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 60%;
+	}
+}
+
+@include keyframes(width-grow-65) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 65%;
+	}
+}
+
+@include keyframes(width-grow-70) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 70%;
+	}
+}
+
+@include keyframes(width-grow-75) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 75%;
+	}
+}
+
+@include keyframes(width-grow-80) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 80%;
+	}
+}
+
+@include keyframes(width-grow-85) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 85%;
+	}
+}
+
+@include keyframes(width-grow-90) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 90%;
+	}
+}
+
+@include keyframes(width-grow-95) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 95%;
+	}
+}
+
+@include keyframes(width-grow-100) {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+/*====================================== Spin ======================================*/
+
+@include keyframes(spin) {
+	0% {
+		@include transform(rotate(0deg));
+	}
+	100% {
+		@include transform(rotate(360deg));
+	}
+}
+
+/*====================================== Circular Charts ======================================*/
+
+@include keyframes(circle-chart-fill) {
+	to {
+		stroke-dasharray: 0 100;
+	}
+}
+
+@include keyframes(circle-chart-appear) {
+	to {
+		opacity: 1;
+		@include transform(translateY(0));
+	}
+}
