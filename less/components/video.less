@@ -1,0 +1,24 @@
+/*============================================================= Video container =============================================================*/
+
+.video-container {
+	width: 100%;
+	float: left;
+
+	video {
+		width: 100%;
+	}
+
+	&.video-embed {
+		width: 100%;
+		height: 40vw;
+
+		iframe {
+			width: 100%;
+			height: 100%;
+		}
+
+		@media only screen and (max-width: 600px) {
+			height: 400px;
+		}
+	}
+}

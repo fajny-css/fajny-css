@@ -1,0 +1,61 @@
+/*============================================================= Components =============================================================*/
+
+.pagination-container {
+	.flexbox(center, flex-start, nowrap);
+	width: 100%;
+
+	.pagination {
+		.ulNone();
+
+		li {
+			width: 30px;
+			height: 30px;
+			float: left;
+			.border-radius(5px);
+			margin-right: 5px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+				.flexCenter();
+				line-height: normal;
+				width: 100%;
+				height: 100%;
+
+				i {
+					font-size: @icon-font-body;
+				}
+			}
+
+			&.active {
+				background: @primary;
+
+				a {
+					color: @white;
+				}
+			}
+
+			&:hover {
+				background: @secondary;
+
+				a {
+					color: @white;
+				}
+			}
+		}
+	}
+
+	&.pagination-left {
+		.flexbox(center, flex-start, nowrap);
+	}
+
+	&.pagination-center {
+		.flexbox(center, center, nowrap);
+	}
+
+	&.pagination-right {
+		.flexbox(center, flex-end, nowrap);
+	}
+}

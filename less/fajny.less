@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/* Less Document */
+
+/*============================================================= Imports =============================================================*/
+
+@import "mixins";
+@import "colors";
+@import "fonts";
+@import "layout";
+@import "animations";
+
+/*============================================================= General =============================================================*/
+
+* {
+	.box-sizing(border-box);
+}
+
+html,
+body {
+	.paMar();
+	.body();
+	color: @dark-gray;
+	width: 100%;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+.clearfix {
+	width: 100%;
+	height: 5px;
+	float: left;
+	clear: both;
+	background: transparent;
+}
+
+hr {
+	border: 1px solid @light-gray;
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+img {
+	width: 100%;
+}
+
+/*============================================================= Components =============================================================*/
+
+@import "components/accordion";
+@import "components/alerts";
+@import "components/attribute";
+@import "components/avatar";
+@import "components/badges";
+@import "components/blockquote";
+@import "components/breadcrumbs";
+@import "components/buttons";
+@import "components/cards";
+@import "components/circular-charts";
+@import "components/code-container";
+@import "components/footer";
+@import "components/parallax";
+@import "components/forms";
+@import "components/image-container";
+@import "components/modals";
+@import "components/navbar";
+@import "components/pagination";
+@import "components/progress";
+@import "components/slider";
+@import "components/spinner";
+@import "components/tables";
+@import "components/tabs";
+@import "components/timeline";
+@import "components/video";
+
+
+
+
+/*=============================================================
+
+     Import helpers at the end of the file to override the classes
+
+ =============================================================*/
+
+ @import "helpers";

@@ -1,0 +1,445 @@
+/*============================================================= Buttons colors =============================================================*/
+
+.btn-primary {
+	background: @primary;
+	color: @white;
+	.shadow-bottom(@primary);
+	min-width: 55px;
+	text-align: center;
+
+	&:hover {
+		background: @primary-70;
+		color: @white;
+	}
+
+	&:active {
+		background: @primary-50;
+		color: @white;
+		.shadow-outline(@primary-50);
+	}
+
+	&:visited {
+		color: @white;
+	}
+
+	&.btn-outline {
+		color: @primary;
+	}
+
+	&.btn-full {
+		.shadow-top(@primary);
+	}
+}
+
+.btn-secondary {
+	background: @secondary;
+	color: @white;
+	.shadow-bottom(@secondary);
+	min-width: 55px;
+	text-align: center;
+
+	&:hover {
+		background: @secondary-70;
+		color: @white;
+	}
+
+	&:active {
+		background: @secondary-50;
+		color: @white;
+		.shadow-outline(@secondary-50);
+	}
+
+	&:visited {
+		color: @white;
+	}
+
+	&.btn-outline {
+		color: @secondary;
+	}
+
+	&.btn-full {
+		.shadow-top(@secondary);
+	}
+}
+
+.btn-success {
+	background: @success;
+	color: @white;
+	.shadow-bottom(@success);
+	min-width: 55px;
+	text-align: center;
+
+	&:hover {
+		background: @success-70;
+		color: @white;
+	}
+
+	&:active {
+		background: @success-50;
+		color: @white;
+		.shadow-outline(@success-50);
+	}
+
+	&:visited {
+		color: @white;
+	}
+
+	&.btn-outline {
+		color: @success;
+	}
+
+	&.btn-full {
+		.shadow-top(@success);
+	}
+}
+
+.btn-danger {
+	background: @danger;
+	color: @white;
+	.shadow-bottom(@danger);
+	min-width: 55px;
+	text-align: center;
+
+	&:hover {
+		background: @danger-70;
+		color: @white;
+	}
+
+	&:active {
+		background: @danger-50;
+		color: @white;
+		.shadow-outline(@danger-50);
+	}
+
+	&:visited {
+		color: @white;
+	}
+
+	&.btn-outline {
+		color: @danger;
+	}
+
+	&.btn-full {
+		.shadow-top(@danger);
+	}
+}
+
+.btn-warning {
+	background: @warning;
+	color: @white;
+	.shadow-bottom(@warning);
+	min-width: 55px;
+	text-align: center;
+
+	&:hover {
+		background: @warning-70;
+		color: @white;
+	}
+
+	&:active {
+		background: @warning-50;
+		color: @white;
+		.shadow-outline(@warning-50);
+	}
+
+	&:visited {
+		color: @white;
+	}
+
+	&.btn-outline {
+		color: @warning;
+	}
+
+	&.btn-full {
+		.shadow-top(@warning);
+	}
+}
+
+.btn-gray {
+	background: @gray;
+	color: @white;
+	.shadow-bottom(@gray);
+	min-width: 55px;
+	text-align: center;
+
+	&:hover {
+		background: @light-gray;
+		color: @white;
+	}
+
+	&:active {
+		background: @lighter-gray;
+		color: @white;
+		.shadow-outline(@light-gray);
+	}
+
+	&:visited {
+		color: @white;
+	}
+
+	&.btn-outline {
+		color: @gray;
+	}
+
+	&.btn-full {
+		.shadow-top(@gray);
+	}
+}
+
+.btn-white {
+	background: @white;
+	color: @primary;
+	.shadow-bottom(@light-gray);
+	min-width: 55px;
+	text-align: center;
+
+	&:hover {
+		background: @grayscale-5;
+		color: @primary-70;
+	}
+
+	&:active {
+		background: @white;
+		color: @primary-50;
+		.shadow-outline(@light-gray);
+	}
+
+	&:visited {
+		color: @primary;
+	}
+
+	&.btn-outline {
+		color: @white;
+
+		&:hover,
+		&:active {
+			color: @primary;
+		}
+	}
+
+	&.btn-full {
+		.shadow-bottom(@light-gray);
+	}
+}
+
+.btn-disabled {
+	background: @light-gray;
+	color: @gray;
+	.shadow-bottom(@gray);
+	cursor: not-allowed;
+	min-width: 55px;
+	text-align: center;
+
+	&:hover {
+		background: @light-gray;
+		color: @gray;
+		cursor: not-allowed;
+	}
+
+	&:active {
+		background: @light-gray;
+		color: @gray;
+		.shadow-outline(@gray);
+	}
+
+	&:visited {
+		color: @gray;
+	}
+
+	&.btn-outline {
+		color: @light-gray;
+	}
+
+	&.btn-full {
+		.shadow-top(@gray);
+	}
+}
+
+/*============================================================= Buttons shapes =============================================================*/
+
+button {
+	cursor: pointer;
+	border: none;
+	background: none;
+	padding: 0;
+	margin: 0;
+	outline: none;
+}
+
+.btn {
+	float: left;
+	.transition(background, 0.2s, ease);
+	cursor: pointer;
+}
+
+.btn-rectangle {
+	padding: 8px 12px;
+	.border-radius(5px);
+	.outline(2px, @transparent);
+}
+
+.btn-pill {
+	padding: 12px 12px;
+	.border-radius(25px);
+}
+
+.btn-outline {
+	.outline(2px, @transparent);
+	background-color: @transparent;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+
+	&.btn-primary {
+		border-color: @primary;
+	}
+
+	&.btn-secondary {
+		border-color: @secondary;
+	}
+
+	&.btn-success {
+		border-color: @success;
+	}
+
+	&.btn-danger {
+		border-color: @danger;
+	}
+
+	&.btn-warning {
+		border-color: @warning;
+	}
+
+	&.btn-gray {
+		border-color: @gray;
+	}
+
+	&.btn-white {
+		border-color: @white;
+	}
+
+	&.btn-disabled {
+		border-color: @light-gray;
+	}
+
+	&:hover,
+	&:active {
+		color: @white !important;
+
+		&.btn-disabled {
+			color: @light-gray;
+		}
+	}
+
+	&.btn-white:hover,
+	&.btn-white:active {
+		color: @primary !important;
+	}
+}
+
+.btn-large {
+	padding: 16px 12px;
+	.outline(2px, @transparent);
+
+	&.btn-pill {
+		.border-radius(30px);
+		padding: 12px 20px;
+	}
+}
+
+.btn-round {
+	width: 60px;
+	height: 60px;
+	.border-radius(50%);
+	font-size: 32px !important;
+	.flexCenter();
+	color: @white;
+	background: @secondary;
+	.shadow-bottom(@secondary);
+
+	&:hover {
+		background: @secondary-70;
+	}
+
+	&:active {
+		background: @secondary-50;
+	}
+
+	&:hover,
+	&:active,
+	&:after,
+	&:visited {
+		color: @white;
+	}
+}
+
+.btn-full {
+	width: 100%;
+	padding: 12px 12px;
+	text-align: center;
+	font-size: @font-large;
+}
+
+.dropdown {
+	position: relative;
+
+	.btn-dropdown::after {
+		.icon("\eab3");
+		color: @white;
+		margin-left: 5px;
+		font-size: @icon-font-body;
+	}
+
+	.dropdown-content {
+		.ulNone();
+		float: left;
+		width: 300px;
+		background: @white;
+		.shadow-bottom(@light-gray);
+		.border-radius(5px);
+		overflow: hidden;
+		position: absolute;
+		left: 0;
+		top: 112px;
+		.transition-ease(0.5s);
+		max-height: 0;
+
+		@media only screen and (max-width: 600px) {
+			max-height: 300px !important;
+		}
+
+		li {
+			border-bottom: 1px solid;
+			border-color: @light-gray;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			a {
+				display: block;
+				padding: 10px 5px;
+				width: 100%;
+			}
+
+			&:hover {
+				background: @primary;
+				border-color: @white;
+
+				a {
+					color: @white;
+				}
+			}
+		}
+	}
+
+	&:hover {
+		.btn-dropdown::after {
+			.icon("\eabc");
+		}
+
+		.dropdown-content {
+			.transition-ease(0.8s);
+			max-height: 300px;
+		}
+	}
+}

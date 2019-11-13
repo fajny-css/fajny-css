@@ -1,0 +1,22 @@
+/*============================================================= Breadcrumbs =============================================================*/
+
+.breadcrumbs {
+	.ulNone();
+	float: left;
+
+	li {
+		float: left;
+
+		&:after {
+			.icon("\ec57");
+			margin-left: 5px;
+			margin-right: 5px;
+			color: @primary;
+			font-size: @icon-font-body;
+		}
+
+		&:last-child:after {
+			content: normal;
+		}
+	}
+}
