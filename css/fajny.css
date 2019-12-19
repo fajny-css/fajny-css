@@ -3449,7 +3449,8 @@ table {
     margin: 0;
     padding-bottom: 100px;
     padding-left: 20px;
-    height: auto; }
+    height: auto;
+    float: left; }
     .timeline li:before {
       content: "";
       background-color: #1b4568;
