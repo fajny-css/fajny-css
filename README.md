@@ -6,7 +6,7 @@ Just copy this in the `<head>` of your HTML `<link rel="stylesheet" href="https:
 
 ## Via NPM
 
-Open the folder in your terminal and run this command `npm i @julseb42/fajny-css`.
+Open the folder in your terminal and run this command `npm i fajny-css`.
 
 ## Locally
 
