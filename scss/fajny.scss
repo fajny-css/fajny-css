@@ -1,79 +1,194 @@
 @charset "UTF-8";
-/* SCSS Document */
+/* SASS Document */
 
-/*============================================================= Imports =============================================================*/
+/*=============================================== Imports ===============================================*/
+
 @import "mixins";
+@import "variables";
 @import "colors";
 @import "fonts";
-@import "layout";
-@import "animations";
+@import "shadows";
+@import "layouts";
+@import "animation";
 
-/*============================================================= General =============================================================*/
+/*=============================================== General ===============================================*/
 
 * {
-	@include box-sizing(border-box);
+    @include box-sizing(border-box);
+    outline: none;
 }
 
 html,
 body {
-	@extend %paMar;
-	@extend %body;
-	color: $dark-gray;
-	width: 100%;
-	overflow-x: hidden;
-	scroll-behavior: smooth;
-}
-
-.clearfix {
-	width: 100%;
-	height: 5px;
-	float: left;
-	clear: both;
-	background: transparent;
-}
-
-hr {
-	border: 1px solid $light-gray;
-	width: 100%;
-	float: left;
-	margin-top: 20px;
-	margin-bottom: 20px;
+    @include paMar();
+    @include font-body(16px);
+    color: $black;
+    max-width: 100%;
+    position: relative;
 }
 
 img {
-	width: 100%;
+    max-width: 100%;
 }
 
-/*============================================================= Components =============================================================*/
+.no-scroll {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
 
-@import "components/accordion";
-@import "components/alerts";
-@import "components/attribute";
-@import "components/avatar";
-@import "components/badges";
-@import "components/blockquote";
-@import "components/breadcrumbs";
+/*=============================================== Components ===============================================*/
+
+@import "components/images";
+@import "components/videos";
+@import "components/avatars";
 @import "components/buttons";
-@import "components/cards";
-@import "components/circular-charts";
-@import "components/footer";
-@import "components/parallax";
+@import "components/tags";
+@import "components/badges";
 @import "components/forms";
-@import "components/image-container";
+@import "components/breadcrumbs";
+@import "components/accordion";
+@import "components/dropdown";
+@import "components/alerts";
+@import "components/cards";
+@import "components/parallax";
 @import "components/modals";
-@import "components/navbar";
 @import "components/pagination";
 @import "components/progress";
 @import "components/spinner";
 @import "components/tables";
 @import "components/tabs";
 @import "components/timeline";
-@import "components/video";
+@import "components/nav";
+@import "components/footer";
 
-/*=============================================================
-
-     Import helpers at the end of the file to override the classes
-
- =============================================================*/
+/*=============================================== Helpers ===============================================*/
 
 @import "helpers";
+
+/*=============================================== Demo ===============================================*/
+
+.card-color {
+    @include flexbox(center, flex-start, nowrap);
+    height: 200px;
+    width: 100%;
+    background-color: $white;
+    @include shadow-cards();
+    @include border-radius($radius-l);
+    overflow: hidden;
+
+    .color {
+        width: 150px;
+        height: 100%;
+        margin-right: $margin-m;
+    }
+
+    .content {
+        width: calc(100% - 150px - #{$margin-m});
+        p {
+            margin: 0;
+            @include font-body(16px);
+            width: calc(100% - 150px - #{$margin-m});
+
+            &:first-child {
+                @include font-body-bold(16px);
+            }
+
+            &:not(:last-child) {
+                margin-bottom: $margin-xxs;
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        @include flex-direction(column);
+        height: auto;
+
+        .color {
+            width: 100%;
+            height: 150px;
+            margin-right: 0;
+        }
+
+        .content {
+            width: 100%;
+            padding: $margin-s;
+
+            p {
+                width: 100%;
+            }
+        }
+    }
+}
+
+section {
+    .card-shadow {
+        width: 200px;
+        height: 200px;
+        background-color: $white;
+        @include flexbox(center, center, nowrap);
+        padding: $margin-s;
+
+        &:not(:last-child) {
+            margin-bottom: $margin-s;
+        }
+    }
+}
+
+.container-demo,
+.section-demo,
+.col-demo {
+    background-color: $primary;
+    color: $white;
+    @include flexbox(center, center, nowrap);
+    @include border-radius($radius-s);
+}
+
+.col-demo {
+    padding: $margin-xxs 0;
+    @include font-size(14px);
+}
+
+.demo-avatar {
+    @include flexbox(flex-start, flex-start, wrap);
+
+    .avatar:not(:last-child) {
+        margin-right: $margin-s;
+    }
+}
+
+.demo-buttons .btn-half {
+    width: 100%;
+
+    @media (max-width: $breakpoint-mobile) {
+        width: 50%;
+    }
+}
+
+.demo-full {
+    @include grid(1fr, 0, $margin-l);
+    width: 100%;
+
+    .btn {
+        @include grid-column-span(1);
+        width: 100%;
+    }
+}
+
+.demo-fab .btn-fab {
+    position: relative;
+    bottom: inherit;
+    right: inherit;
+}
+
+.demo-nav {
+    position: relative;
+}
+
+.col-icon {
+    @include flexbox(center, center, nowrap);
+
+    i {
+        font-size: 48px;
+    }
+}

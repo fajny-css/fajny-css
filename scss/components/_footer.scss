@@ -1,67 +1,53 @@
-/*============================================================= Components =============================================================*/
+/*=============================================== Footer ===============================================*/
 
 footer {
-	width: 100%;
-	float: left;
-	padding: 50px 0;
+    width: 100%;
+    position: relative;
+    @include flexbox(center, space-between, nowrap);
+    padding: $container-padding;
+    padding-top: $margin-m;
+    padding-bottom: $margin-l;
+    position: relative;
+    z-index: 1;
+    background-color: $white;
 
-	.footer-container {
-		width: 100%;
-		float: left;
-		@include flexbox(center, space-between, nowrap);
+    &:before {
+        content: "";
+        width: $container-width;
+        height: 1px;
+        background-color: $light-gray;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: $container-padding;
+    }
 
-		ul {
-			@extend %ulNone;
+    .logo {
+        width: 100px;
+    }
 
-			li {
-				margin-right: 10px;
+    ul {
+        @include ulNone();
+        @include flexbox(center, flex-start, nowrap);
 
-				&:last-child {
-					margin-right: 0;
-				}
-			}
+        li {
+            &:not(:last-child):after {
+                content: "•";
+                color: $gray;
+                margin: 0 $margin-xxs;
+            }
 
-			.logo {
-				width: 100px;
+            a {
+                @include links($primary, $primary-75, 14px);
+            }
+        }
+    }
 
-				img {
-					float: left;
-					padding-top: 2px;
-				}
-			}
-		}
-
-		.left {
-			@include flexbox(center, flex-start, nowrap);
-		}
-
-		.right {
-			@include flexbox(center, flex-end, nowrap);
-		}
-
-		.social {
-			li {
-				a {
-					font-size: $font-large;
-				}
-			}
-		}
-
-		@media only screen and (max-width: 600px) {
-			-ms-flex-wrap: wrap;
-			flex-wrap: wrap;
-
-			.left,
-			.right {
-				width: 100%;
-				-webkit-box-pack: center;
-				-ms-flex-pack: center;
-				justify-content: center;
-			}
-
-			.left {
-				margin-bottom: 20px;
-			}
-		}
-	}
+    @media(max-width: $breakpoint-mobile) {
+        @include flex-direction(column);
+        
+        .logo {
+            margin-bottom: $margin-m;
+        }
+    }
 }

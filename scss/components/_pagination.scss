@@ -1,61 +1,90 @@
-/*============================================================= Components =============================================================*/
+/*=============================================== Pagination ===============================================*/
 
-.pagination-container {
-	@include flexbox(center, flex-start, nowrap);
-	width: 100%;
+/*=========================== Normal pagination ===========================*/
 
-	.pagination {
-		@extend %ulNone;
+.pagination {
+    @include ulNone();
+    width: 100%;
+    margin: $margin-l 0;
 
-		li {
-			width: 30px;
-			height: 30px;
-			float: left;
-			@include border-radius(5px);
-			margin-right: 5px;
+    li {
+        display: block;
+        width: auto;
 
-			&:last-child {
-				margin-right: 0;
-			}
+        &:not(:last-child) {
+            margin-right: $margin-xs;
+        }
 
-			a {
-				@extend %flexCenter;
-				line-height: normal;
-				width: 100%;
-				height: 100%;
+        a {
+            $width: 32px;
+            width: $width;
+            height: $width;
+            color: $primary;
+            text-decoration: none;
+            @include transition(all, .2s, ease);
+            @include font-body-bold(16px);
+            @include flexbox(center, center, nowrap);
+            text-align: center;
+            @include border-radius($radius-m);
 
-				i {
-					font-size: $icon-font-body;
-				}
-			}
+            &.active {
+                background-color: $primary;
+                color: $white;
+            }
 
-			&.active {
-				background: $primary;
+            &:hover {
+                background-color: $primary-75;
+                color: $white;
+            }
 
-				a {
-					color: $white;
-				}
-			}
+            &.disabled {
+                color: $gray;
+                cursor: not-allowed;
 
-			&:hover {
-				background: $secondary;
+                &:hover {
+                    color: $gray;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
 
-				a {
-					color: $white;
-				}
-			}
-		}
-	}
 
-	&.pagination-left {
-		@include flexbox(center, flex-start, nowrap);
-	}
+/*================ Align left ================*/
 
-	&.pagination-center {
-		@include flexbox(center, center, nowrap);
-	}
+.pagination-left {
+    @include flexbox(center, flex-start, wrap);
+}
 
-	&.pagination-right {
-		@include flexbox(center, flex-end, nowrap);
-	}
+/*================ Align center ================*/
+
+.pagination-center {
+    @include flexbox(center, center, wrap);
+}
+
+/*================ Align right ================*/
+
+.pagination-right {
+    @include flexbox(center, flex-end, wrap);
+}
+
+/*=========================== Paginator ===========================*/
+
+.paginator {
+    @include flexbox(center, flex-start, nowrap);
+    @include font-size(16px);
+
+    i:first-child {
+        margin: 0 $margin-xxs;
+    }
+
+    a {
+        @include links($primary, $primary-75, 14px);
+
+        &.disabled {
+            @include links($gray, $gray, 14px);
+            cursor: not-allowed;
+        }
+    }
 }

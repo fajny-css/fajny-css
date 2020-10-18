@@ -1,51 +1,48 @@
-/*============================================================= Components =============================================================*/
+/*=============================================== Timeline ===============================================*/
 
 .timeline {
-	list-style-type: none;
-	width: 100%;
-	float: left;
-	margin-bottom: 20px;
+    @include ulNone();
+    max-width: 327px;
+    position: relative;
+    @include flexbox(flex-start, flex-start, nowrap);
+    @include flex-direction(column);
 
-	li {
-		position: relative;
-		margin: 0;
-		padding-bottom: 100px;
-		padding-left: 20px;
-		height: auto;
-		float: left;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 2px;
+        height: 100%;
+        width: 2px;
+        display: block;
+        background-color: $primary;
+    }
 
-		h5,
-		small,
-		p {
-			@extend %paMar;
-		}
+    li {
+        padding-left: calc(16px + #{$margin-xs});
+        position: relative;
 
-		&:before {
-			content: "";
-			background-color: $primary;
-			position: absolute;
-			bottom: 0;
-			top: 0;
-			left: 5px;
-			width: 3px;
-		}
+        &:not(:last-child) {
+            margin-bottom: $margin-l;
+        }
 
-		&:after {
-			content: "";
-			width: 15px;
-			height: 15px;
-			background: $primary;
-			border: 1px solid $white;
-			float: left;
-			position: absolute;
-			left: -1.6px;
-			top: 0;
-			@include border-radius(50%);
-			@include shadow-bottom($primary);
-		}
+        &:before {
+            $width: 16px;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            display: block;
+            width: $width;
+            height: $width;
+            @include border-radius(50%);
+            background-color: $primary;
+            border: 1px solid $white;
+            @include shadow-cards();
+        }
 
-		&:last-child {
-			padding-bottom: 50px;
-		}
-	}
+        h4, small, p {
+            margin: 0;
+        }
+    }
 }

@@ -1,0 +1,227 @@
+/*=============================================== Variables ===============================================*/
+
+/*=========================== CSS Properties ===========================*/
+
+:root {
+    // Colors
+    --color-primary: 27, 69, 104;
+    --color-primary-75: 93, 122, 147;
+    --color-primary-5: 244, 246, 247;
+    --color-secondary: 38, 109, 211;
+    --color-secondary-75: 101, 150, 222;
+    --color-secondary-5: 244, 248, 253;
+    --color-success: 151, 219, 79;
+    --color-success-75: 180, 227, 129;
+    --color-success-5: 250, 253, 246;
+    --color-danger: 255, 49, 46;
+    --color-danger-75: 253, 108, 106;
+    --color-danger-5: 255, 245, 245;
+    --color-warning: 244, 96, 54;
+    --color-warning-75: 245, 141, 112;
+    --color-warning-5: 254, 247, 245;
+    --color-black: 27, 27, 27;
+    --color-white: 255, 255, 255;
+    --color-dark-gray: 51, 51, 51;
+    --color-gray: 118, 118, 118;
+    --color-light-gray: 198, 198, 198;
+    --color-lighter-gray: 221, 221, 221;
+    --color-gray-5: 243, 243, 243;
+
+    --color-grayscale-100: 51, 51, 51;
+    --color-grayscale-95: 61, 61, 61;
+    --color-grayscale-90: 70, 70, 70;
+    --color-grayscale-85: 80, 80, 80;
+    --color-grayscale-80: 91, 91, 91;
+    --color-grayscale-75: 100, 100, 100;
+    --color-grayscale-70: 110, 110, 110;
+    --color-grayscale-65: 120, 120, 120;
+    --color-grayscale-60: 131, 131, 131;
+    --color-grayscale-55: 140, 140, 140;
+    --color-grayscale-50: 150, 150, 150;
+    --color-grayscale-45: 160, 160, 160;
+    --color-grayscale-40: 169, 169, 169;
+    --color-grayscale-35: 180, 180, 180;
+    --color-grayscale-30: 189, 189, 189;
+    --color-grayscale-25: 200, 200, 200;
+    --color-grayscale-20: 209, 209, 209;
+    --color-grayscale-15: 220, 220, 220;
+    --color-grayscale-10: 229, 229, 229;
+    --color-grayscale-5: 239, 239, 239;
+
+    // Fonts families
+    --font-title: "Nunito Sans", sans-serif;
+    --font-body: "Mulish", sans-serif;
+    --font-code: monaco, Consolas, Lucida Console, monospace;
+
+    // Fonts weights
+    --weight-regular: 400;
+    --weight-bold: 800;
+
+    // Fonts styles
+    --italic: italic;
+
+    // Margins
+    --margin-xxl: 48px;
+    --margin-xl: 32px;
+    --margin-l: 24px;
+    --margin-m: 16px;
+    --margin-s: 12px;
+    --margin-xs: 8px;
+    --margin-xxs: 4px;
+
+    // Shadows
+    --shadow-cards: 0px 2px 6px rgba(var(--color-black), 0.08),
+        0px 4px 12px rgba(var(--color-black), 0.04),
+        0px 6px 18px rgba(var(--color-black), 0.02),
+        0px 8px 24px rgba(var(--color-black), 0.02);
+    --shadow-cards-hover: 0px 8px 36px rgba(var(--color-black), 0.06),
+        0px 6px 24px rgba(var(--color-black), 0.06),
+        0px 4px 16px rgba(var(--color-black), 0.16),
+        0px 2px 8px rgba(var(--color-black), 0.24);
+    --shadow-buttons: 0px 4px 8px rgba(var(--color-black), 0.08),
+        0px 2px 4px rgba(var(--color-black), 0.3);
+    --shadow-buttons-hover: 0px 4px 12px rgba(var(--color-black), 0.25),
+        0px 4px 4px rgba(var(--color-black), 0.25),
+        0px 4px 2px rgba(var(--color-black), 0.25);
+    --shadow-alerts: 0px 8px 48px rgba(var(--color-black), 0.33),
+        0px 6px 18px rgba(var(--color-black), 0.05),
+        0px 4px 12px rgba(var(--color-black), 0.05),
+        0px 2px 6px rgba(var(--color-black), 0.1);
+
+    // Border Radiuses
+    --radius-xl: 16px;
+    --radius-l: 12px;
+    --radius-m: 8px;
+    --radius-s: 4px;
+    --radius-round: 99em;
+
+    // Container width and related
+    --container-width: 90%;
+    --container-padding: 5%;
+}
+
+/*=========================== Mixins ===========================*/
+
+/*================ Colors ================*/
+
+$primary: rgba(var(--color-primary), 1);
+$primary-75: rgba(var(--color-primary-75), 1);
+$primary-5: rgba(var(--color-primary-5), 1);
+$secondary: rgba(var(--color-secondary), 1);
+$secondary-75: rgba(var(--color-secondary-75), 1);
+$secondary-5: rgba(var(--color-secondary-5), 1);
+$success: rgba(var(--color-success), 1);
+$success-75: rgba(var(--color-success-75), 1);
+$success-5: rgba(var(--color-success-5), 1);
+$danger: rgba(var(--color-danger), 1);
+$danger-75: rgba(var(--color-danger-75), 1);
+$danger-5: rgba(var(--color-danger-5), 1);
+$warning: rgba(var(--color-warning), 1);
+$warning-75: rgba(var(--color-warning-75), 1);
+$warning-5: rgba(var(--color-warning-5), 1);
+$black: rgba(var(--color-black), 1);
+$white: rgba(var(--color-white), 1);
+$dark-gray: rgba(var(--color-dark-gray), 1);
+$gray: rgba(var(--color-gray), 1);
+$light-gray: rgba(var(--color-light-gray), 1);
+$lighter-gray: rgba(var(--color-lighter-gray), 1);
+$gray-5: rgba(var(--color-gray-5), 1);
+
+$grayscale-100: rgba(var(--color-grayscale-100), 1);
+$grayscale-95: rgba(var(--color-grayscale-95), 1);
+$grayscale-90: rgba(var(--color-grayscale-90), 1);
+$grayscale-85: rgba(var(--color-grayscale-85), 1);
+$grayscale-80: rgba(var(--color-grayscale-80), 1);
+$grayscale-75: rgba(var(--color-grayscale-75), 1);
+$grayscale-70: rgba(var(--color-grayscale-70), 1);
+$grayscale-65: rgba(var(--color-grayscale-65), 1);
+$grayscale-60: rgba(var(--color-grayscale-60), 1);
+$grayscale-55: rgba(var(--color-grayscale-55), 1);
+$grayscale-50: rgba(var(--color-grayscale-50), 1);
+$grayscale-45: rgba(var(--color-grayscale-45), 1);
+$grayscale-40: rgba(var(--color-grayscale-40), 1);
+$grayscale-35: rgba(var(--color-grayscale-35), 1);
+$grayscale-30: rgba(var(--color-grayscale-30), 1);
+$grayscale-25: rgba(var(--color-grayscale-25), 1);
+$grayscale-20: rgba(var(--color-grayscale-20), 1);
+$grayscale-15: rgba(var(--color-grayscale-15), 1);
+$grayscale-10: rgba(var(--color-grayscale-10), 1);
+$grayscale-5: rgba(var(--color-grayscale-5), 1);
+
+/*================ Fonts ================*/
+
+@mixin font-title($font-size) {
+    font-family: var(--font-title);
+    @include font-size($font-size);
+}
+
+@mixin font-body($font-size) {
+    font-family: var(--font-body);
+    font-weight: var(--weight-regular);
+    @include font-size($font-size);
+}
+
+@mixin font-body-italic($font-size) {
+    font-family: var(--font-body);
+    font-weight: var(--weight-regular);
+    font-style: var(--italic);
+    @include font-size($font-size);
+}
+
+@mixin font-body-bold($font-size) {
+    font-family: var(--font-body);
+    font-weight: var(--weight-bold);
+    @include font-size($font-size);
+}
+
+@mixin font-body-bold-italic($font-size) {
+    font-family: var(--font-body);
+    font-weight: var(--weight-bold);
+    font-style: var(--italic);
+    @include font-size($font-size);
+}
+
+/*================ Shadows ================*/
+
+@mixin shadow-cards() {
+    @include shadow(var(--shadow-cards));
+}
+
+@mixin shadow-cards-hover() {
+    @include shadow(var(--shadow-cards-hover));
+}
+
+@mixin shadow-buttons() {
+    @include shadow(var(--shadow-buttons));
+}
+
+@mixin shadow-buttons-hover() {
+    @include shadow(var(--shadow-buttons-hover));
+}
+
+@mixin shadow-alerts() {
+    @include shadow(var(--shadow-alerts));
+}
+
+/*================ Margins ================*/
+
+$margin-xxl: var(--margin-xxl);
+$margin-xl: var(--margin-xl);
+$margin-l: var(--margin-l);
+$margin-m: var(--margin-m);
+$margin-s: var(--margin-s);
+$margin-xs: var(--margin-xs);
+$margin-xxs: var(--margin-xxs);
+
+/*================ Radiuses ================*/
+
+$radius-xl: var(--radius-xl);
+$radius-l: var(--radius-l);
+$radius-m: var(--radius-m);
+$radius-s: var(--radius-s);
+$radius-round: var(--radius-round);
+
+/*================ Container width ================*/
+
+$container-width: var(--container-width);
+$container-padding: var(--container-padding);

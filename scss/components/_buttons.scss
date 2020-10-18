@@ -1,445 +1,247 @@
-/*============================================================= Buttons colors =============================================================*/
-
-.btn-primary {
-	background: $primary;
-	color: $white;
-	@include shadow-bottom($primary);
-	min-width: 55px;
-	text-align: center;
-
-	&:hover {
-		background: $primary-70;
-		color: $white;
-	}
-
-	&:active {
-		background: $primary-50;
-		color: $white;
-		@include shadow-outline($primary-50);
-	}
-
-	&:visited {
-		color: $white;
-	}
-
-	&.btn-outline {
-		color: $primary;
-	}
-
-	&.btn-full {
-		@include shadow-top($primary);
-	}
-}
-
-.btn-secondary {
-	background: $secondary;
-	color: $white;
-	@include shadow-bottom($secondary);
-	min-width: 55px;
-	text-align: center;
-
-	&:hover {
-		background: $secondary-70;
-		color: $white;
-	}
-
-	&:active {
-		background: $secondary-50;
-		color: $white;
-		@include shadow-outline($secondary-50);
-	}
-
-	&:visited {
-		color: $white;
-	}
-
-	&.btn-outline {
-		color: $secondary;
-	}
-
-	&.btn-full {
-		@include shadow-top($secondary);
-	}
-}
-
-.btn-success {
-	background: $success;
-	color: $white;
-	@include shadow-bottom($success);
-	min-width: 55px;
-	text-align: center;
-
-	&:hover {
-		background: $success-70;
-		color: $white;
-	}
-
-	&:active {
-		background: $success-50;
-		color: $white;
-		@include shadow-outline($success-50);
-	}
-
-	&:visited {
-		color: $white;
-	}
-
-	&.btn-outline {
-		color: $success;
-	}
-
-	&.btn-full {
-		@include shadow-top($success);
-	}
-}
-
-.btn-danger {
-	background: $danger;
-	color: $white;
-	@include shadow-bottom($danger);
-	min-width: 55px;
-	text-align: center;
-
-	&:hover {
-		background: $danger-70;
-		color: $white;
-	}
-
-	&:active {
-		background: $danger-50;
-		color: $white;
-		@include shadow-outline($danger-50);
-	}
-
-	&:visited {
-		color: $white;
-	}
-
-	&.btn-outline {
-		color: $danger;
-	}
-
-	&.btn-full {
-		@include shadow-top($danger);
-	}
-}
-
-.btn-warning {
-	background: $warning;
-	color: $white;
-	@include shadow-bottom($warning);
-	min-width: 55px;
-	text-align: center;
-
-	&:hover {
-		background: $warning-70;
-		color: $white;
-	}
-
-	&:active {
-		background: $warning-50;
-		color: $white;
-		@include shadow-outline($warning-50);
-	}
-
-	&:visited {
-		color: $white;
-	}
-
-	&.btn-outline {
-		color: $warning;
-	}
-
-	&.btn-full {
-		@include shadow-top($warning);
-	}
-}
-
-.btn-gray {
-	background: $gray;
-	color: $white;
-	@include shadow-bottom($gray);
-	min-width: 55px;
-	text-align: center;
-
-	&:hover {
-		background: $light-gray;
-		color: $white;
-	}
-
-	&:active {
-		background: $lighter-gray;
-		color: $white;
-		@include shadow-outline($light-gray);
-	}
-
-	&:visited {
-		color: $white;
-	}
-
-	&.btn-outline {
-		color: $gray;
-	}
-
-	&.btn-full {
-		@include shadow-top($gray);
-	}
-}
-
-.btn-white {
-	background: $white;
-	color: $primary;
-	@include shadow-bottom($light-gray);
-	min-width: 55px;
-	text-align: center;
-
-	&:hover {
-		background: $grayscale-5;
-		color: $primary-70;
-	}
-
-	&:active {
-		background: $white;
-		color: $primary-50;
-		@include shadow-outline($light-gray);
-	}
-
-	&:visited {
-		color: $primary;
-	}
-
-	&.btn-outline {
-		color: $white;
-
-		&:hover,
-		&:active {
-			color: $primary;
-		}
-	}
-
-	&.btn-full {
-		@include shadow-bottom($light-gray);
-	}
-}
-
-.btn-disabled {
-	background: $light-gray;
-	color: $gray;
-	@include shadow-bottom($gray);
-	cursor: not-allowed;
-	min-width: 55px;
-	text-align: center;
-
-	&:hover {
-		background: $light-gray;
-		color: $gray;
-		cursor: not-allowed;
-	}
-
-	&:active {
-		background: $light-gray;
-		color: $gray;
-		@include shadow-outline($gray);
-	}
-
-	&:visited {
-		color: $gray;
-	}
-
-	&.btn-outline {
-		color: $light-gray;
-	}
-
-	&.btn-full {
-		@include shadow-top($gray);
-	}
-}
-
-/*============================================================= Buttons shapes =============================================================*/
-
-button {
-	cursor: pointer;
-	border: none;
-	background: none;
-	padding: 0;
-	margin: 0;
-	outline: none;
-}
+/*=============================================== Buttons ===============================================*/
 
 .btn {
-	float: left;
-	@include transition(background, 0.2s, ease);
-	cursor: pointer;
+    padding: $margin-xs $margin-m;
+    @include border-radius($radius-m);
+    @include transition(all, 0.2s, ease);
+    border: 1px solid transparent;
+    cursor: pointer;
+    float: left;
 }
 
-.btn-rectangle {
-	padding: 8px 12px;
-	@include border-radius(5px);
-	@include outline(2px, $transparent);
-}
+/*=========================== Button styles ===========================*/
 
-.btn-pill {
-	padding: 12px 12px;
-	@include border-radius(25px);
+.btn-background {
+    @include shadow-buttons();
+
+    &:hover {
+        @include shadow-buttons-hover();
+    }
 }
 
 .btn-outline {
-	@include outline(2px, $transparent);
-	background-color: $transparent;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-
-	&.btn-primary {
-		border-color: $primary;
-	}
-
-	&.btn-secondary {
-		border-color: $secondary;
-	}
-
-	&.btn-success {
-		border-color: $success;
-	}
-
-	&.btn-danger {
-		border-color: $danger;
-	}
-
-	&.btn-warning {
-		border-color: $warning;
-	}
-
-	&.btn-gray {
-		border-color: $gray;
-	}
-
-	&.btn-white {
-		border-color: $white;
-	}
-
-	&.btn-disabled {
-		border-color: $light-gray;
-	}
-
-	&:hover,
-	&:active {
-		color: $white !important;
-
-		&.btn-disabled {
-			color: $light-gray;
-		}
-	}
-
-	&.btn-white:hover,
-	&.btn-white:active {
-		color: $primary !important;
-	}
+    border: 1px solid;
 }
 
-.btn-large {
-	padding: 16px 12px;
-	@include outline(2px, $transparent);
+.btn-icon {
+    i {
+        font-size: 10px;
+        line-height: 14px * 1.4;
+        top: 0;
+        vertical-align: -.2px;
+    }
 
-	&.btn-pill {
-		@include border-radius(30px);
-		padding: 12px 20px;
-	}
+    &.btn-big i {
+        font-size: 14px;
+        line-height: 28px;
+        vertical-align: -.2px;
+    }
+
+    &.btn-icon-left i {
+        margin-right: $margin-xxs;
+    }
+
+    &.btn-icon-right i {
+        margin-left: $margin-xxs;
+    }
 }
 
-.btn-round {
-	width: 60px;
-	height: 60px;
-	@include border-radius(50%);
-	font-size: 32px !important;
-	@extend %flexCenter;
-	color: $white;
-	background: $secondary;
-	@include shadow-bottom($secondary);
-
-	&:hover {
-		background: $secondary-70;
-	}
-
-	&:active {
-		background: $secondary-50;
-	}
-
-	&:hover,
-	&:active,
-	&:after,
-	&:visited {
-		color: $white;
-	}
+.btn-half {
+    width: 50%;
+    text-align: center;
 }
 
 .btn-full {
-	width: 100%;
-	padding: 12px 12px;
-	text-align: center;
-	font-size: $font-large;
+    width: 100% !important;
+    text-align: center;
 }
 
-.dropdown {
-	position: relative;
+.btn-fab {
+    $width: 48px;
+    width: $width;
+    height: $width;
+    padding: 0;
+    @include border-radius(50%);
+    @include flexbox(center, center, nowrap);
+    font-size: 24px;
+    position: fixed;
+    bottom: $margin-l;
+    right: $margin-l;
+    z-index: 999;
+}
 
-	.btn-dropdown::after {
-		@include icon("\eab3");
-		color: $white;
-		margin-left: 5px;
-		font-size: $icon-font-body;
-	}
+/*=========================== Button colors ===========================*/
 
-	.dropdown-content {
-		@extend %ulNone;
-		float: left;
-		width: 300px;
-		background: $white;
-		@include shadow-bottom($light-gray);
-		@include border-radius(5px);
-		overflow: hidden;
-		position: absolute;
-		left: 0;
-		top: 112px;
-		@include transition-ease(0.5s);
-		max-height: 0;
+.btn-primary {
+    color: $primary;
 
-		@media only screen and (max-width: 600px) {
-			max-height: 300px !important;
-		}
+    &:hover {
+        color: $primary-75;
+    }
 
-		li {
-			border-bottom: 1px solid;
-			border-color: $light-gray;
+    &.btn-background {
+        background-color: $primary;
+        color: $white;
 
-			&:last-child {
-				border-bottom: none;
-			}
+        &:hover {
+            background-color: $primary-75;
+            color: $white;
+        }
+    }
 
-			a {
-				display: block;
-				padding: 10px 5px;
-				width: 100%;
-			}
+    &.btn-outline {
+        border-color: $primary;
 
-			&:hover {
-				background: $primary;
-				border-color: $white;
+        &:hover {
+            border-color: $primary-75;
+        }
+    }
+}
 
-				a {
-					color: $white;
-				}
-			}
-		}
-	}
+.btn-secondary {
+    color: $secondary;
 
-	&:hover {
-		.btn-dropdown::after {
-			@include icon("\eabc");
-		}
+    &:hover {
+        color: $secondary-75;
+    }
 
-		.dropdown-content {
-			@include transition-ease(0.8s);
-			max-height: 300px;
-		}
-	}
+    &.btn-background {
+        background-color: $secondary;
+        color: $white;
+
+        &:hover {
+            background-color: $secondary-75;
+            color: $white;
+        }
+    }
+
+    &.btn-outline {
+        border-color: $secondary;
+
+        &:hover {
+            border-color: $secondary-75;
+        }
+    }
+}
+
+.btn-success {
+    color: $success;
+
+    &:hover {
+        color: $success-75;
+    }
+
+    &.btn-background {
+        background-color: $success;
+        color: $white;
+
+        &:hover {
+            background-color: $success-75;
+            color: $white;
+        }
+    }
+
+    &.btn-outline {
+        border-color: $success;
+
+        &:hover {
+            border-color: $success-75;
+        }
+    }
+}
+
+.btn-danger {
+    color: $danger;
+
+    &:hover {
+        color: $danger-75;
+    }
+
+    &.btn-background {
+        background-color: $danger;
+        color: $white;
+
+        &:hover {
+            background-color: $danger-75;
+            color: $white;
+        }
+    }
+
+    &.btn-outline {
+        border-color: $danger;
+
+        &:hover {
+            border-color: $danger-75;
+        }
+    }
+}
+
+.btn-warning {
+    color: $warning;
+
+    &:hover {
+        color: $warning-75;
+    }
+
+    &.btn-background {
+        background-color: $warning;
+        color: $white;
+
+        &:hover {
+            background-color: $warning-75;
+            color: $white;
+        }
+    }
+
+    &.btn-outline {
+        border-color: $warning;
+
+        &:hover {
+            border-color: $warning-75;
+        }
+    }
+}
+
+.btn-white {
+    color: $white;
+
+    &:hover {
+        color: $gray-5;
+    }
+
+    &.btn-background {
+        background-color: $white;
+        color: $primary;
+
+        &:hover {
+            background-color: $gray-5;
+            color: $primary;
+        }
+    }
+
+    &.btn-outline {
+        border-color: $white;
+
+        &:hover {
+            border-color: $gray-5;
+        }
+    }
+}
+
+.btn-disabled {
+    color: $gray;
+    cursor: not-allowed;
+    @include shadow(inherit);
+
+    &:hover {
+        @include shadow(inherit);
+    }
+
+    &.btn-background {
+        background-color: $lighter-gray;
+    }
+
+    &.btn-outline {
+        border-color: $gray;
+    }
 }

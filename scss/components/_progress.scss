@@ -1,214 +1,207 @@
-/*============================================================= Progress =============================================================*/
+/*=============================================== Progress ===============================================*/
 
 .progress {
-	width: 100%;
-	float: left;
-	height: 16px;
-	background: $lighter-gray;
-	@include border-radius(20px);
-	position: relative;
-	z-index: 1;
-	overflow: hidden;
+    width: 100%;
+    height: 16px;
+    @include border-radius($radius-round);
+    display: block;
+    background-color: $lighter-gray;
 
-	&:after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		float: left;
-		height: 100%;
-		z-index: 2;
-		@include border-radius(20px);
-	}
+    &:after {
+        content: "";
+        display: block;
+        @include border-radius($radius-round);
+        height: 100%;
+    }
 
-	/*===== Background Progress =====*/
+    // Bar colors
+    &.progress-primary:after {
+        background-color: $primary;
+    }
 
-	&.progress-primary:after {
-		background: $primary;
-	}
+    &.progress-secondary:after {
+        background-color: $secondary;
+    }
 
-	&.progress-secondary:after {
-		background: $secondary;
-	}
+    &.progress-success:after {
+        background-color: $success;
+    }
 
-	&.progress-success:after {
-		background: $success;
-	}
+    &.progress-danger:after {
+        background-color: $danger;
+    }
 
-	&.progress-danger:after {
-		background: $danger;
-	}
+    &.progress-warning:after {
+        background-color: $warning;
+    }
 
-	&.progress-warning:after {
-		background: $warning;
-	}
+    &.progress-disabled:after {
+        background-color: $gray;
+    }
 
-	&.progress-disabled:after {
-		background: $gray;
-	}
+    // Bar width
 
-	/*===== Width Progress =====*/
+    &.progress-0:after {
+        width: 0;
+    }
 
-	&.progress-5:after {
-		width: 5%;
-	}
+    &.progress-5:after {
+        width: 5%;
 
-	&.progress-10:after {
-		width: 10%;
-	}
+        &.progress-animation {
+            @include animation(progress-5 0.2s 1);
+        }
+    }
 
-	&.progress-15:after {
-		width: 15%;
-	}
+    &.progress-10:after {
+        width: 10%;
 
-	&.progress-20:after {
-		width: 20%;
-	}
+        &.progress-animation {
+            @include animation(progress-10 0.4s 1);
+        }
+    }
 
-	&.progress-25:after {
-		width: 25%;
-	}
+    &.progress-15:after {
+        width: 15%;
 
-	&.progress-30:after {
-		width: 30%;
-	}
+        &.progress-animation {
+            @include animation(progress-15 .6s 1);
+        }
+    }
 
-	&.progress-35:after {
-		width: 35%;
-	}
+    &.progress-20:after {
+        width: 20%;
 
-	&.progress-40:after {
-		width: 40%;
-	}
+        &.progress-animation {
+            @include animation(progress-20 .8s 1);
+        }
+    }
 
-	&.progress-45:after {
-		width: 45%;
-	}
+    &.progress-25:after {
+        width: 25%;
 
-	&.progress-50:after {
-		width: 50%;
-	}
+        &.progress-animation {
+            @include animation(progress-25 1s 1);
+        }
+    }
 
-	&.progress-55:after {
-		width: 55%;
-	}
+    &.progress-30:after {
+        width: 30%;
 
-	&.progress-60:after {
-		width: 60%;
-	}
+        &.progress-animation {
+            @include animation(progress-30 1.2s 1);
+        }
+    }
 
-	&.progress-65:after {
-		width: 65%;
-	}
+    &.progress-35:after {
+        width: 35%;
 
-	&.progress-70:after {
-		width: 70%;
-	}
+        &.progress-animation {
+            @include animation(progress-35 1.4s 1);
+        }
+    }
 
-	&.progress-75:after {
-		width: 75%;
-	}
+    &.progress-40:after {
+        width: 40%;
 
-	&.progress-80:after {
-		width: 80%;
-	}
+        &.progress-animation {
+            @include animation(progress-40 1.6s 1);
+        }
+    }
 
-	&.progress-85:after {
-		width: 85%;
-	}
+    &.progress-45:after {
+        width: 45%;
 
-	&.progress-90:after {
-		width: 90%;
-	}
+        &.progress-animation {
+            @include animation(progress-45 1.8s 1);
+        }
+    }
 
-	&.progress-95:after {
-		width: 95%;
-	}
+    &.progress-50:after {
+        width: 50%;
+        
+        &.progress-animation {
+            @include animation(progress-50 2s 1);
+        }
+    }
 
-	&.progress-100:after {
-		width: 100%;
-	}
+    &.progress-55:after {
+        width: 55%;
 
-	/*===== Animation Progress =====*/
+        &.progress-animation {
+            @include animation(progress-55 2.2s 1);
+        }
+    }
 
-	&.progress-anim-5:after {
-		@include animation(width-grow-5 0.25s 1);
-	}
+    &.progress-60:after {
+        width: 60%;
 
-	&.progress-anim-10:after {
-		@include animation(width-grow-10 0.5s 1);
-	}
+        &.progress-animation {
+            @include animation(progress-60 2.4s 1);
+        }
+    }
 
-	&.progress-anim-15:after {
-		@include animation(width-grow-15 1s 1);
-	}
+    &.progress-65:after {
+        width: 65%;
 
-	&.progress-anim-20:after {
-		@include animation(width-grow-20 1.25s 1);
-	}
+        &.progress-animation {
+            @include animation(progress-65 2.6s 1);
+        }
+    }
 
-	&.progress-anim-25:after {
-		@include animation(width-grow-25 1.5s 1);
-	}
+    &.progress-70:after {
+        width: 70%;
 
-	&.progress-anim-30:after {
-		@include animation(width-grow-30 1.75s 1);
-	}
+        &.progress-animation {
+            @include animation(progress-70 2.8s 1);
+        }
+    }
 
-	&.progress-anim-35:after {
-		@include animation(width-grow-35 2s 1);
-	}
+    &.progress-75:after {
+        width: 75%;
 
-	&.progress-anim-40:after {
-		@include animation(width-grow-40 2.25s 1);
-	}
+        &.progress-animation {
+            @include animation(progress-75 3s 1);
+        }
+    }
 
-	&.progress-anim-45:after {
-		@include animation(width-grow-45 2.5s 1);
-	}
+    &.progress-80:after {
+        width: 80%;
 
-	&.progress-anim-50:after {
-		@include animation(width-grow-50 2.75s 1);
-	}
+        &.progress-animation {
+            @include animation(progress-80 3.2s 1);
+        }
+    }
 
-	&.progress-anim-55:after {
-		@include animation(width-grow-55 3s 1);
-	}
+    &.progress-85:after {
+        width: 85%;
 
-	&.progress-anim-60:after {
-		@include animation(width-grow-60 3.25s 1);
-	}
+        &.progress-animation {
+            @include animation(progress-85 3.4s 1);
+        }
+    }
 
-	&.progress-anim-65:after {
-		@include animation(width-grow-65 3.5s 1);
-	}
+    &.progress-90:after {
+        width: 90%;
 
-	&.progress-anim-70:after {
-		@include animation(width-grow-70 3.75s 1);
-	}
+        &.progress-animation {
+            @include animation(progress-90 3.6s 1);
+        }
+    }
 
-	&.progress-anim-75:after {
-		@include animation(width-grow-75 4s 1);
-	}
+    &.progress-95:after {
+        width: 95%;
 
-	&.progress-anim-80:after {
-		@include animation(width-grow-80 4.25s 1);
-	}
+        &.progress-animation {
+            @include animation(progress-95 3.8s 1);
+        }
+    }
 
-	&.progress-anim-85:after {
-		@include animation(width-grow-85 4.5s 1);
-	}
+    &.progress-100:after {
+        width: 100%;
 
-	&.progress-anim-90:after {
-		@include animation(width-grow-90 4.75s 1);
-	}
-
-	&.progress-anim-95:after {
-		@include animation(width-grow-95 5s 1);
-	}
-
-	&.progress-anim-100:after {
-		width: 100%;
-		@include animation(width-grow-100 5.25s 1);
-	}
+        &.progress-animation {
+            @include animation(progress-100 4s 1);
+        }
+    }
 }

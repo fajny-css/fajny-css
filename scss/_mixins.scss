@@ -1,136 +1,193 @@
 /*============================================================= Mixins =============================================================*/
 
 @mixin flexbox($align, $justify, $wrap) {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-
-	-webkit-box-align: $align;
-	-ms-flex-align: $align;
-	align-items: $align;
-
-	-webkit-box-pack: $justify;
-	-ms-flex-pack: $justify;
-	justify-content: $justify;
-
-	-ms-flex-wrap: $wrap;
-	flex-wrap: $wrap;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: $align;
+    -ms-flex-align: $align;
+    align-items: $align;
+    -webkit-box-pack: $justify;
+    -ms-flex-pack: $justify;
+    justify-content: $justify;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
 }
 
-@mixin shadow-top($color) {
-	-webkit-box-shadow: 0 -2px 4px 0 $color;
-	box-shadow: 0 -2px 4px 0 $color;
+@mixin flex-direction($direction) {
+    @if $direction == column {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+    }
+
+    @if $direction == column-reverse {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+    } @else {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+    }
+
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
 }
 
-@mixin shadow-bottom($color) {
-	-webkit-box-shadow: 0 2px 4px 0 $color;
-	box-shadow: 0 2px 4px 0 $color;
+@mixin grid($size, $column-gap, $row-gap) {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: $size;
+    grid-template-columns: $size;
+    -webkit-column-gap: $column-gap;
+    -moz-column-gap: $column-gap;
+    column-gap: $column-gap;
+    row-gap: $row-gap;
 }
 
-@mixin shadow-left($color) {
-	-webkit-box-shadow: -2px 0 4px 0 $color;
-	box-shadow: -2px 0 4px 0 $color;
+@mixin grid-start($start) {
+    -ms-grid-column: $start;
+    grid-column-start: $start;
 }
 
-@mixin shadow-right($color) {
-	-webkit-box-shadow: 2px 0 4px 0 $color;
-	box-shadow: 2px 0 4px 0 $color;
+@mixin grid-end($end) {
+    -ms-grid-column-span: $end;
+    grid-column-end: $end;
 }
 
-@mixin shadow-outline($color) {
-	-webkit-box-shadow: 0 0 0px 2px $color;
-	box-shadow: 0 0 0px 2px $color;
+@mixin grid-column($number) {
+    -ms-grid-column: $number;
+    grid-column: $number;
 }
 
-@mixin outline($size-border, $color) {
-	border: $size-border solid $color;
+@mixin grid-column-span($number) {
+    -ms-grid-column-span: $number;
+    grid-column: span $number;
 }
 
 @mixin transition($property, $duration, $function) {
-	-webkit-transition: $property $duration $function;
-	-moz-transition: $property $duration $function;
-	-ms-transition: $property $duration $function;
-	-o-transition: $property $duration $function;
-	transition: $property $duration $function;
+    -webkit-transition: $property $duration $function;
+    -moz-transition: $property $duration $function;
+    -ms-transition: $property $duration $function;
+    -o-transition: $property $duration $function;
+    transition: $property $duration $function;
 }
 
-@mixin transition-ease($duration) {
-	@include transition(all, $duration, ease);
+@mixin transition-timing($method) {
+    -webkit-transition-timing-function: $method;
+    -moz-transition-timing-function: $method;
+    -o-transition-timing-function: $method;
+    transition-timing-function: $method;
 }
 
 @mixin transform($method) {
-	-moz-transform: $method;
-	-webkit-transform: $method;
-	-o-transform: $method;
-	-ms-transform: $method;
-	transform: $method;
+    -moz-transform: $method;
+    -webkit-transform: $method;
+    -o-transform: $method;
+    -ms-transform: $method;
+    transform: $method;
 }
 
 @mixin transform-origin($method) {
-	-moz-transform-origin: $method;
-	-webkit-transform-origin: $method;
-	-o-transform-origin: $method;
-	-ms-transform-origin: $method;
-	transform-origin: $method;
-}
-
-@mixin calc-width($values) {
-	width: -moz-calc($values);
-	width: -webkit-calc($values);
-	width: -o-calc($values);
-	width: calc($values);
-}
-
-@mixin calc-height($values) {
-	height: -moz-calc($values);
-	height: -webkit-calc($values);
-	height: -o-calc($values);
-	height: calc($values);
-}
-
-@mixin appearance($value) {
-	-webkit-appearance: $value;
-	-moz-appearance: $value;
-	appearance: $value;
+    -moz-transform-origin: $method;
+    -webkit-transform-origin: $method;
+    -o-transform-origin: $method;
+    -ms-transform-origin: $method;
+    transform-origin: $method;
 }
 
 @mixin border-radius($value) {
-	-webkit-border-radius: $value;
-	border-radius: $value;
+    -webkit-border-radius: $value;
+    border-radius: $value;
 }
 
 @mixin box-sizing($property) {
-	-moz-box-sizing: $property;
-	-webkit-box-sizing: $property;
-	box-sizing: $property;
+    -moz-box-sizing: $property;
+    -webkit-box-sizing: $property;
+    box-sizing: $property;
+}
+
+@mixin appearance($value) {
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
 }
 
 @mixin icon($unicode) {
-	font-family: "fajny-css-icons";
-	content: $unicode;
+    font-family: "fajny-css-icons";
+    content: $unicode;
 }
 
-/*============================================================= Extend variables =============================================================*/
-
-%paMar {
-	padding: 0;
-	margin: 0;
+@mixin transition-delay($delay) {
+    -webkit-transition-delay: $delay;
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    transition-delay: $delay;
 }
 
-%ulNone {
-	list-style: none;
-	@extend %paMar;
+@mixin font-size($font-size) {
+    font-size: $font-size;
+    line-height: $font-size * 1.4;
 }
 
-%flexCenter {
-	@include flexbox(center, center, nowrap);
+@mixin links($color, $hover, $font-size) {
+    color: $color;
+    text-decoration: none;
+    @include transition(all, 0.2s, ease);
+    @include font-body-bold($font-size);
+
+    &:hover {
+        color: $hover;
+    }
 }
 
-%bgCenter {
-	background-position: center !important;
-	background-size: cover !important;
+@mixin shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
 }
 
-/*============================================================= Variables =============================================================*/
+@mixin paMar() {
+    padding: 0;
+    margin: 0;
+}
 
-$margin: 10px;
+@mixin ulNone() {
+    list-style: none;
+    @include paMar();
+}
+
+@mixin bgCenter() {
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+/*============================================================= Animations =============================================================*/
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin animation($keyframe) {
+    -webkit-animation: #{$keyframe};
+    -moz-animation: #{$keyframe};
+    -ms-animation: #{$keyframe};
+    -o-animation: #{$keyframe};
+    animation: #{$keyframe};
+}
+
+/*=============================================== Queries ===============================================*/
+
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 600px;

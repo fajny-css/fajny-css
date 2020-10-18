@@ -1,0 +1,27 @@
+/*=============================================== Shadows ===============================================*/
+
+/*=========================== Shadow cards ===========================*/
+
+.shadow-cards {
+    @include shadow-cards();
+}
+
+.shadow-cards-hover {
+    @include shadow-cards-hover();
+}
+
+/*=========================== Shadow buttons ===========================*/
+
+.shadow-buttons {
+    @include shadow-buttons();
+}
+
+.shadow-buttons-hover {
+    @include shadow-buttons-hover();
+}
+
+/*=========================== Shadow alerts ===========================*/
+
+.shadow-alerts {
+    @include shadow-alerts();
+}

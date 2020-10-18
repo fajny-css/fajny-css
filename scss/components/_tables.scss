@@ -1,84 +1,66 @@
-/*============================================================= Components =============================================================*/
+/*=============================================== Tables ===============================================*/
 
 table {
-	width: 100%;
-	float: left;
-	display: table;
+    width: 100%;
+    display: table;
+    border-collapse: initial;
+    border-spacing: 0;
+    background: $white;
 
-	@media only screen and (max-width: 600px) {
-		td {
-			display: block;
-		}
-	}
+    thead {
+        background-color: $primary;
+        color: $white;
+    }
 
-	&.table-stripped {
-		border-collapse: initial;
-		border-spacing: 0;
-		background: $white;
+    td {
+        padding: $margin-xs $margin-m;
 
-		thead {
-			background: $primary;
-			color: $white;
-		}
+        @media(max-width: $breakpoint-mobile) {
+            display: block;
+        }
+    }
+}
 
-		tr {
-			&:nth-child(even) {
-				background: $grayscale-5;
-			}
+/*=========================== Stripped ===========================*/
 
-			td {
-				padding: 10px 0;
+.table-stripped  tbody tr:nth-child(even) {
+    background-color: $gray-5;
+}
 
-				&:first-child {
-					padding-left: 5px;
-				}
+/*=========================== Border ===========================*/
 
-				&:last-child {
-					padding-right: 5px;
-				}
-			}
-		}
-	}
+.table-border {
+    border: 1px solid $light-gray;
 
-	&.table-bordered {
-		border-spacing: 0;
-		background: $white;
-		border-collapse: collapse;
+    tr td {
+        border-bottom: 1px solid $light-gray;
 
-		thead {
-			background: $primary;
-			color: $white;
+        &:not(:last-child) {
+            border-right: 1px solid $light-gray;
+        }
 
-			tr {
-				td {
-					border: 1px solid $white;
+        @media(max-width: $breakpoint-mobile) {
+            border-bottom: none;
 
-					@media only screen and (max-width: 600px) {
-						border-top: none;
-						border-bottom: none;
+            &:not(:last-child) {
+                border-right: none;
+            }
 
-						&:last-child {
-							border-bottom: 1px solid $light-gray;
-						}
-					}
-				}
-			}
-		}
+            &:last-child {
+                border-bottom: 1px solid $light-gray;
+            }
+        }
+    }
 
-		tr {
-			td {
-				padding: 10px 5px;
-				border: 1px solid $light-gray;
+    tr:last-child td {
+        border-bottom: none;
+    }
 
-				@media only screen and (max-width: 600px) {
-					border-top: none;
-					border-bottom: none;
+    thead tr td:not(:last-child) {
+        border-right-color: $white;
 
-					&:last-child {
-						border-bottom: 1px solid $light-gray;
-					}
-				}
-			}
-		}
-	}
+        @media(max-width: $breakpoint-mobile) {
+            border-right: none;
+        }
+    }
 }

@@ -1,22 +1,26 @@
-/*============================================================= Breadcrumbs =============================================================*/
+/*=============================================== Breadcrumbs ===============================================*/
 
 .breadcrumbs {
-	@extend %ulNone;
-	float: left;
+    @include ulNone();
+    @include flexbox(center, flex-start, wrap);
 
-	li {
-		float: left;
+    li {
+        @include font-body(16px);
+        width: auto;
+        display: block;
+        padding: 0;
 
-		&:after {
-			@include icon("\ec57");
-			margin-left: 5px;
-			margin-right: 5px;
-			color: $primary;
-			font-size: $icon-font-body;
-		}
+        &:not(:last-child) {
+            margin-bottom: 0;
 
-		&:last-child:after {
-			content: normal;
-		}
-	}
+            &:after {
+                content: "/";
+                margin: 0 $margin-xxs;
+            }
+        }
+
+        a {
+            @include links($primary, $primary-75, 16px);
+        }
+    }
 }

@@ -1,303 +1,276 @@
-/*============================================================= Import from Google Fonts =============================================================*/
+/*=============================================== Fonts ===============================================*/
 
-@import url("https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i|Nunito+Sans:900&display=swap");
+/*=========================== Reset ===========================*/
 
-/*============================================================= Variables =============================================================*/
-
-%titles {
-	font-family: "Nunito Sans", sans-serif;
-	text-transform: uppercase;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+ul.list,
+ol,
+dl,
+li,
+dt,
+dd {
+    @include paMar();
+    width: 100%;
 }
 
-%body {
-	font-family: "Muli", sans-serif;
-	font-weight: 400;
-	font-style: normal;
-}
-
-%body-italic {
-	font-family: "Muli", sans-serif;
-	font-weight: 400;
-	font-style: italic;
-}
-
-%body-bold {
-	font-family: "Muli", sans-serif;
-	font-weight: 700;
-	font-style: normal;
-}
-
-%body-bold-italic {
-	font-family: "Muli", sans-serif;
-	font-weight: 700;
-	font-style: italic;
-}
-
-$font-size: 16px;
-$font-small: 14px;
-$font-big: 18px;
-$font-large: 20px;
-$icon-font-body: 10px;
-
-/*============================================================= Text styles =============================================================*/
+/*=========================== Titles ===========================*/
 
 h1 {
-	@extend %titles;
-	font-size: 32px;
-	width: 100%;
-     float: left;
-     margin: 0 {
-          top: $margin*2;
-          bottom: $margin*2;
-     };
+    @include font-title(32px);
+    margin: $margin-l 0;
 
-	&.display {
-          font-size: 80px;
-          margin: 0 {
-               top: $margin*4;
-               bottom: $margin*4;
-          };
-	}
+    &.display {
+        @include font-size(5vw);
+
+        @media (max-width: $breakpoint-mobile) {
+            @include font-size(70px);
+        }
+    }
 }
 
 h2 {
-	@extend %titles;
-	font-size: 24px;
-	width: 100%;
-     float: left;
-     margin: 0 {
-          top: $margin*2;
-          bottom: $margin*2;
-     };
+    @include font-title(24px);
+    margin: $margin-l 0;
 
-	&.display {
-          font-size: 64px;
-          margin: 0 {
-               top: $margin*4;
-               bottom: $margin*4;
-          };
-	}
+    &.display {
+        @include font-size(4.5vw);
+
+        @media (max-width: $breakpoint-mobile) {
+            @include font-size(64px);
+        }
+    }
 }
 
 h3 {
-	@extend %body-bold;
-	font-size: 24px;
-	width: 100%;
-     float: left;
-     margin: 0 {
-          top: $margin*2;
-          bottom: $margin*2;
-     };
+    @include font-body-bold(24px);
+    margin: $margin-l 0;
 
-	&.display {
-		@extend %titles;
-          font-size: 55px;
-          
-          margin: 0 {
-               top: $margin*3;
-               bottom: $margin*3;
-          };
-	}
+    &.display {
+        @include font-title(4vw);
+
+        @media (max-width: $breakpoint-mobile) {
+            @include font-size(56px);
+        }
+    }
 }
 
 h4 {
-	@extend %titles;
-	font-size: $font-big;
-	width: 100%;
-     float: left;
-     margin: 0 {
-          top: $margin*1.5;
-          bottom: $margin*1.5;
-     };
+    @include font-title(18px);
+    margin: $margin-m 0;
 
-	&.display {
-          font-size: 45px;
-          margin: 0 {
-               top: $margin*3;
-               bottom: $margin*3;
-          };
-	}
+    &.display {
+        @include font-size(3.5vw);
+        margin: $margin-l 0;
+
+        @media (max-width: $breakpoint-mobile) {
+            @include font-size(48px);
+        }
+    }
 }
 
 h5 {
-	@extend %body-bold;
-	font-size: $font-big;
-	width: 100%;
-     float: left;
-     margin: 0 {
-          top: $margin;
-          bottom: $margin;
-     };
+    @include font-body-bold(18px);
+    margin: $margin-m 0;
 
-	&.display {
-		@extend %titles;
-          font-size: 35px;
-          
-          margin: 0 {
-               top: $margin*2;
-               bottom: $margin*2;
-          };
-	}
+    &.display {
+        @include font-title(3vw);
+        margin: $margin-l 0;
+
+        @media (max-width: $breakpoint-mobile) {
+            @include font-size(40px);
+        }
+    }
 }
 
 h6 {
-	@extend %titles;
-	font-size: $font-big;
-	width: 100%;
-     float: left;
-     
-     margin: 0 {
-          top: $margin;
-          bottom: $margin;
-     };
+    @include font-title(16px);
+    margin: $margin-s 0;
 }
+
+/*=========================== Nav ===========================*/
 
 nav {
-	@extend %titles;
-     font-size: $font-big;
+    @include font-title(16px);
 }
 
-.header-full {
-	@extend %titles;
-     font-size: 80px;
-}
-
-blockquote,
-blockquote p {
-	@extend %body-bold-italic;
-	font-size: $font-big;
-	width: 100%;
-	float: left;
-}
+/*=========================== Body ===========================*/
 
 p {
-	width: 100%;
-     float: left;
-     margin: 0 {
-          top: $margin;
-          bottom: $margin;
-     };
+    @include font-body(16px);
+    margin: $margin-s 0;
+
+    strong {
+        @include font-body-bold(16px);
+    }
+
+    em {
+        @include font-body-italic(16px);
+    }
+
+    strong em,
+    em strong {
+        @include font-body-bold-italic(16px);
+    }
+
+    a {
+        @include links($primary, $primary-75, 16px);
+    }
+
+    code {
+        font-family: var(--font-code);
+        color: $secondary;
+        padding: $margin-xxs;
+        background-color: $gray-5;
+        border: 1px solid $lighter-gray;
+        @include border-radius($radius-s);
+    }
 }
 
-p,
-ul,
-ol,
-dl,
-li {
-	@extend %body;
-	font-size: $font-size;
-	line-height: 25px;
+/*=========================== Quote ===========================*/
 
-	code {
-		float: none;
-		background: $lighter-gray;
-		@include outline(0.5px, $gray);
-		@include border-radius(5px);
-		padding-left: 5px;
-		padding-right: 5px;
-		color: $secondary;
-	}
+blockquote {
+    @include font-body-bold-italic(18px);
+    padding: $margin-s;
 }
 
-strong {
-	@extend %body-bold;
+/*=========================== Lists ===========================*/
+
+ul.list {
+    @include ulNone();
+    @include font-body(16px);
+    padding: $margin-s;
+
+    li {
+        @include flexbox(flex-start, flex-start, nowrap);
+
+        &:before {
+            @include icon("\e988");
+            font-size: 12px;
+            line-height: calc(16px * 1.4);
+            margin-right: $margin-xxs;
+            padding-top: 1px;
+            color: $gray;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: $margin-xs;
+        }
+    }
 }
 
-a,
-.breadcrumbs-links a {
-	@extend %body-bold;
-	color: $primary;
-	text-decoration: none;
+ol {
+    @include font-body(16px);
+    padding: $margin-s;
+    padding-left: $margin-xl;
 
-	&:visited {
-		color: $primary;
-	}
-
-	&:hover {
-		color: $primary-50;
-	}
-
-	&:active {
-		color: $primary-70;
-	}
+    li:not(:last-child) {
+        margin-bottom: $margin-xs;
+    }
 }
 
-em {
-	@extend %body-italic;
+dl {
+    padding: $margin-s;
+
+    dt {
+        @include font-title(18px);
+    }
+
+    dd {
+        padding-left: $margin-l;
+
+        &:not(:last-child) {
+            margin-bottom: $margin-s;
+        }
+    }
 }
 
-dt {
-	@extend %titles;
-}
-
-.badge,
-.badge p {
-	@extend %body;
-	text-transform: uppercase;
-	font-size: $font-small;
-}
-
-.btn {
-	@extend %body-bold;
-	text-transform: uppercase;
-	font-size: $font-small;
-
-	&.btn-large {
-		font-size: $font-large;
-	}
-}
+/*=========================== Subtitles ===========================*/
 
 small {
-	@extend %body-italic;
-	font-size: $font-small;
-	color: $gray;
+    @include font-body-italic(14px);
+    color: $gray;
+    margin: $margin-xs 0;
 }
+
+/*=========================== Tags ===========================*/
+
+.tag {
+    @include font-body(16px);
+
+    &.tag-small {
+        @include font-size(14px);
+    }
+}
+
+/*=========================== Buttons ===========================*/
+
+.btn {
+    @include font-body(14px);
+    text-decoration: none;
+    color: $black;
+
+    &.btn-big,
+    &.btn-half,
+    &.btn-full {
+        @include font-size(20px);
+    }
+}
+
+/*=========================== Inputs ===========================*/
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+textarea {
+    @include font-body(14px);
+    color: $black;
+
+    &::placeholder {
+        color: $light-gray;
+    }
+
+    &:disabled {
+        color: $gray;
+
+        &::placeholder {
+            color: $gray;
+        }
+    }
+}
+
+label {
+    @include font-body(14px);
+
+    &.disabled {
+        color: $gray;
+    }
+}
+
+/*=========================== Tables ===========================*/
 
 table {
-	font-size: $font-small;
-
-	thead {
-		@extend %titles;
-	}
+    @include font-body(14px);
 }
 
-input {
-	font-size: $font-small;
-	color: $dark-gray;
-
-	&::placeholder {
-		color: $gray;
-	}
-
-	&:disabled {
-		color: $light-gray;
-	}
-}
-
-.placeholder {
-	color: $gray;
-	font-size: $font-small;
-
-	&.placeholder-small {
-		color: $primary;
-		font-size: 10px;
-	}
-
-	&.placeholder-disabled {
-		color: $light-gray;
-	}
-}
-
-code {
-	font-family: monaco, Consolas, "Lucida Console";
-}
-
-.error {
-	@extend %body-bold;
-	color: $danger;
-}
+/*=========================== Footer ===========================*/
 
 footer {
-	@extend %body-bold;
-	font-size: $font-big;
+    p {
+        @include font-body(14px);
+
+        a {
+            @include links($primary, $primary-75, 14px);
+        }
+    }
 }

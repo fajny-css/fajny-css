@@ -1,55 +1,98 @@
-/*============================================================= Cards =============================================================*/
+/*=============================================== Cards ===============================================*/
 
-.cards {
-	width: 100%;
-	max-width: 400px;
-	float: left;
-	max-height: 500px;
-	background-color: $white;
-	@include border-radius(5px);
-	@include shadow-bottom($gray);
-	overflow: hidden;
+.card {
+    width: 100%;
+    max-width: 327px;
+    background-color: $white;
+    @include shadow-cards();
+    @include transition(all, .2s, ease);
+    @include border-radius($radius-xl);
+    overflow: hidden;
 
-	h4,
-	p {
-		@extend %paMar;
-	}
+    &:hover {
+        @include shadow-cards-hover();
+        @include transform(scale(1.01));
+    }
+}
 
-	@media only screen and (max-width: 600px) {
-		max-width: none;
-	}
+/*=========================== Image & video card ===========================*/
 
-	.cards-image {
-		width: 100%;
-		height: 150px;
-		overflow: hidden;
-		float: left;
-		@extend %bgCenter;
-	}
+.card-image {
+    height: 200px;
+    position: relative;
+    padding: $margin-m;
+    cursor: pointer;
 
-	.cards-content {
-		width: 100%;
-		float: left;
-		padding: 10px;
+    a {
+        color: $white;
+        text-decoration: none;
+    }
 
-		h4,
-		p {
-			width: 100%;
-			margin-bottom: 10px;
-		}
+    picture, img {
+        height: 200px;
+    }
 
-		p {
-			overflow: hidden;
-			text-overflow: ellipsis;
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 3;
-			line-height: 25px;
-			max-height: 75px;
-		}
+    picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
 
-		.btn {
-			float: right;
-		}
-	}
+    h4 {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
+        @include flexbox(flex-end, flex-start, nowrap);
+        color: $white;
+        margin: 0;
+    }
+
+    &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgba(var(--color-dark-gray), .8);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        display: block;
+    }
+
+    &.card-video i {
+        $width: 100%;
+        width: $width;
+        height: $width;
+        color: $white;
+        font-size: 48px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        @include flexbox(center, center, nowrap)
+    }
+}
+
+/*=========================== Action card ===========================*/
+
+.action-card {
+    picture, img {
+        height: 150px !important;
+    }
+
+    .content {
+        padding: $margin-m;
+
+        h4, p {
+            margin: 0;
+        }
+
+        .button {
+            @include flexbox(center, flex-end, nowrap);
+            margin-top: $margin-m;
+            width: 100%;
+        }
+    }
 }

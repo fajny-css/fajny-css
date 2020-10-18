@@ -1,12 +1,25 @@
-/*============================================================= Badges =============================================================*/
+/*=============================================== Bagdes ===============================================*/
 
 .badge {
-	float: left;
-	padding: 5px 10px;
-	color: $white;
-	@include border-radius(25px);
+    @include border-radius(50%);
+    color: $white;
+    @include flexbox(center, center, nowrap);
+}
 
-	p {
-		@extend %paMar;
-	}
+/*=========================== With icon ===========================*/
+
+.badge-icon {
+    $width: 64px;
+    width: $width;
+    height: $width;
+    font-size: 32px;
+}
+
+/*=========================== With number ===========================*/
+
+.badge-number {
+    $width: 32px;
+    width: $width;
+    height: $width;
+    @include font-body-bold(16px);
 }
