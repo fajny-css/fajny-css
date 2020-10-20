@@ -40,7 +40,7 @@
     }
 
     &.container-input-disabled label {
-        color: $gray;
+        color: $gray !important;
     }
 
     .error-message {

@@ -1112,7 +1112,7 @@ textarea { resize: none; height: 20vh; }
 
 .accordion .title-accordion { font-family: var(--font-body); font-weight: var(--weight-bold); font-size: 16px; line-height: 22.4px; cursor: pointer; margin-bottom: 0; margin-top: 0; }
 
-.accordion .title-accordion:before { font-family: "fajny-css-icons"; content: "\ea9e"; font-size: 12px; line-height: calc(16px * 1.4); color: rgba(var(--color-primary), 1); margin-right: var(--margin-xxs); -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -ms-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; display: inline-block; }
+.accordion .title-accordion:before { font-family: "fajny-css-icons"; content: ""; font-size: 12px; line-height: calc(16px * 1.4); color: rgba(var(--color-primary), 1); margin-right: var(--margin-xxs); -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -ms-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; display: inline-block; }
 
 .accordion .accordion-text { padding-left: 18px; max-height: 0; overflow: hidden; -webkit-transition: all 0.2s linear; -moz-transition: all 0.2s linear; -ms-transition: all 0.2s linear; -o-transition: all 0.2s linear; transition: all 0.2s linear; }
 
