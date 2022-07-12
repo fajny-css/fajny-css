@@ -1,0 +1,15 @@
+/*=============================================== Breadcrumbs ===============================================*/
+
+.breadcrumbs {
+    @include flexbox(center, flex-start, $spacer-xxs);
+
+    a:after {
+        content: "/";
+        color: $color-black;
+        margin-left: $spacer-xxs;
+    }
+
+    &[data-separator="icon"] a:after {
+        @include icon(chevron-right-solid, 12);
+    }
+}

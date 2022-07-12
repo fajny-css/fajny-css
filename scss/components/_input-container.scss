@@ -1,0 +1,14 @@
+/*=============================================== Input container ===============================================*/
+
+.input-container {
+    @include gridCol(1, $spacer-xxs);
+
+    label {
+        color: $color-primary-500;
+        font-weight: $font-weight-black;
+    }
+
+    .counter {
+        color: $color-gray-500;
+    }
+}

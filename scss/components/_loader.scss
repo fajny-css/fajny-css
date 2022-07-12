@@ -1,0 +1,60 @@
+/*=============================================== Loader ===============================================*/
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader {
+    --loader-size: 64px;
+    --border: 8px;
+
+    width: var(--loader-size);
+    height: var(--loader-size);
+    border-radius: $radius-circle;
+    border: var(--border) solid transparent;
+    border-bottom-color: $color-primary-500;
+    animation: spin 1500ms linear infinite;
+
+    @include colorShort(color, border-bottom-color);
+
+    &[data-size="xxl"] {
+        --loader-size: 64px;
+        --border: 8px;
+    }
+
+    &[data-size="xl"] {
+        --loader-size: 56px;
+        --border: 7px;
+    }
+
+    &[data-size="l"] {
+        --loader-size: 48px;
+        --border: 6px;
+    }
+
+    &[data-size="m"] {
+        --loader-size: 40px;
+        --border: 5px;
+    }
+
+    &[data-size="s"] {
+        --loader-size: 32px;
+        --border: 4px;
+    }
+
+    &[data-size="xs"] {
+        --loader-size: 24px;
+        --border: 3px;
+    }
+
+    &[data-size="xxs"] {
+        --loader-size: 16px;
+        --border: 2px;
+    }
+}

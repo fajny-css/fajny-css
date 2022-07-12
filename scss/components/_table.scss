@@ -1,0 +1,144 @@
+/*=============================================== Table ===============================================*/
+
+.table {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: $font-size-small;
+    table-layout: fixed;
+    width: 100%;
+    vertical-align: middle;
+    border: 1px solid $color-gray-200;
+
+    td,
+    th {
+        padding: $spacer-xxs $spacer-xs;
+        text-align: left;
+        display: table-cell;
+        overflow-x: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &>* {
+            font-size: $font-size-small;
+        }
+
+        @include mobile() {
+            display: block;
+        }
+    }
+
+    thead {
+        text-align: left;
+        background-color: $color-primary-500;
+        color: $color-white;
+
+        th:not(:last-child) {
+            border-right: 1px solid $color-white;
+        }
+
+        a {
+            color: $color-white;
+        }
+    }
+
+    td {
+        border: 1px solid $color-gray-200;
+    }
+
+    &[data-vertical-align="baseline"] th,
+    &[data-vertical-align="baseline"] td {
+        vertical-align: baseline;
+    }
+
+    &[data-vertical-align="top"] th,
+    &[data-vertical-align="top"] td {
+        vertical-align: top;
+    }
+
+    &[data-vertical-align="middle"] th,
+    &[data-vertical-align="middle"] td {
+        vertical-align: middle;
+    }
+
+    &[data-vertical-align="bottom"] th,
+    &[data-vertical-align="bottom"] td {
+        vertical-align: bottom;
+    }
+
+    &[data-vertical-align="sub"] th,
+    &[data-vertical-align="sub"] td {
+        vertical-align: sub;
+    }
+
+    &[data-vertical-align="text-top"] th,
+    &[data-vertical-align="text-top"] td {
+        vertical-align: text-top;
+    }
+
+    &[data-text-align="left"] th,
+    &[data-text-align="left"] td {
+        text-align: left;
+    }
+
+    &[data-text-align="center"] th,
+    &[data-text-align="center"] td {
+        text-align: center;
+    }
+
+    &[data-text-align="right"] th,
+    &[data-text-align="right"] td {
+        text-align: right;
+    }
+
+    &[data-text-align="justify"] th,
+    &[data-text-align="justify"] td {
+        text-align: justify;
+    }
+
+    &[data-text-align="inherit"] th,
+    &[data-text-align="inherit"] td {
+        text-align: inherit;
+    }
+
+    &[data-text-align="initial"] th,
+    &[data-text-align="initial"] td {
+        text-align: initial;
+    }
+
+    &[data-text-align="revert"] th,
+    &[data-text-align="revert"] td {
+        text-align: revert;
+    }
+
+    &[data-text-align="revert-layer"] th,
+    &[data-text-align="revert-layer"] td {
+        text-align: revert-layer;
+    }
+
+    &[data-text-align="unset"] th,
+    &[data-text-align="unset"] td {
+        text-align: unset;
+    }
+
+    &[data-table-style="stripped"] {
+        border: none;
+
+        th,
+        td {
+            border: none;
+        }
+
+        thead th:not(:last-child) {
+            border-right: none;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: $color-gray-50;
+        }
+    }
+}

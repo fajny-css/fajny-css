@@ -1,0 +1,82 @@
+/*=============================================== Flexbox ===============================================*/
+
+.flexbox {
+    display: flex;
+    @include gap();
+
+    &[data-inline] {
+        display: inline-flex;
+    }
+
+    &[data-direction="row"] {
+        flex-direction: row;
+    }
+
+    &[data-direction="row-reverse"] {
+        flex-direction: row-reverse;
+    }
+
+    &[data-direction="column"] {
+        flex-direction: column;
+    }
+
+    &[data-direction="column-reverse"] {
+        flex-direction: column-reverse;
+    }
+
+    &[data-wrap="nowrap"] {
+        flex-wrap: nowrap;
+    }
+
+    &[data-wrap="wrap"] {
+        flex-wrap: wrap;
+    }
+
+    &[data-wrap="wrap-reverse"] {
+        flex-wrap: wrap-reverse;
+    }
+
+    &[data-align="stretch"] {
+        align-items: stretch;
+    }
+
+    &[data-align="flex-start"] {
+        align-items: flex-start;
+    }
+
+    &[data-align="flex-end"] {
+        align-items: flex-end;
+    }
+
+    &[data-align="center"] {
+        align-items: center;
+    }
+
+    &[data-align="baseline"] {
+        align-items: baseline;
+    }
+
+    &[data-justify="flex-start"] {
+        justify-content: flex-start;
+    }
+
+    &[data-justify="flex-end"] {
+        justify-content: flex-end;
+    }
+
+    &[data-justify="center"] {
+        justify-content: center;
+    }
+
+    &[data-justify="space-between"] {
+        justify-content: space-between;
+    }
+
+    &[data-justify="space-around"] {
+        justify-content: space-around;
+    }
+
+    &[data-justify="space-evenly"] {
+        justify-content: space-evenly;
+    }
+}

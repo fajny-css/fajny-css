@@ -1,0 +1,263 @@
+/*=============================================== Input ===============================================*/
+
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="file"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea,
+select {
+    width: 100%;
+    height: 32px;
+    border: 1px solid $color-gray-200;
+    border-radius: $radius-s;
+    font-size: $font-size-body;
+    font-family: $font-family-body;
+    padding: $spacer-xs;
+    background-color: $color-white;
+    color: $color-black;
+    line-height: 100%;
+    outline: none;
+
+    &:focus {
+        border-color: $color-primary-500;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: $color-gray-50;
+        color: $color-gray-500;
+
+        &::placeholder {
+            color: $color-gray-500;
+        }
+    }
+
+    &::placeholder {
+        color: $color-gray-200;
+    }
+}
+
+input[type="color"],
+select,
+input[type="file"],
+input[type="file"]::file-selector-button {
+    cursor: pointer;
+}
+
+select {
+    padding: 0 $spacer-xs;
+}
+
+input[type="file"] {
+    padding: 0;
+
+    &::file-selector-button {
+        height: 100%;
+        background-color: $color-gray-100;
+        border: none;
+        height: 100%;
+        padding: 0 $spacer-xs;
+        line-height: 100%;
+        transition: $transition-short;
+    }
+
+    &:hover::file-selector-button {
+        background-color: $color-gray-300;
+    }
+
+    &:disabled:hover::file-selector-button {
+        background-color: $color-gray-100;
+        color: $color-gray-500;
+        cursor: not-allowed;
+    }
+
+    @include touch() {
+        &:hover::file-selector-button {
+            background-color: $color-gray-100;
+        }
+    }
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"] {
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-calendar-picker-indicator {
+        display: none;
+    }
+}
+
+.input-validate {
+    &[data-validate="not-passed"] input {
+        background-color: $color-danger-50;
+
+        &:focus {
+            border-color: $color-danger-500;
+        }
+    }
+}
+
+.input-content {
+    position: relative;
+
+    input,
+    select {
+        position: relative;
+        z-index: 0;
+    }
+
+    select {
+        appearance: none;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+
+    &[data-icon] {
+        .input-icon-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            width: 32px;
+            height: 32px;
+            @include inlineFlex(center, center);
+
+            .icon {
+                --icon-size: 24px;
+                color: $color-primary-500;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                width: 1px;
+                top: 1px;
+                height: 30px;
+                background-color: $color-gray-200;
+            }
+        }
+
+        input {
+            padding-left: calc(32px + $spacer-xs);
+        }
+    }
+
+    &.input-url {
+        .url-container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 32px;
+            z-index: 2;
+            line-height: 32px;
+            padding-left: $spacer-xs;
+
+            &.disabled {
+                color: $color-gray-500;
+            }
+        }
+
+        input {
+            padding-left: 53px;
+        }
+    }
+
+    &.input-select {
+        &:after {
+            @include icon(chevron-down-solid, 16, $color-primary-500);
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 10;
+            right: $spacer-xs;
+            top: calc(50% - 8px);
+            cursor: pointer;
+        }
+
+        &.disabled:after {
+            background-color: $color-gray-500;
+            cursor: not-allowed;
+        }
+    }
+
+    .right-container {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 32px;
+        padding: 0 $spacer-xs;
+        @include inlineFlex(center, center);
+        gap: $spacer-xs;
+
+        &>* {
+            height: 100%;
+            @include inlineFlex(center, center);
+        }
+
+        button {
+            color: $color-primary-500;
+            border: none;
+            background-color: transparent;
+            padding: 0;
+
+            &:hover {
+                color: $color-primary-300;
+            }
+
+            &:active {
+                color: $color-primary-600;
+            }
+
+            &:disabled {
+                color: $color-gray-500;
+            }
+
+            @include touch() {
+
+                &:hover,
+                &:active {
+                    color: $color-primary-500;
+                }
+            }
+        }
+    }
+
+    &[data-validate="not-passed"] {
+        .right-container .icon {
+            color: $color-danger-500;
+        }
+    }
+
+    &[data-validate="passed"] {
+        .right-container .icon {
+            color: $color-success-500;
+        }
+    }
+}
+
+textarea {
+    height: inherit;
+    min-height: calc($font-size-body * $line-height * 4 + $spacer-xxs * 2);
+    resize: vertical;
+}

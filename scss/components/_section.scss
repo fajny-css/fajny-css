@@ -1,0 +1,49 @@
+/*=============================================== Section ===============================================*/
+
+.section {
+    @include gridCol();
+    align-content: start;
+    justify-items: start;
+    gap: $spacer-m;
+
+    &>div,
+    &>h1,
+    &>h2,
+    &>h3,
+    &>h4,
+    &>h5,
+    &>h6,
+    &>p,
+    &>ul,
+    &>ol,
+    &>dl,
+    &>section,
+    &>input,
+    &>article,
+    &>hr,
+    &>pre,
+    &>table,
+    &>header,
+    &>footer,
+    &>iframe,
+    &>nav,
+    &>noscript,
+    &>picture,
+    &>select,
+    &>textarea,
+    &>form {
+        justify-self: stretch;
+    }
+
+    &[data-gap="large"] {
+        gap: $spacer-m;
+    }
+
+    &[data-gap="medium"] {
+        gap: $spacer-s;
+    }
+
+    &[data-gap="small"] {
+        gap: $spacer-xs;
+    }
+}

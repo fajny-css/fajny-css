@@ -1,0 +1,58 @@
+/*=============================================== Paginator ===============================================*/
+
+.paginator {
+    @include flexbox(center, flex-start, $spacer-xs);
+
+    input {
+        width: 48px;
+        -moz-appearance: textfield;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    button {
+        $size: 24px;
+        width: $size;
+        height: $size;
+        border: none;
+        border-radius: $radius-circle;
+        @include inlineFlex(center, center);
+        background-color: transparent;
+        color: $color-primary-500;
+        transition: $transition-short;
+
+        .icon {
+            --icon-size: 16px;
+        }
+
+        &:not(:disabled):hover {
+            background-color: $color-primary-300;
+            color: $color-white;
+        }
+
+        &:not(:disabled):active {
+            background-color: $color-primary-600;
+            color: $color-white;
+        }
+
+        &:disabled {
+            color: $color-gray-500;
+        }
+
+        @include touch() {
+
+            &:not(:disabled):hover,
+            &:not(:disabled):active {
+                background-color: transparent;
+                color: $color-primary-500;
+            }
+        }
+    }
+
+    &[data-justify="right"] {
+        justify-content: flex-end;
+    }
+}

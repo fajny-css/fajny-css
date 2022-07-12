@@ -1,0 +1,72 @@
+/*=============================================== Footer ===============================================*/
+
+.footer {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    background-color: $color-background;
+    @include flexbox(center, space-between);
+    padding: $spacer-l 5%;
+
+    a,
+    button {
+        color: $color-primary-500;
+        text-decoration: none;
+        border: none;
+        padding: 0;
+        background-color: transparent;
+
+        &:hover {
+            color: $color-primary-300;
+        }
+
+        &:active {
+            color: $color-primary-600;
+        }
+    }
+
+    .logo img {
+        width: 100px;
+        height: 32px;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    .links {
+        @include inlineFlex(center, flex-start, $spacer-xs);
+        flex-wrap: wrap;
+
+        &>*:not(:last-child):after {
+            content: "•";
+            color: $color-black;
+            margin-left: $spacer-xs;
+            font-size: 12px;
+            position: relative;
+            top: -2px;
+        }
+    }
+
+    @include mobile() {
+        flex-direction: column;
+        gap: $spacer-l;
+
+        .links {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &[data-separator] {
+        padding-top: $spacer-xxl;
+
+        &:before {
+            content: "";
+            width: calc(100% - 10%);
+            height: 1px;
+            position: absolute;
+            top: $spacer-l;
+            left: 5%;
+            background-color: $color-gray-200;
+        }
+    }
+}

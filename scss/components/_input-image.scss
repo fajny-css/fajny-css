@@ -1,0 +1,98 @@
+/*=============================================== Input image ===============================================*/
+
+.input-image {
+    position: relative;
+
+    input {
+        display: none;
+    }
+
+    label {
+        $label-size: 64px;
+        width: $label-size;
+        height: $label-size;
+        @include flexbox(center, center);
+        position: relative;
+        border-radius: $radius-m;
+        overflow: hidden;
+        cursor: pointer;
+
+        span,
+        img {
+            width: $label-size;
+            height: $label-size;
+        }
+
+        span {
+            @include inlineFlex(center, center);
+            color: $color-primary-500;
+        }
+
+        .empty-container,
+        img {
+            position: relative;
+            z-index: 0;
+        }
+
+        .empty-container {
+            background-color: $color-gray-100;
+
+            .icon {
+                --icon-size: 48px;
+            }
+        }
+
+        img {
+            object-fit: cover;
+            display: block;
+        }
+
+        .hover-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background-color: $overlay-white-50;
+            opacity: 0;
+            transition: $transition-short;
+
+            .icon {
+                --icon-size: 32px;
+            }
+        }
+
+        &:hover .hover-container {
+            opacity: 1;
+        }
+
+        @include touch() {
+            &:hover .hover-container {
+                opacity: 0;
+            }
+        }
+
+        &.disabled {
+            cursor: not-allowed;
+
+            span {
+                color: $color-gray-500;
+            }
+
+            &:hover .hover-container {
+                opacity: 0;
+            }
+        }
+    }
+
+    &[data-validate="not-passed"] {
+        label {
+            .empty-container {
+                background-color: $color-danger-50;
+            }
+
+            span {
+                color: $color-danger-500;
+            }
+        }
+    }
+}

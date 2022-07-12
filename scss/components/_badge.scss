@@ -1,0 +1,65 @@
+/*=============================================== Badge ===============================================*/
+
+.badge {
+    --badge-size: 64px;
+    --badge-icon-size: 56px;
+    width: var(--badge-size);
+    height: var(--badge-size);
+    border-radius: $radius-circle;
+    @include inlineFlex(center, center);
+    background-color: $color-primary-500;
+    color: $color-white;
+    font-size: calc(var(--badge-size) * 0.6);
+    font-weight: $font-weight-black;
+
+    @include colorShort(color, background-color);
+
+    &[data-color="white"] {
+        color: $color-primary-500;
+    }
+
+    .icon-container {
+        width: 100%;
+        height: 100%;
+        @include inlineFlex(center, center);
+
+        .icon {
+            --icon-size: var(--badge-icon-size);
+        }
+    }
+
+    &[data-size="xxl"] {
+        --badge-size: 64px;
+        --badge-icon-size: 56px;
+    }
+
+    &[data-size="xl"] {
+        --badge-size: 48px;
+        --badge-icon-size: 40px;
+    }
+
+    &[data-size="l"] {
+        --badge-size: 32px;
+        --badge-icon-size: 24px;
+    }
+
+    &[data-size="m"] {
+        --badge-size: 24px;
+        --badge-icon-size: 16px;
+    }
+
+    &[data-size="s"] {
+        --badge-size: 16px;
+        --badge-icon-size: 8px;
+    }
+
+    &[data-size="xs"] {
+        --badge-size: 12px;
+        --badge-icon-size: 8px;
+    }
+
+    &[data-size="xxs"] {
+        --badge-size: 8px;
+        --badge-icon-size: 4px;
+    }
+}

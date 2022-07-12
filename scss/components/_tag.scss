@@ -1,0 +1,24 @@
+/*=============================================== Tag ===============================================*/
+
+.tag {
+    font-size: $font-size-small;
+    padding: $spacer-xxs $spacer-s;
+    border-radius: $radius-s;
+    background-color: $color-primary-500;
+    color: $color-white;
+    @include colorShort(color, background-color);
+
+    &[data-color="white"] {
+        color: $color-primary-500;
+    }
+
+    &[data-tag-style="rounded"] {
+        padding: $spacer-xxs $spacer-s;
+        border-radius: $radius-s;
+    }
+
+    &[data-tag-style="pill"] {
+        padding: $spacer-xxs $spacer-m;
+        border-radius: $radius-round;
+    }
+}

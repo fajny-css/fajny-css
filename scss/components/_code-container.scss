@@ -1,0 +1,13 @@
+/*=============================================== Code container ===============================================*/
+
+.code-container {
+    width: 100%;
+    overflow-x: scroll;
+    background-color: $color-gray-900;
+    color: $color-white;
+    padding: $spacer-m;
+    
+    code {
+        font-family: $font-family-code;
+    }
+}

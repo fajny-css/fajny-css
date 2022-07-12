@@ -1,0 +1,61 @@
+/*=============================================== Avatar ===============================================*/
+
+.avatar {
+    overflow: hidden;
+    @include inlineFlex(center, center);
+    font-weight: $font-weight-black;
+    border-radius: $radius-circle;
+    --avatar-size: 64px;
+    --avatar-icon-size: 48px;
+
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    font-size: calc(var(--avatar-size) * 0.6);
+
+    .icon {
+        --icon-size: var(--avatar-icon-size);
+    }
+
+    background-color: $color-primary-500;
+    color: $color-white;
+    @include colorShort(color, background-color);
+
+    &[data-color="white"] {
+        color: $color-primary-500;
+    }
+
+    &[data-size="xxl"] {
+        --avatar-size: 64px;
+        --avatar-icon-size: 48px;
+    }
+
+    &[data-size="xl"] {
+        --avatar-size: 56px;
+        --avatar-icon-size: 40px;
+    }
+
+    &[data-size="l"] {
+        --avatar-size: 48px;
+        --avatar-icon-size: 32px;
+    }
+
+    &[data-size="m"] {
+        --avatar-size: 40px;
+        --avatar-icon-size: 24px;
+    }
+
+    &[data-size="s"] {
+        --avatar-size: 32px;
+        --avatar-icon-size: 16px;
+    }
+
+    &[data-size="xs"] {
+        --avatar-size: 24px;
+        --avatar-icon-size: 12px;
+    }
+
+    &[data-size="xxs"] {
+        --avatar-size: 16px;
+        --avatar-icon-size: 8px;
+    }
+}

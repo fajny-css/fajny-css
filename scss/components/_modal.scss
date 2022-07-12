@@ -1,0 +1,65 @@
+/*=============================================== Modal ===============================================*/
+
+.modal {
+    display: none;
+
+    &.modal-open {
+        @include flexbox(center, center);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $overlay-black-80;
+        z-index: 900;
+        padding: $spacer-xxl;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .alert {
+            max-width: 400px;
+            width: 100%;
+        }
+
+        img,
+        .alert {
+            position: relative;
+            z-index: 1;
+        }
+
+        .button-close {
+            position: absolute;
+            top: $spacer-xxl;
+            right: $spacer-xxl;
+            $size: 48px;
+            width: $size;
+            height: $size;
+            padding: 0;
+            border: none;
+            @include inlineFlex(center, center);
+            z-index: 2;
+            border-radius: $radius-circle;
+            background-color: transparent;
+            color: $color-white;
+            transition: $transition-short;
+
+            .icon {
+                --icon-size: 32px;
+            }
+
+            &:hover {
+                background-color: $color-gray-800;
+            }
+
+            @include touch() {
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/* SASS Document */
+
+/*=============================================== Fajny CSS ===============================================*/
+
+/*==================== Imports ====================*/
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap");
+
+/*==================== Base ====================*/
+
+@import "variables";
+@import "mixins";
+@import "reset";
+
+html,
+body {
+    background-color: $color-background;
+    color: $color-black;
+    font-family: $font-family-body;
+    font-weight: $font-weight-regular;
+    line-height: $line-height;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.stop-scrolling {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*==================== Styles ====================*/
+
+@import "components/fonts";
+
+/*==================== Layouts ====================*/
+
+@import "components/container";
+@import "components/section";
+@import "components/grid";
+@import "components/flexbox";
+
+/*==================== Components ====================*/
+
+@import "components/icon";
+@import "components/hr";
+@import "components/image";
+@import "components/video";
+@import "components/avatar";
+@import "components/loader";
+@import "components/button";
+@import "components/button-icon";
+@import "components/tag";
+@import "components/badge";
+@import "components/tooltip";
+@import "components/input-container";
+@import "components/input";
+@import "components/input-image";
+@import "components/input-check";
+@import "components/form";
+@import "components/breadcrumbs";
+@import "components/accordion";
+@import "components/dropdown";
+@import "components/toast";
+@import "components/alert";
+@import "components/modal";
+@import "components/pagination";
+@import "components/paginator";
+@import "components/stepper";
+@import "components/progress-bar";
+@import "components/tabs";
+@import "components/slideshow";
+@import "components/burger";
+@import "components/card";
+@import "components/cover";
+@import "components/table";
+@import "components/page-loading";
+@import "components/code-container";
+@import "components/header";
+@import "components/footer";
+
+/*==================== Helpers ====================*/
+
+@import "helpers";

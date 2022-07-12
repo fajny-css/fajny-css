@@ -1,0 +1,59 @@
+/*=============================================== Tooltip ===============================================*/
+
+.tooltip {
+    display: inline;
+    position: relative;
+
+    &[data-style="dotted"] {
+        border-bottom: 1px dotted currentColor;
+    }
+
+    &[data-style="underline"] {
+        border-bottom: 1px solid currentColor;
+    }
+
+    &[data-style="bold"] {
+        font-weight: $font-weight-black;
+    }
+
+    &:before {
+        content: attr(data-tooltip);
+        width: 150px;
+        background-color: $overlay-black-80;
+        color: $color-white;
+        text-align: center;
+        padding: $spacer-xs;
+        border-radius: $radius-m;
+        bottom: 125%;
+        left: calc(50% - 150px / 2);
+        font-size: $font-size-small;
+        font-weight: $font-weight-regular;
+    }
+
+    &:after {
+        content: "";
+        bottom: 80%;
+        left: 50%;
+        margin-left: 2px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: $overlay-black-80 transparent transparent transparent;
+    }
+
+    &:before,
+    &:after {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 1;
+        transition: $transition-short;
+    }
+
+    &:hover {
+        &:before,
+        &:after {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+/*=============================================== Video ===============================================*/
+
+video {
+    display: block;
+    @include objectFit();
+
+    &:not([width]) {
+        width: 100%;
+    }
+
+    &:not([height]) {
+        height: auto;
+    }
+}
+
+.youtube {
+    &:not([width]) {
+        width: 100%;
+    }
+
+    &:not([height]) {
+        height: 40vw;
+    }
+}

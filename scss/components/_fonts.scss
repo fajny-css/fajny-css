@@ -1,0 +1,239 @@
+/*=============================================== Fonts ===============================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+strong,
+em,
+small,
+blockquote,
+table,
+thead,
+tbody,
+tr,
+td,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+label {
+    @include allColors(color, color);
+
+    &>* {
+        @include allColors(color, color);
+    }
+
+    a {
+        @include linkFont();
+    }
+
+    &[data-align="left"] {
+        text-align: left;
+    }
+
+    &[data-align="center"] {
+        text-align: center;
+    }
+
+    &[data-align="right"] {
+        text-align: right;
+    }
+
+    &[data-align="justify"] {
+        text-align: justify;
+    }
+
+    &[data-align="inherit"] {
+        text-align: inherit;
+    }
+
+    &[data-align="initial"] {
+        text-align: initial;
+    }
+
+    &[data-align="revert"] {
+        text-align: revert;
+    }
+
+    &[data-align="revert-layer"] {
+        text-align: revert-layer;
+    }
+
+    &[data-align="unset"] {
+        text-align: unset;
+    }
+
+    code {
+        font-family: $font-family-code;
+        line-height: $line-height-code;
+        color: $color-primary-500;
+        padding: $spacer-xxs;
+        border-radius: $radius-xs;
+        background-color: $color-gray-50;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    font-weight: $font-weight-black;
+}
+
+button,
+a.btn {
+    font-family: $font-family-body;
+    font-size: $font-size-body;
+    font-weight: $font-weight-black;
+    line-height: $line-height;
+}
+
+h1 {
+    font-size: $font-size-h1;
+
+    &>* {
+        font-size: $font-size-h1;
+    }
+
+    &.display {
+        font-size: $font-size-display-h1;
+
+        &>* {
+            font-size: $font-size-display-h1;
+        }
+    }
+}
+
+h2 {
+    font-size: $font-size-h2;
+
+    &>* {
+        font-size: $font-size-h2;
+    }
+
+    &.display {
+        font-size: $font-size-display-h2;
+
+        &>* {
+            font-size: $font-size-display-h2;
+        }
+    }
+}
+
+h3 {
+    font-size: $font-size-h3;
+
+    &>* {
+        font-size: $font-size-h3;
+    }
+
+    &.display {
+        font-size: $font-size-display-h3;
+
+        &>* {
+            font-size: $font-size-display-h3;
+        }
+    }
+}
+
+h4 {
+    font-size: $font-size-h4;
+
+    &>* {
+        font-size: $font-size-h4;
+    }
+
+    &.display {
+        font-size: $font-size-display-h4;
+
+        &>* {
+            font-size: $font-size-display-h4;
+        }
+    }
+}
+
+h5 {
+    font-size: $font-size-h5;
+
+    &>* {
+        font-size: $font-size-h5;
+    }
+
+    &.display {
+        font-size: $font-size-display-h5;
+
+        &>* {
+            font-size: $font-size-display-h5;
+        }
+    }
+}
+
+h6 {
+    font-size: $font-size-h6;
+
+    &>* {
+        font-size: $font-size-h6;
+    }
+}
+
+p {
+    font-size: $font-size-body;
+
+    &>* {
+        font-size: $font-size-body;
+    }
+
+    &.pre {
+        white-space: pre-line;
+    }
+}
+
+small {
+    font-size: $font-size-small;
+
+    &>* {
+        font-size: $font-size-small;
+    }
+}
+
+em {
+    font-style: italic;
+}
+
+blockquote {
+    font-size: $font-size-h6;
+    font-style: italic;
+}
+
+ul,
+ol {
+    @include paMar();
+    font-size: $font-size-body;
+    padding-left: $spacer-s;
+    @include gridCol(1, $spacer-xxs);
+
+    li {
+        padding-inline-start: $spacer-xxs;
+        line-height: $line-height;
+    }
+}
+
+dl {
+    dt {
+        font-weight: $font-weight-black;
+    }
+
+    dd {
+        margin-bottom: $spacer-xs;
+        padding-inline-start: $spacer-m;
+    }
+}

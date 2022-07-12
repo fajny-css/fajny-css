@@ -1,0 +1,65 @@
+/*=============================================== Dropdown ===============================================*/
+
+.dropdown-container {
+    position: relative;
+    @include flexbox(center, flex-start);
+
+    .dropdown {
+        position: absolute;
+        top: 42px;
+        @include gridCol();
+        flex-direction: column;
+        min-width: 200px;
+        background-color: $color-white;
+        border-radius: $radius-m;
+        overflow: hidden;
+        box-shadow: $shadow-m;
+        max-height: 0;
+        transition: $transition-long;
+        left: 0;
+        z-index: 50;
+
+        &.dropdown-open {
+            max-height: 800px;
+        }
+
+        a,
+        button {
+            color: $color-primary-500;
+            text-decoration: none;
+            text-align: left;
+            background-color: transparent;
+            border: none;
+            padding: $spacer-xs $spacer-s;
+            transition: $transition-short;
+
+            &:hover {
+                background-color: $color-primary-300;
+                color: $color-white;
+            }
+
+            &:active {
+                background-color: $color-primary-600;
+                color: $color-white;
+            }
+
+            @include touch() {
+
+                &:hover,
+                &:active {
+                    background-color: transparent;
+                    color: $color-primary-500;
+                }
+            }
+        }
+    }
+
+    &[data-justify="right"] {
+        justify-content: flex-end;
+
+        .dropdown {
+            left: inherit;
+            right: 0;
+        }
+    }
+}

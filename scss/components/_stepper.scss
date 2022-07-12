@@ -1,0 +1,91 @@
+/*=============================================== Stepper ===============================================*/
+
+.stepper {
+    @include flexbox(flex-start, space-between, $spacer-xs);
+    position: relative;
+
+    &:before {
+        content: "";
+        width: calc(100% - 24px);
+        height: 2px;
+        position: absolute;
+        left: 12px;
+        top: 12px;
+        background-color: $color-primary-500;
+        z-index: 0;
+    }
+
+    .step {
+        position: relative;
+        z-index: 1;
+        @include inlineFlex(center, flex-start, $spacer-xxs);
+        flex-direction: column;
+
+        .step-number {
+            $size: 24px;
+            width: $size;
+            height: $size;
+            border-radius: $radius-circle;
+            background-color: $color-primary-300;
+            color: $color-white;
+            outline: 2px solid $color-white;
+            @include inlineFlex(center, center);
+            font-weight: $font-weight-black;
+
+            .icon {
+                --icon-size: 16px;
+            }
+        }
+
+        .step-text {
+            font-size: $font-size-small;
+            text-decoration: none;
+            color: $color-primary-300;
+        }
+
+        &.step-active {
+            .step-number {
+                background-color: $color-primary-500;
+            }
+
+            .step-text {
+                color: $color-primary-500;
+            }
+
+            a.step-text {
+                &:hover {
+                    color: $color-primary-300;
+                }
+
+                &:active {
+                    color: $color-primary-600;
+                }
+
+                @include touch() {
+
+                    &:hover,
+                    &:active {
+                        color: $color-primary-500;
+                    }
+                }
+            }
+        }
+    }
+
+    &[data-direction="column"] {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: $spacer-l;
+
+        &:before {
+            width: 2px;
+            height: calc(100% - 24px);
+        }
+
+        .step {
+            flex-direction: row;
+            gap: $spacer-xs;
+        }
+    }
+}

@@ -1,0 +1,70 @@
+/*=============================================== Button icon ===============================================*/
+
+.btn-icon {
+    $button-size: 48px;
+    width: $button-size;
+    height: $button-size;
+    @include inlineFlex(center, center);
+    @include paMar();
+    border: none;
+    border-radius: $radius-circle;
+    background-color: $color-primary-500;
+    color: $color-white;
+
+    &:hover {
+        background-color: $color-primary-300;
+    }
+
+    &:active {
+        background-color: $color-primary-600;
+    }
+
+    &:disabled {
+        background-color: $color-gray-100;
+        color: $color-gray-500;
+    }
+
+    @include touch() {
+
+        &:hover,
+        &:active {
+            background-color: $color-primary-500;
+        }
+    }
+
+    .icon-container {
+        width: 100%;
+        height: 100%;
+        @include inlineFlex(center, center);
+
+        .icon {
+            --icon-size: 32px;
+        }
+    }
+
+    &[data-button-style="plain"] {
+        @include colorHover(color, background-color);
+
+        &[data-color="white"] {
+            color: $color-primary-500;
+        }
+
+        &:disabled,
+        &:disabled:hover,
+        &:disabled:active {
+            background-color: $color-gray-100;
+            color: $color-gray-500;
+        }
+    }
+
+    &[data-button-style="transparent"] {
+        background-color: transparent;
+        @include colorHover(color, color);
+
+        &:disabled,
+        &:disabled:hover,
+        &:disabled:active {
+            color: $color-gray-500;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+/*=============================================== Alert ===============================================*/
+
+.alert {
+    @include gridCol(1, $spacer-s);
+    color: $color-black  !important;
+    padding: $spacer-m;
+    background-color: $color-primary-50;
+    border: 1px solid $color-primary-500;
+    border-radius: $radius-m;
+
+    &[data-color="primary"] {
+        background-color: $color-primary-50;
+        border-color: $color-primary-500;
+    }
+
+    &[data-color="secondary"] {
+        background-color: $color-secondary-50;
+        border-color: $color-secondary-500;
+    }
+
+    &[data-color="success"] {
+        background-color: $color-success-50;
+        border-color: $color-success-500;
+    }
+
+    &[data-color="danger"] {
+        background-color: $color-danger-50;
+        border-color: $color-danger-500;
+    }
+
+    &[data-color="warning"] {
+        background-color: $color-warning-50;
+        border-color: $color-warning-500;
+    }
+
+    &[data-color="gray"] {
+        background-color: $color-gray-50;
+        border-color: $color-gray-500;
+    }
+
+    &[data-color="black"] {
+        background-color: $color-gray-800;
+        border-color: $color-black;
+        color: $color-white !important;
+    }
+
+    &[data-color="white"] {
+        background-color: $color-gray-50;
+        border-color: $color-white;
+    }
+}

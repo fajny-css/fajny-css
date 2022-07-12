@@ -1,0 +1,102 @@
+/*=============================================== Button ===============================================*/
+
+.btn {
+    border: 1px solid transparent;
+    text-decoration: none;
+    padding: $spacer-xs $spacer-s;
+    @include inlineFlex(center, center, $spacer-xs);
+    border-radius: $radius-m;
+    background-color: $color-primary-500;
+    color: $color-white;
+
+    &:hover {
+        background-color: $color-primary-300;
+    }
+
+    &:active {
+        background-color: $color-primary-600;
+    }
+
+    &:disabled {
+        background-color: $color-gray-100;
+        color: $color-gray-500;
+    }
+
+    @include touch() {
+
+        &:hover,
+        &:active {
+            background-color: $color-primary-500;
+        }
+    }
+
+    &[data-no-padding] {
+        padding: 0;
+    }
+
+    &[data-button-style="plain"] {
+        @include colorHover(color, background-color);
+
+        &[data-color="white"] {
+            color: $color-primary-500;
+        }
+
+        &:disabled,
+        &:disabled:hover,
+        &:disabled:active {
+            background-color: $color-gray-100;
+            color: $color-gray-500;
+        }
+    }
+
+    &[data-button-style="text"] {
+        background-color: transparent;
+        color: $color-primary-500;
+
+        &:hover {
+            color: $color-primary-300;
+        }
+
+        &:active {
+            color: $color-primary-600;
+        }
+
+        @include touch() {
+
+            &:hover,
+            &:active {
+                color: $color-primary-500;
+            }
+        }
+
+        @include colorHover(color, color);
+
+        &:disabled,
+        &:disabled:hover,
+        &:disabled:active {
+            color: $color-gray-500;
+        }
+    }
+
+    &[data-button-style="outline"] {
+        background-color: transparent;
+        @include colorHover(color, color);
+        @include colorHover(color, border-color);
+
+        &:disabled,
+        &:disabled:hover,
+        &:disabled:active {
+            color: $color-gray-500;
+            border-color: $color-gray-500;
+        }
+    }
+
+    .icon-container {
+        height: 100%;
+        @include inlineFlex(center, center);
+
+        .icon {
+            --icon-size: 16px;
+        }
+    }
+}

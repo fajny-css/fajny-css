@@ -1,0 +1,285 @@
+/*=============================================== Input check ===============================================*/
+
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+
+    &~label {
+        cursor: pointer;
+    }
+
+    &:disabled~label {
+        cursor: not-allowed;
+    }
+}
+
+.radio label,
+.checkbox label,
+.toggle label {
+    @include inlineFlex(center, flex-start, $spacer-xxs);
+    position: relative;
+    font-size: $font-size-body;
+}
+
+.radio {
+    label {
+        &:before {
+            content: "";
+            $size: 16px;
+            width: $size;
+            height: $size;
+            border: 2px solid $color-primary-500;
+            display: block;
+            border-radius: $radius-circle;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 8px;
+            $size: 8px;
+            width: $size;
+            height: $size;
+            background-color: transparent;
+            border-radius: $radius-circle;
+            transition: $transition-short;
+        }
+    }
+
+    input:checked~label:after {
+        background-color: $color-primary-500;
+    }
+
+    input:disabled {
+        &~label {
+            color: $color-gray-500;
+
+            &:before {
+                border-color: $color-gray-500;
+            }
+        }
+
+        &:checked~label:after {
+            background-color: $color-gray-500;
+        }
+    }
+
+    &[data-validate="not-passed"] {
+        label {
+            &:before {
+                border-color: $color-danger-500;
+            }
+        }
+
+        input:not(:disabled):checked~label:after {
+            background-color: $color-danger-500;
+        }
+    }
+}
+
+.checkbox {
+    label {
+        &:before {
+            content: "";
+            $size: 16px;
+            width: $size;
+            height: $size;
+            border: 2px solid $color-primary-500;
+            border-radius: $radius-s;
+            transition: $transition-short;
+        }
+
+        &:after {
+            @include icon(check-solid, 8, $color-white);
+            position: absolute;
+            left: 4px;
+            top: 8px;
+        }
+    }
+
+    input:checked~label:before {
+        background-color: $color-primary-500;
+    }
+
+    input:disabled {
+        &~label {
+            color: $color-gray-500;
+
+            &:before {
+                border-color: $color-gray-500;
+            }
+        }
+
+        &:checked~label:before {
+            background-color: $color-gray-500;
+        }
+    }
+
+    &[data-validate="not-passed"] {
+        label:before {
+            border-color: $color-danger-500;
+        }
+
+        input:not(:disabled):checked~label:before {
+            background-color: $color-danger-500;
+        }
+    }
+}
+
+.tile {
+    label {
+        background-color: $color-white;
+        border-radius: $radius-m;
+        border: 1px solid transparent;
+        padding: $spacer-s;
+        width: 100%;
+        transition: $transition-short;
+    }
+
+    input:not(:disabled)~label:hover {
+        border-color: $color-primary-300;
+    }
+
+    input:checked~label {
+        border-color: $color-primary-500;
+    }
+
+    input:disabled:checked~label {
+        border-color: $color-gray-500;
+    }
+
+    &.radio label:after,
+    &.checkbox label:after {
+        top: 20px;
+        left: 16px;
+    }
+
+    &[data-validate="not-passed"] {
+        input:not(:disabled):checked~label {
+            border-color: $color-danger-500;
+        }
+
+        &:hover input:not(:disabled)~label {
+            border-color: $color-danger-300;
+        }
+
+        @include touch() {
+            &:hover input:not(:disabled)~label {
+                border-color: $color-danger-500;
+            }
+        }
+    }
+}
+
+.toggle {
+    label {
+        &:before {
+            content: "";
+            width: 24px;
+            height: 16px;
+            border-radius: $radius-round;
+            border: 2px solid $color-primary-500;
+            transition: $transition-short;
+        }
+
+        &:after {
+            content: "";
+            $size: 8px;
+            width: $size;
+            height: $size;
+            border-radius: $radius-circle;
+            position: absolute;
+            background-color: $color-primary-500;
+            top: 8px;
+            left: 4px;
+            transition: $transition-short;
+        }
+    }
+
+    input:checked~label {
+        &:before {
+            background-color: $color-success-500;
+            border-color: $color-success-500;
+        }
+
+        &:after {
+            background-color: $color-white;
+            left: 12px;
+        }
+    }
+
+    input:disabled {
+        &~label {
+            color: $color-gray-500;
+
+            &:before {
+                border-color: $color-gray-500;
+            }
+
+            &:after {
+                background-color: $color-gray-500;
+            }
+        }
+
+        &:checked {
+            &~label:before {
+                background-color: $color-gray-100;
+                border-color: transparent;
+            }
+        }
+    }
+
+    &[data-validate="not-passed"] {
+        label {
+            &:before {
+                border-color: $color-danger-500;
+            }
+
+            &:after {
+                background-color: $color-danger-500;
+            }
+        }
+
+        input:not(:disabled):checked~label:before {
+            border-color: $color-danger-500;
+            background-color: $color-danger-500;
+        }
+    }
+}
+
+.selector {
+    label {
+        padding: $spacer-xxs $spacer-m;
+        border-radius: $radius-round;
+        transition: $transition-short;
+        background-color: $color-gray-100;
+    }
+
+    &:hover label,
+    &:hover input:not(:disabled):checked~label {
+        background-color: $color-primary-300;
+        color: $color-white;
+    }
+
+    &:active label,
+    &:active input:not(:disabled):checked~label {
+        background-color: $color-primary-600;
+    }
+
+    input:checked~label {
+        background-color: $color-primary-500;
+        color: $color-white;
+    }
+
+    input:disabled {
+        &~label {
+            background-color: $color-gray-50;
+            color: $color-gray-500;
+        }
+
+        &:checked~label {
+            background-color: $color-gray-100;
+        }
+    }
+}

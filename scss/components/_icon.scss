@@ -1,0 +1,9 @@
+/*=============================================== Icon ===============================================*/
+
+.icon {
+    --icon-size: 24px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    color: currentColor;
+    @include allColors(color, color);
+}

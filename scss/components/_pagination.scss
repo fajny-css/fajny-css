@@ -1,0 +1,80 @@
+/*=============================================== Pagination ===============================================*/
+
+.pagination {
+    @include flexbox(center, flex-start, $spacer-xs);
+
+    a,
+    button,
+    span {
+        $size: 32px;
+        width: $size;
+        height: $size;
+        @include inlineFlex(center, center);
+        color: $color-primary-500;
+        padding: 0;
+        border: none;
+        border-radius: $radius-circle;
+        text-decoration: none;
+        background-color: transparent;
+        font-weight: $font-weight-black;
+
+        .icon {
+            --icon-size: 16px;
+        }
+
+        &.active {
+            background-color: $color-primary-500;
+            color: $color-white;
+
+            @include touch() {
+
+                &:hover,
+                &:active {
+                    background-color: $color-primary-500;
+                    color: $color-white;
+                }
+            }
+        }
+
+        &:disabled {
+            color: $color-gray-500;
+        }
+    }
+
+    a,
+    button {
+        transition: $transition-short;
+
+        &:not(:disabled):hover {
+            background-color: $color-primary-300;
+            color: $color-white;
+        }
+
+        &:not(:disabled):active {
+            background-color: $color-primary-600;
+        }
+
+        @include touch() {
+
+            &:not(:disabled):hover,
+            &:not(:disabled):active {
+                background-color: transparent;
+                color: $color-primary-500;
+            }
+
+            &.active:hover,
+            &.active:active {
+                background-color: $color-primary-500;
+                color: $color-white;
+            }
+        }
+    }
+
+    &[data-justify="center"] {
+        justify-content: center;
+    }
+
+    &[data-justify="right"] {
+        justify-content: flex-end;
+    }
+}

@@ -1,0 +1,347 @@
+/*=============================================== Variables ===============================================*/
+
+/*==================== CSS ====================*/
+
+:root {
+    /*===== Colors =====*/
+
+    --color-black: rgb(0, 0, 0);
+    --color-white: rgb(255, 255, 255);
+    --color-gray-50: rgb(248, 248, 248);
+    --color-gray-100: rgb(228, 228, 228);
+    --color-gray-200: rgb(200, 200, 200);
+    --color-gray-300: rgb(173, 173, 173);
+    --color-gray-400: rgb(145, 145, 145);
+    --color-gray-500: rgb(118, 118, 118);
+    --color-gray-600: rgb(94, 94, 94);
+    --color-gray-700: rgb(71, 71, 71);
+    --color-gray-800: rgb(47, 47, 47);
+    --color-gray-900: rgb(24, 24, 24);
+    --color-primary-50: rgb(244, 246, 247);
+    --color-primary-100: rgb(209, 218, 225);
+    --color-primary-200: rgb(164, 181, 195);
+    --color-primary-300: rgb(118, 143, 164);
+    --color-primary-400: rgb(73, 106, 134);
+    --color-primary-500: rgb(27, 69, 104);
+    --color-primary-600: rgb(22, 55, 83);
+    --color-primary-700: rgb(16, 41, 62);
+    --color-primary-800: rgb(11, 28, 42);
+    --color-primary-900: rgb(5, 14, 21);
+    --color-secondary-50: rgb(244, 248, 253);
+    --color-secondary-100: rgb(212, 226, 246);
+    --color-secondary-200: rgb(168, 197, 237);
+    --color-secondary-300: rgb(125, 167, 229);
+    --color-secondary-400: rgb(81, 138, 220);
+    --color-secondary-500: rgb(38, 109, 211);
+    --color-secondary-600: rgb(30, 87, 169);
+    --color-secondary-700: rgb(23, 65, 127);
+    --color-secondary-800: rgb(15, 44, 84);
+    --color-secondary-900: rgb(8, 22, 42);
+    --color-success-50: rgb(243, 249, 246);
+    --color-success-100: rgb(206, 230, 219);
+    --color-success-200: rgb(157, 205, 183);
+    --color-success-300: rgb(107, 179, 146);
+    --color-success-400: rgb(58, 154, 110);
+    --color-success-500: rgb(9, 129, 74);
+    --color-success-600: rgb(7, 103, 59);
+    --color-success-700: rgb(5, 77, 44);
+    --color-success-800: rgb(4, 52, 30);
+    --color-success-900: rgb(2, 26, 15);
+    --color-danger-50: rgb(251, 242, 244);
+    --color-danger-100: rgb(240, 204, 209);
+    --color-danger-200: rgb(225, 153, 164);
+    --color-danger-300: rgb(209, 102, 118);
+    --color-danger-400: rgb(194, 51, 73);
+    --color-danger-500: rgb(179, 0, 27);
+    --color-danger-600: rgb(143, 0, 22);
+    --color-danger-700: rgb(107, 0, 16);
+    --color-danger-800: rgb(72, 0, 11);
+    --color-danger-900: rgb(36, 0, 5);
+    --color-warning-50: rgb(252, 246, 242);
+    --color-warning-100: rgb(243, 219, 204);
+    --color-warning-200: rgb(231, 182, 153);
+    --color-warning-300: rgb(220, 146, 102);
+    --color-warning-400: rgb(208, 109, 51);
+    --color-warning-500: rgb(196, 73, 0);
+    --color-warning-600: rgb(157, 58, 0);
+    --color-warning-700: rgb(118, 44, 0);
+    --color-warning-800: rgb(78, 29, 0);
+    --color-warning-900: rgb(39, 15, 0);
+
+    --color-background: var(--color-white);
+
+    /*===== Overlays =====*/
+
+    --overlay-black-50: rgba(0, 0, 0, 0.5);
+    --overlay-black-80: rgba(0, 0, 0, 0.8);
+    --overlay-white-50: rgba(255, 255, 255, 0.5);
+    --overlay-white-80: rgba(255, 255, 255, 0.8);
+    --overlay-gradient-black: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.56) 100%);
+    --overlay-gradient-white: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.35) 100%);
+
+    /*===== Fonts =====*/
+
+    /* Font families */
+
+    --font-family-body: "Lato", sans-serif;
+    --font-family-code: monospace;
+
+    /* Font sizes */
+
+    --font-size-display-h1: 5rem;
+    --font-size-display-h2: 4rem;
+    --font-size-display-h3: 3.5rem;
+    --font-size-display-h4: 3rem;
+    --font-size-display-h5: 2.5rem;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.8rem;
+    --font-size-h4: 1.5rem;
+    --font-size-h5: 1.3rem;
+    --font-size-h6: 1.1rem;
+    --font-size-body: 1rem;
+    --font-size-small: 0.875rem;
+
+    /* Font weights */
+
+    --font-weight-black: 900;
+    --font-weight-bold: 700;
+    --font-weight-regular: 400;
+
+    /* Line height */
+
+    --line-height: 1.5;
+    --line-height-code: 1.8;
+
+    /*===== Shadows =====*/
+
+    --shadow-xxl: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+    --shadow-xl: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-l: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-m: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-s: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+    --shadow-xs: 0px 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+    /*===== Radiuses =====*/
+
+    --radius-xxl: 24px;
+    --radius-xl: 16px;
+    --radius-l: 12px;
+    --radius-m: 8px;
+    --radius-s: 4px;
+    --radius-xs: 2px;
+    --radius-round: 99em;
+    --radius-circle: 50%;
+
+    /*===== Layouts =====*/
+
+    /* Main */
+
+    --main-default: 600px;
+    --main-large: 800px;
+    --main-form: 400px;
+
+    /* Aside */
+
+    --aside-default: 250px;
+    --aside-small: 200px;
+
+    /* Wrapper */
+
+    --wrapper-1-col: 1fr auto 1fr;
+    --wrapper-2-cols: 1fr auto auto 1fr;
+    --wrapper-3-cols: 1fr auto auto auto 1fr;
+
+    @media screen and (max-width: 1024px) {
+        --main-default: 100%;
+        --main-large: 100%;
+        --main-form: 100%;
+        --aside-default: 100%;
+        --aside-small: 100%;
+        --wrapper-1-col: 5vw 1fr 5vw;
+        --wrapper-2-cols: 5vw 1fr 5vw;
+        --wrapper-3-cols: 5vw 1fr 5vw;
+    }
+
+    /*===== Spacers =====*/
+
+    --spacer-xxl: 48px;
+    --spacer-xl: 32px;
+    --spacer-l: 24px;
+    --spacer-m: 16px;
+    --spacer-s: 12px;
+    --spacer-xs: 8px;
+    --spacer-xxs: 4px;
+
+    /*===== Transitions =====*/
+
+    --transition-short: all 0.2s ease;
+    --transition-long: all 0.5s ease;
+    --transition-bezier: all 0.5s cubic-bezier(0.25, 0.75, 0, 0.66);
+}
+
+/*==================== SCSS ====================*/
+
+/*===== Colors =====*/
+
+$color-black: var(--color-black);
+$color-white: var(--color-white);
+$color-gray-50: var(--color-gray-50);
+$color-gray-100: var(--color-gray-100);
+$color-gray-200: var(--color-gray-200);
+$color-gray-300: var(--color-gray-300);
+$color-gray-400: var(--color-gray-400);
+$color-gray-500: var(--color-gray-500);
+$color-gray-600: var(--color-gray-600);
+$color-gray-700: var(--color-gray-700);
+$color-gray-800: var(--color-gray-800);
+$color-gray-900: var(--color-gray-900);
+$color-primary-50: var(--color-primary-50);
+$color-primary-100: var(--color-primary-100);
+$color-primary-200: var(--color-primary-200);
+$color-primary-300: var(--color-primary-300);
+$color-primary-400: var(--color-primary-400);
+$color-primary-500: var(--color-primary-500);
+$color-primary-600: var(--color-primary-600);
+$color-primary-700: var(--color-primary-700);
+$color-primary-800: var(--color-primary-800);
+$color-primary-900: var(--color-primary-900);
+$color-secondary-50: var(--color-secondary-50);
+$color-secondary-100: var(--color-secondary-100);
+$color-secondary-200: var(--color-secondary-200);
+$color-secondary-300: var(--color-secondary-300);
+$color-secondary-400: var(--color-secondary-400);
+$color-secondary-500: var(--color-secondary-500);
+$color-secondary-600: var(--color-secondary-600);
+$color-secondary-700: var(--color-secondary-700);
+$color-secondary-800: var(--color-secondary-800);
+$color-secondary-900: var(--color-secondary-900);
+$color-success-50: var(--color-success-50);
+$color-success-100: var(--color-success-100);
+$color-success-200: var(--color-success-200);
+$color-success-300: var(--color-success-300);
+$color-success-400: var(--color-success-400);
+$color-success-500: var(--color-success-500);
+$color-success-600: var(--color-success-600);
+$color-success-700: var(--color-success-700);
+$color-success-800: var(--color-success-800);
+$color-success-900: var(--color-success-900);
+$color-danger-50: var(--color-danger-50);
+$color-danger-100: var(--color-danger-100);
+$color-danger-200: var(--color-danger-200);
+$color-danger-300: var(--color-danger-300);
+$color-danger-400: var(--color-danger-400);
+$color-danger-500: var(--color-danger-500);
+$color-danger-600: var(--color-danger-600);
+$color-danger-700: var(--color-danger-700);
+$color-danger-800: var(--color-danger-800);
+$color-danger-900: var(--color-danger-900);
+$color-warning-50: var(--color-warning-50);
+$color-warning-100: var(--color-warning-100);
+$color-warning-200: var(--color-warning-200);
+$color-warning-300: var(--color-warning-300);
+$color-warning-400: var(--color-warning-400);
+$color-warning-500: var(--color-warning-500);
+$color-warning-600: var(--color-warning-600);
+$color-warning-700: var(--color-warning-700);
+$color-warning-800: var(--color-warning-800);
+$color-warning-900: var(--color-warning-900);
+$color-background: var(--color-background);
+
+/*===== Overlays =====*/
+
+$overlay-black-50: var(--overlay-black-50);
+$overlay-black-80: var(--overlay-black-80);
+$overlay-white-50: var(--overlay-white-50);
+$overlay-white-80: var(--overlay-white-80);
+$overlay-gradient-black: var(--overlay-gradient-black);
+$overlay-gradient-white: var(--overlay-gradient-white);
+
+/*===== Fonts =====*/
+
+/* Font families */
+
+$font-family-body: var(--font-family-body);
+$font-family-code: var(--font-family-code);
+
+/* Font sizes */
+
+$font-size-display-h1: var(--font-size-display-h1);
+$font-size-display-h2: var(--font-size-display-h2);
+$font-size-display-h3: var(--font-size-display-h3);
+$font-size-display-h4: var(--font-size-display-h4);
+$font-size-display-h5: var(--font-size-display-h5);
+$font-size-h1: var(--font-size-h1);
+$font-size-h2: var(--font-size-h2);
+$font-size-h3: var(--font-size-h3);
+$font-size-h4: var(--font-size-h4);
+$font-size-h5: var(--font-size-h5);
+$font-size-h6: var(--font-size-h6);
+$font-size-body: var(--font-size-body);
+$font-size-small: var(--font-size-small);
+
+/* Font weights */
+
+$font-weight-black: var(--font-weight-black);
+$font-weight-bold: var(--font-weight-bold);
+$font-weight-regular: var(--font-weight-regular);
+
+/* Line height */
+
+$line-height: var(--line-height);
+$line-height-code: var(--line-height-code);
+
+/*===== Shadows =====*/
+
+$shadow-xxl: var(--shadow-xxl);
+$shadow-xl: var(--shadow-xl);
+$shadow-l: var(--shadow-l);
+$shadow-m: var(--shadow-m);
+$shadow-s: var(--shadow-s);
+$shadow-xs: var(--shadow-xs);
+
+/*===== Radiuses =====*/
+
+$radius-xxl: var(--radius-xxl);
+$radius-xl: var(--radius-xl);
+$radius-l: var(--radius-l);
+$radius-m: var(--radius-m);
+$radius-s: var(--radius-s);
+$radius-xs: var(--radius-xs);
+$radius-round: var(--radius-round);
+$radius-circle: var(--radius-circle);
+
+/*===== Layouts =====*/
+
+/* Main */
+
+$main-default: var(--main-default);
+$main-large: var(--main-large);
+$main-form: var(--main-form);
+
+/* Aside */
+
+$aside-default: var(--aside-default);
+$aside-small: var(--aside-small);
+
+/* Wrapper */
+
+$wrapper-1-col: var(--wrapper-1-col);
+$wrapper-2-cols: var(--wrapper-2-cols);
+$wrapper-3-cols: var(--wrapper-3-cols);
+
+/*===== Spacers =====*/
+
+$spacer-xxl: var(--spacer-xxl);
+$spacer-xl: var(--spacer-xl);
+$spacer-l: var(--spacer-l);
+$spacer-m: var(--spacer-m);
+$spacer-s: var(--spacer-s);
+$spacer-xs: var(--spacer-xs);
+$spacer-xxs: var(--spacer-xxs);
+
+/*===== Transitions =====*/
+
+$transition-short: var(--transition-short);
+$transition-long: var(--transition-long);
+$transition-bezier: var(--transition-bezier);

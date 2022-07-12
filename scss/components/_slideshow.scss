@@ -1,0 +1,122 @@
+/*=============================================== Slideshow ===============================================*/
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    @include gridCol(1, $spacer-xs);
+
+    .slides {
+        position: relative;
+        height: 60vh;
+        width: 100%;
+        overflow: hidden;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        .slide {
+            position: absolute;
+            top: 0;
+            transition: $transition-short;
+            width: 100%;
+            height: 100%;
+
+            &.slide-previous {
+                left: -100%;
+            }
+
+            &.slide-active {
+                left: 0;
+            }
+
+            &.slide-next {
+                left: 100%;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    .slideshow-pagination {
+        @include flexbox(center, center, $spacer-xs);
+
+        .slideshow-pagination-item {
+            $size: 8px;
+            width: $size;
+            height: $size;
+            padding: 0;
+            border: none;
+            border-radius: $radius-circle;
+            background-color: $color-primary-300;
+            transition: $transition-short;
+
+            &:hover {
+                background-color: $color-primary-500;
+            }
+
+            &:active {
+                background-color: $color-primary-600;
+            }
+
+            @include touch() {
+
+                &:hover,
+                &:active {
+                    background-color: $color-primary-300;
+                }
+            }
+
+            &.slideshow-pagination-item-active {
+                background-color: $color-primary-500;
+
+                &:hover {
+                    background-color: $color-primary-300;
+                }
+
+                @include touch() {
+                    background-color: $color-primary-500;
+                }
+            }
+        }
+    }
+
+    .slideshow-button {
+        $size: 32px;
+        width: $size;
+        height: $size;
+        border-radius: $radius-circle;
+        border: none;
+        background-color: $color-primary-500;
+        color: $color-white;
+        @include inlineFlex(center, center);
+        position: absolute;
+        top: calc(60vh / 2 - #{$size} / 2);
+        transition: $transition-short;
+
+        &:hover {
+            background-color: $color-primary-300;
+        }
+
+        &:active {
+            background-color: $color-primary-600;
+        }
+
+        .icon {
+            --icon-size: 24px;
+        }
+
+        &.slideshow-button-previous {
+            left: $spacer-xs;
+        }
+
+        &.slideshow-button-next {
+            right: $spacer-xs;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+/*=============================================== Page loading ===============================================*/
+
+.page-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    @include flexbox(center, center);
+    background-color: $color-primary-500;
+
+    @include colorShort(color, background-color);
+
+    .loader {
+        --loader-size: 64px;
+        --border: 8px;
+        border-bottom-color: $color-white;
+    }
+
+    &[data-color="white"] .loader {
+        border-bottom-color: $color-primary-500;
+    }
+}

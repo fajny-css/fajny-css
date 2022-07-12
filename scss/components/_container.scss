@@ -1,0 +1,131 @@
+/*=============================================== Container ===============================================*/
+
+.wrapper {
+    display: grid;
+    grid-template-columns: $wrapper-1-col;
+    gap: $spacer-l;
+    position: relative;
+    z-index: 10;
+    background-color: $color-background;
+
+    &[data-template="2cols"] {
+        grid-template-columns: $wrapper-2-cols;
+    }
+
+    &[data-template="3cols"] {
+        grid-template-columns: $wrapper-3-cols;
+    }
+}
+
+.main,
+.aside {
+    @include gridCol();
+    align-content: start;
+    justify-items: start;
+    gap: $spacer-l;
+    padding: $spacer-xxl 0;
+    min-height: 100vh;
+
+    @include tablet() {
+        min-height: inherit;
+    }
+
+    &>div,
+    &>h1,
+    &>h2,
+    &>h3,
+    &>h4,
+    &>h5,
+    &>h6,
+    &>p,
+    &>ul,
+    &>ol,
+    &>dl,
+    &>section,
+    &>input,
+    &>article,
+    &>hr,
+    &>pre,
+    &>table,
+    &>header,
+    &>footer,
+    &>iframe,
+    &>nav,
+    &>noscript,
+    &>picture,
+    &>select,
+    &>textarea,
+    &>form {
+        justify-self: stretch;
+    }
+}
+
+.main {
+    width: $main-default;
+    grid-column: 2;
+
+    &[data-size="large"] {
+        width: $main-large;
+
+        @include tablet() {
+            grid-column: 2;
+        }
+    }
+
+    &[data-size="form"] {
+        width: $main-form;
+
+        @include tablet() {
+            grid-column: 2;
+        }
+    }
+
+    &[data-position="1"] {
+        grid-column: 2;
+
+        @include tablet() {
+            grid-column: 2;
+        }
+    }
+
+    &[data-position="2"] {
+        grid-column: 3;
+
+        @include tablet() {
+            grid-column: 2;
+        }
+    }
+}
+
+.aside {
+    width: $aside-default;
+    grid-column: 2;
+
+    &[data-size="small"] {
+        width: $aside-small;
+    }
+
+    &[data-position="1"] {
+        grid-column: 2;
+
+        @include tablet() {
+            grid-column: 2;
+        }
+    }
+
+    &[data-position="2"] {
+        grid-column: 3;
+
+        @include tablet() {
+            grid-column: 2;
+        }
+    }
+
+    &[data-position="3"] {
+        grid-column: 4;
+
+        @include tablet() {
+            grid-column: 2;
+        }
+    }
+}

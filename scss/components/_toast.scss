@@ -1,0 +1,77 @@
+/*=============================================== Toast ===============================================*/
+
+.toast {
+    width: 100%;
+    max-width: 400px;
+    background-color: $color-white;
+    @include gridCol(1, $spacer-xxs);
+    box-shadow: $shadow-m;
+    padding: $spacer-m;
+    border-radius: $radius-m;
+
+    .title-container {
+        @include flexbox(center, flex-start, $spacer-xs);
+
+        .icon-container {
+            height: 100%;
+            @include inlineFlex(center, center);
+            color: $color-primary-500;
+
+            .icon {
+                --icon-size: 24px;
+            }
+        }
+
+        h5 {
+            flex-grow: 1;
+        }
+
+        .button-close {
+            $size: 32px;
+            width: $size;
+            height: $size;
+            color: $color-primary-500;
+            border: none;
+            padding: 0;
+            @include inlineFlex(center, center);
+            border-radius: $radius-circle;
+            background-color: transparent;
+
+            &:hover {
+                background-color: $color-gray-50;
+
+                @include touch() {
+                    background-color: transparent;
+                }
+            }
+
+            .icon {
+                --icon-size: 16px;
+            }
+        }
+    }
+
+    &[data-icon-color="secondary"] .title-container .icon-container {
+        color: $color-secondary-500;
+    }
+
+    &[data-icon-color="success"] .title-container .icon-container {
+        color: $color-success-500;
+    }
+
+    &[data-icon-color="danger"] .title-container .icon-container {
+        color: $color-danger-500;
+    }
+
+    &[data-icon-color="warning"] .title-container .icon-container {
+        color: $color-warning-500;
+    }
+
+    &[data-icon-color="gray"] .title-container .icon-container {
+        color: $color-gray-500;
+    }
+
+    &[data-icon-color="black"] .title-container .icon-container {
+        color: $color-black;
+    }
+}

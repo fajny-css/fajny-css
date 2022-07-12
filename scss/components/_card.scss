@@ -1,0 +1,206 @@
+/*=============================================== Card ===============================================*/
+
+.card {
+    width: 100%;
+    max-width: 320px;
+    background-color: $color-background;
+    border-radius: $radius-m;
+    box-shadow: $shadow-m;
+    overflow: hidden;
+
+    img {
+        display: block;
+    }
+
+    &.card-basic {
+        padding: $spacer-s;
+        @include flexbox(center, center, $spacer-m);
+
+        .icon {
+            --icon-size: 48px;
+            color: $color-primary-500;
+        }
+
+        .card-content {
+            @include gridCol(1, $spacer-xxs)
+        }
+
+        &[data-orientation="landscape"] {
+            .card-content {
+                flex-grow: 1;
+            }
+        }
+
+        &[data-orientation="portrait"] {
+            text-align: center;
+            flex-direction: column;
+        }
+    }
+
+    &.card-image {
+        position: relative;
+        aspect-ratio: 16/9;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            object-fit: cover;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background-color: $overlay-black-50;
+        }
+
+        .icon {
+            --icon-size: 48px;
+            position: absolute;
+            z-index: 2;
+            color: $color-white;
+            top: calc(50% - 48px / 2);
+            left: calc(50% - 48px / 2);
+        }
+
+        h5 {
+            color: $color-white;
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            @include flexbox(flex-start, flex-end);
+            flex-direction: column;
+            padding: $spacer-s;
+        }
+    }
+
+    &.card-action {
+        @include flexbox(flex-start, flex-start);
+        flex-direction: column;
+
+        .img-container {
+            width: 100%;
+            height: 150px;
+            position: relative;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: relative;
+                z-index: 0;
+            }
+
+            .like-button {
+                position: absolute;
+                bottom: $spacer-xs;
+                right: $spacer-xs;
+                $size: 32px;
+                width: $size;
+                height: $size;
+                padding: 0;
+                border: none;
+                @include inlineFlex(center, center);
+                border-radius: $radius-circle;
+                color: $color-white;
+                background-color: transparent;
+                transition: $transition-short;
+
+                .icon {
+                    --icon-size: 24px;
+                }
+
+                &:hover {
+                    background-color: $color-gray-300;
+                }
+
+                &:active {
+                    background-color: $color-gray-100;
+                }
+
+                @include touch() {
+
+                    &:hover,
+                    &:active {
+                        background-color: transparent;
+                    }
+                }
+
+                &:disabled {
+                    background-color: $color-gray-100;
+                    color: $color-gray-500;
+                }
+            }
+        }
+
+        .card-content {
+            padding: $spacer-xs;
+            @include flexbox(flex-start, flex-start, $spacer-xxs);
+            flex-direction: column;
+            width: 100%;
+
+            &>* {
+                width: 100%;
+            }
+
+            .rating {
+                @include inlineFlex(center, flex-start, $spacer-xxs);
+
+                .icon {
+                    --icon-size: 12px;
+                    color: $color-primary-500;
+                }
+            }
+        }
+
+        &[data-orientation="landscape"] {
+            flex-direction: row;
+            align-items: center;
+
+            .img-container {
+                width: 100px;
+                height: 100%;
+                min-height: 120px;
+
+                img {
+                    min-height: 120px;
+                }
+            }
+
+            .card-content {
+                width: auto;
+                height: 100%;
+                flex-grow: 1;
+            }
+        }
+    }
+}
+
+a.card {
+    color: currentColor;
+    text-decoration: none;
+    transition: $transition-short;
+
+    p {
+        font-weight: $font-weight-regular;
+    }
+
+    &:hover {
+        transform: scale(1.02);
+        box-shadow: $shadow-xl;
+
+        @include touch() {
+            transform: scale(1);
+            box-shadow: $shadow-m;
+        }
+    }
+}

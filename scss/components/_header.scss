@@ -1,0 +1,166 @@
+/*=============================================== Header ===============================================*/
+
+.header {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: $color-primary-500;
+    @include flexbox(center, space-between);
+    padding: $spacer-m 5%;
+
+    &[data-position="absolute"] {
+        position: absolute;
+    }
+
+    &[data-position="fixed"] {
+        position: fixed;
+    }
+
+    a.logo {
+        font-weight: $font-weight-black;
+
+        img {
+            width: 100px;
+            height: 32px;
+            object-fit: contain;
+            object-position: left center;
+        }
+    }
+
+    a {
+        color: $color-white;
+        text-decoration: none;
+        font-weight: $font-weight-regular;
+
+        &:hover {
+            color: $color-primary-300;
+        }
+
+        &:active {
+            color: $color-primary-600;
+        }
+
+        @include touch() {
+
+            &:hover,
+            &:active {
+                color: $color-white;
+            }
+        }
+
+        &.active {
+            font-weight: $font-weight-black;
+        }
+    }
+
+    .burger {
+        display: none;
+    }
+
+    nav {
+        @include inlineFlex(center, flex-start, $spacer-m)
+    }
+
+    @include mobile() {
+        .burger {
+            display: inherit;
+        }
+
+        nav {
+            position: absolute;
+            top: -300px;
+            transition: $transition-short;
+            left: 0;
+            width: 100%;
+            background-color: $color-primary-500;
+            padding: $spacer-m 5%;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &.header-open {
+            background-color: $color-primary-500;
+
+            nav {
+                top: 64px;
+            }
+
+            &[data-header-style="plain-white"],
+            &[data-header-style="transparent-primary"] {
+                background-color: $color-white;
+            }
+        }
+    }
+
+    &[data-header-style="plain-white"] {
+        background-color: $color-white;
+
+        a {
+            color: $color-primary-500;
+
+            &:hover {
+                color: $color-primary-300;
+            }
+
+            &:active {
+                color: $color-primary-600;
+            }
+
+            @include touch() {
+
+                &:hover,
+                &:active {
+                    color: $color-primary-500;
+                }
+            }
+        }
+
+        @include mobile() {
+            nav {
+                background-color: $color-white;
+            }
+        }
+    }
+
+    &[data-header-style="transparent-primary"] {
+        background-color: transparent;
+
+        a {
+            color: $color-primary-500;
+
+            &:hover {
+                color: $color-primary-300;
+            }
+
+            &:active {
+                color: $color-primary-600;
+            }
+
+            @include touch() {
+
+                &:hover,
+                &:active {
+                    color: $color-primary-500;
+                }
+            }
+        }
+
+        @include mobile() {
+            nav {
+                background-color: $color-white;
+            }
+        }
+    }
+
+    &[data-header-style="transparent-white"] {
+        background-color: transparent;
+
+        @include mobile() {
+            &.header-open {
+                background-color: $color-primary-500;
+            }
+        }
+    }
+}
