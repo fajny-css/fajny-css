@@ -97,9 +97,9 @@
   --font-size-body: 1rem;
   --font-size-small: 0.875rem;
   /* Font weights */
-  --font-weight-black: 900;
-  --font-weight-bold: 700;
   --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
   /* Line height */
   --line-height: 1.5;
   --line-height-code: 1.8;
@@ -11216,6 +11216,11 @@ a.card:hover {
 .table[data-table-style=stripped] tbody tr:nth-child(even) {
   background-color: var(--color-gray-50);
 }
+.table pre code {
+  background-color: transparent;
+  line-height: var(--line-height);
+  color: var(--color-white);
+}
 
 /*=============================================== Page loading ===============================================*/
 .page-loading {
@@ -12755,43 +12760,43 @@ a.card:hover {
 
 /*==================== Radiuses ====================*/
 .radius-xxl {
-  -webkit-border-radius: var(--radius-xxl);
-          border-radius: var(--radius-xxl);
+  -webkit-border-radius: var(--radius-xxl) !important;
+          border-radius: var(--radius-xxl) !important;
 }
 
 .radius-xl {
-  -webkit-border-radius: var(--radius-xl);
-          border-radius: var(--radius-xl);
+  -webkit-border-radius: var(--radius-xl) !important;
+          border-radius: var(--radius-xl) !important;
 }
 
 .radius-l {
-  -webkit-border-radius: var(--radius-l);
-          border-radius: var(--radius-l);
+  -webkit-border-radius: var(--radius-l) !important;
+          border-radius: var(--radius-l) !important;
 }
 
 .radius-m {
-  -webkit-border-radius: var(--radius-m);
-          border-radius: var(--radius-m);
+  -webkit-border-radius: var(--radius-m) !important;
+          border-radius: var(--radius-m) !important;
 }
 
 .radius-s {
-  -webkit-border-radius: var(--radius-s);
-          border-radius: var(--radius-s);
+  -webkit-border-radius: var(--radius-s) !important;
+          border-radius: var(--radius-s) !important;
 }
 
 .radius-xs {
-  -webkit-border-radius: var(--radius-xs);
-          border-radius: var(--radius-xs);
+  -webkit-border-radius: var(--radius-xs) !important;
+          border-radius: var(--radius-xs) !important;
 }
 
 .radius-round {
-  -webkit-border-radius: var(--radius-round);
-          border-radius: var(--radius-round);
+  -webkit-border-radius: var(--radius-round) !important;
+          border-radius: var(--radius-round) !important;
 }
 
 .radius-circle {
-  -webkit-border-radius: var(--radius-circle);
-          border-radius: var(--radius-circle);
+  -webkit-border-radius: var(--radius-circle) !important;
+          border-radius: var(--radius-circle) !important;
 }
 
 /*==================== Shadows ====================*/
