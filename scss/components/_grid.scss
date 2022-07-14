@@ -96,51 +96,9 @@
         align-content: space-evenly;
     }
 
-    &[data-col="1"] {
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    &[data-col="2"] {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    &[data-col="3"] {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    &[data-col="4"] {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    &[data-col="5"] {
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    &[data-col="6"] {
-        grid-template-columns: repeat(6, 1fr);
-    }
-
-    &[data-col="7"] {
-        grid-template-columns: repeat(7, 1fr);
-    }
-
-    &[data-col="8"] {
-        grid-template-columns: repeat(8, 1fr);
-    }
-
-    &[data-col="9"] {
-        grid-template-columns: repeat(9, 1fr);
-    }
-
-    &[data-col="10"] {
-        grid-template-columns: repeat(10, 1fr);
-    }
-
-    &[data-col="11"] {
-        grid-template-columns: repeat(11, 1fr);
-    }
-
-    &[data-col="12"] {
-        grid-template-columns: repeat(12, 1fr);
+    @for $i from 1 through 12 {
+        &[data-col="#{$i}"] {
+            grid-template-columns: repeat(#{$i}, 1fr);
+        }
     }
 }

@@ -191,10 +191,6 @@ p {
     &>* {
         font-size: $font-size-body;
     }
-
-    &.pre {
-        white-space: pre-line;
-    }
 }
 
 small {

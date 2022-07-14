@@ -3,6 +3,7 @@
 .tooltip {
     display: inline;
     position: relative;
+    border-bottom: 1px dotted currentColor;
 
     &[data-style="dotted"] {
         border-bottom: 1px dotted currentColor;
@@ -13,6 +14,7 @@
     }
 
     &[data-style="bold"] {
+        border-bottom: none;
         font-weight: $font-weight-black;
     }
 

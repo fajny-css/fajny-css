@@ -18,14 +18,8 @@
         color: $color-primary-500;
     }
 
-    .icon-container {
-        width: 100%;
-        height: 100%;
-        @include inlineFlex(center, center);
-
-        .icon {
-            --icon-size: var(--badge-icon-size);
-        }
+    .icon {
+        --icon-size: var(--badge-icon-size);
     }
 
     &[data-size="xxl"] {

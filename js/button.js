@@ -2,8 +2,8 @@
 
 /*==================== Icon button ====================*/
 
-const iconButtonsLeft = document.querySelectorAll("button[data-icon-left]")
-const iconButtonsRight = document.querySelectorAll("button[data-icon-right]")
+const iconButtonsLeft = document.querySelectorAll(".btn[data-icon-left]")
+const iconButtonsRight = document.querySelectorAll(".btn[data-icon-right]")
 
 if (iconButtonsLeft.length > 0 || iconButtonsRight.length > 0) {
     const addIcon = (button, position) => {
@@ -33,7 +33,7 @@ if (iconButtonsLeft.length > 0 || iconButtonsRight.length > 0) {
 
 /*==================== Loading button ====================*/
 
-const loadingButtons = document.querySelectorAll("button[data-loading]")
+const loadingButtons = document.querySelectorAll(".btn[data-loading]")
 
 if (loadingButtons.length > 0) {
     loadingButtons.forEach(container => {

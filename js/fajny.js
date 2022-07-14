@@ -33,22 +33,6 @@ if (accordions.length > 0) {
     })
 }
 
-/*============================= Badge =============================*/
-
-const iconBadges = document.querySelectorAll(".badge[data-icon]")
-
-if (iconBadges.length > 0) {
-    iconBadges.forEach(container => {
-        const icon = container.getAttribute("data-icon")
-
-        const createIcon = document.createElement("span")
-        createIcon.setAttribute("class", "icon-container")
-        createIcon.innerHTML = `<svg class="icon"><use xlink:href="/assets/icons/icon-sprite.svg#${icon}"></use></svg>`
-
-        container.appendChild(createIcon)
-    })
-}
-
 /*============================= Burger =============================*/
 
 const burgers = document.querySelectorAll(".burger")
@@ -73,8 +57,8 @@ if (burgers.length > 0) {
 
 /*==================== Icon button ====================*/
 
-const iconButtonsLeft = document.querySelectorAll("button[data-icon-left]")
-const iconButtonsRight = document.querySelectorAll("button[data-icon-right]")
+const iconButtonsLeft = document.querySelectorAll(".btn[data-icon-left]")
+const iconButtonsRight = document.querySelectorAll(".btn[data-icon-right]")
 
 if (iconButtonsLeft.length > 0 || iconButtonsRight.length > 0) {
     const addIcon = (button, position) => {
@@ -104,7 +88,7 @@ if (iconButtonsLeft.length > 0 || iconButtonsRight.length > 0) {
 
 /*==================== Loading button ====================*/
 
-const loadingButtons = document.querySelectorAll("button[data-loading]")
+const loadingButtons = document.querySelectorAll(".btn[data-loading]")
 
 if (loadingButtons.length > 0) {
     loadingButtons.forEach(container => {
@@ -145,7 +129,7 @@ const loadingIconButtons = document.querySelectorAll(".btn-icon[data-loading]")
 
 if (loadingIconButtons.length > 0) {
     loadingIconButtons.forEach(container => {
-        const icon = container.childNodes[0]
+        const icon = container.querySelector(".icon-container")
         container.removeChild(icon)
 
         container.setAttribute("disabled", "")

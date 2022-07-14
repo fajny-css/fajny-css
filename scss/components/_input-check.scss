@@ -19,6 +19,8 @@ input[type="checkbox"] {
     @include inlineFlex(center, flex-start, $spacer-xxs);
     position: relative;
     font-size: $font-size-body;
+    color: $color-black;
+    font-weight: $font-weight-regular;
 }
 
 .radio {

@@ -4286,9 +4286,6 @@ p {
 p > * {
   font-size: var(--font-size-body);
 }
-p.pre {
-  white-space: pre-line;
-}
 
 small {
   font-size: var(--font-size-small);
@@ -5522,7 +5519,7 @@ video:not([height]) {
   width: 100%;
 }
 .youtube:not([height]) {
-  height: 40vw;
+  aspect-ratio: 16/9;
 }
 
 /*=============================================== Avatar ===============================================*/
@@ -6465,23 +6462,7 @@ video:not([height]) {
 .badge[data-color=white] {
   color: var(--color-primary-500);
 }
-.badge .icon-container {
-  width: 100%;
-  height: 100%;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.badge .icon-container .icon {
+.badge .icon {
   --icon-size: var(--badge-icon-size);
 }
 .badge[data-size=xxl] {
@@ -6517,6 +6498,7 @@ video:not([height]) {
 .tooltip {
   display: inline;
   position: relative;
+  border-bottom: 1px dotted currentColor;
 }
 .tooltip[data-style=dotted] {
   border-bottom: 1px dotted currentColor;
@@ -6525,6 +6507,7 @@ video:not([height]) {
   border-bottom: 1px solid currentColor;
 }
 .tooltip[data-style=bold] {
+  border-bottom: none;
   font-weight: var(--font-weight-black);
 }
 .tooltip:before {
@@ -7089,6 +7072,8 @@ input[type=checkbox]:disabled ~ label {
   gap: var(--spacer-xxs);
   position: relative;
   font-size: var(--font-size-body);
+  color: var(--color-black);
+  font-weight: var(--font-weight-regular);
 }
 
 .radio label:before {
@@ -10627,6 +10612,13 @@ input[type=checkbox]:disabled ~ label {
   background-color: transparent;
   width: 32px;
   height: 24px;
+  color: var(--color-primary-500);
+}
+.burger:hover {
+  color: var(--color-primary-300);
+}
+.burger:active {
+  color: var(--color-primary-600);
 }
 .burger[data-color=primary] {
   color: var(--color-primary-500);
@@ -11045,7 +11037,21 @@ a.card:hover {
   width: 100%;
   height: 100vh;
 }
-.cover img {
+.cover > picture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+.cover > picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cover > img {
   position: fixed;
   top: 0;
   left: 0;
@@ -11283,6 +11289,20 @@ a.card:hover {
   background-color: var(--color-gray-900);
   color: var(--color-white);
   padding: var(--spacer-m);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.code-container::-webkit-scrollbar {
+  display: none;
+}
+.code-container pre,
+.code-container code {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.code-container pre::-webkit-scrollbar,
+.code-container code::-webkit-scrollbar {
+  display: none;
 }
 .code-container code {
   font-family: var(--font-family-code);

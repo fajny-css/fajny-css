@@ -6,6 +6,15 @@
     background-color: transparent;
     width: 32px;
     height: 24px;
+    color: $color-primary-500;
+
+    &:hover {
+        color: $color-primary-300;
+    }
+
+    &:active {
+        color: $color-primary-600;
+    }
 
     @include colorHover(color, color);
 

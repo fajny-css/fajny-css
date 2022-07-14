@@ -1,4 +1,4 @@
-/*=============================================== Button ===============================================*/
+/*=============================================== Button icon ===============================================*/
 
 /*==================== Icon ====================*/
 
@@ -22,7 +22,7 @@ const loadingIconButtons = document.querySelectorAll(".btn-icon[data-loading]")
 
 if (loadingIconButtons.length > 0) {
     loadingIconButtons.forEach(container => {
-        const icon = container.childNodes[0]
+        const icon = container.querySelector(".icon-container")
         container.removeChild(icon)
 
         container.setAttribute("disabled", "")

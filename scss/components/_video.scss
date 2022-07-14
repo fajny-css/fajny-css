@@ -19,6 +19,6 @@ video {
     }
 
     &:not([height]) {
-        height: 40vw;
+        aspect-ratio: 16/9;
     }
 }
