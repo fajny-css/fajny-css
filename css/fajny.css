@@ -4323,9 +4323,11 @@ dl dt {
   font-weight: var(--font-weight-black);
 }
 dl dd {
-  margin-bottom: var(--spacer-xs);
   -webkit-padding-start: var(--spacer-m);
           padding-inline-start: var(--spacer-m);
+}
+dl dd:not(:last-of-type) {
+  margin-bottom: var(--spacer-xs);
 }
 
 /*==================== Layouts ====================*/
@@ -4805,41 +4807,148 @@ dl dd {
       -ms-flex-line-pack: space-evenly;
           align-content: space-evenly;
 }
-.grid[data-col="1"] {
-  grid-template-columns: repeat(1, 1fr);
-}
 .grid[data-col="2"] {
   grid-template-columns: repeat(2, 1fr);
+}
+@media screen and (max-width: 1024px) {
+  .grid[data-col="2"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid[data-col="2"] {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .grid[data-col="3"] {
   grid-template-columns: repeat(3, 1fr);
 }
+@media screen and (max-width: 1024px) {
+  .grid[data-col="3"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid[data-col="3"] {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .grid[data-col="4"] {
   grid-template-columns: repeat(4, 1fr);
+}
+@media screen and (max-width: 1024px) {
+  .grid[data-col="4"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid[data-col="4"] {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 .grid[data-col="5"] {
   grid-template-columns: repeat(5, 1fr);
 }
+@media screen and (max-width: 1024px) {
+  .grid[data-col="5"] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid[data-col="5"] {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .grid[data-col="6"] {
   grid-template-columns: repeat(6, 1fr);
+}
+@media screen and (max-width: 1024px) {
+  .grid[data-col="6"] {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid[data-col="6"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .grid[data-col="7"] {
   grid-template-columns: repeat(7, 1fr);
 }
+@media screen and (max-width: 1024px) {
+  .grid[data-col="7"] {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid[data-col="7"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .grid[data-col="8"] {
   grid-template-columns: repeat(8, 1fr);
+}
+@media screen and (max-width: 1024px) {
+  .grid[data-col="8"] {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid[data-col="8"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .grid[data-col="9"] {
   grid-template-columns: repeat(9, 1fr);
 }
+@media screen and (max-width: 1024px) {
+  .grid[data-col="9"] {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid[data-col="9"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .grid[data-col="10"] {
   grid-template-columns: repeat(10, 1fr);
+}
+@media screen and (max-width: 1024px) {
+  .grid[data-col="10"] {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid[data-col="10"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .grid[data-col="11"] {
   grid-template-columns: repeat(11, 1fr);
 }
+@media screen and (max-width: 1024px) {
+  .grid[data-col="11"] {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid[data-col="11"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .grid[data-col="12"] {
   grid-template-columns: repeat(12, 1fr);
+}
+@media screen and (max-width: 1024px) {
+  .grid[data-col="12"] {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .grid[data-col="12"] {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /*=============================================== Flexbox ===============================================*/
@@ -6483,7 +6592,7 @@ video:not([height]) {
 }
 .badge[data-size=s] {
   --badge-size: 16px;
-  --badge-icon-size: 8px;
+  --badge-icon-size: 12px;
 }
 .badge[data-size=xs] {
   --badge-size: 12px;

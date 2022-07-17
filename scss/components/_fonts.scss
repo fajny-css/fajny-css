@@ -229,7 +229,10 @@ dl {
     }
 
     dd {
-        margin-bottom: $spacer-xs;
         padding-inline-start: $spacer-m;
+
+        &:not(:last-of-type) {
+            margin-bottom: $spacer-xs;
+        }
     }
 }

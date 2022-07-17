@@ -96,9 +96,45 @@
         align-content: space-evenly;
     }
 
-    @for $i from 1 through 12 {
+    @for $i from 2 through 3 {
         &[data-col="#{$i}"] {
-            grid-template-columns: repeat(#{$i}, 1fr);
+            grid-template-columns: repeat($i, 1fr);
+
+            @include tablet() {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include mobile() {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+
+    @for $i from 4 through 5 {
+        &[data-col="#{$i}"] {
+            grid-template-columns: repeat($i, 1fr);
+
+            @include tablet() {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @include mobile() {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+
+    @for $i from 6 through 12 {
+        &[data-col="#{$i}"] {
+            grid-template-columns: repeat($i, 1fr);
+
+            @include tablet() {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            @include mobile() {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     }
 }
