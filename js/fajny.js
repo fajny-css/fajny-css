@@ -461,7 +461,7 @@ if (imageInputs.length > 0) {
         const isDisabled = input.getAttributeNames().includes("disabled")
 
         const iconEmpty =
-            container.getAttribute("data-icon-empty") || "user-solid"
+            container.getAttribute("data-icon-empty") || "image-solid"
         const iconHover =
             container.getAttribute("data-icon-hover") || "edit-solid"
 

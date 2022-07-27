@@ -181,14 +181,22 @@ input[type="time"] {
         input {
             padding-left: 53px;
         }
+
+        &[data-icon] {
+            .url-container {
+                left: 32px;
+            }
+
+            input {
+                padding-left: calc(32px + 53px);
+            }
+        }
     }
 
     &.input-select {
         &:after {
             @include icon(chevron-down-solid, 16, $color-primary-500);
             position: absolute;
-            top: 0;
-            right: 0;
             z-index: 10;
             right: $spacer-xs;
             top: calc(50% - 8px);

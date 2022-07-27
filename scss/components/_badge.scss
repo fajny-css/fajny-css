@@ -3,7 +3,7 @@
 .badge {
     --badge-size: 64px;
     --badge-icon-size: 56px;
-    width: var(--badge-size);
+    min-width: var(--badge-size);
     height: var(--badge-size);
     border-radius: $radius-circle;
     @include inlineFlex(center, center);
@@ -55,5 +55,9 @@
     &[data-size="xxs"] {
         --badge-size: 8px;
         --badge-icon-size: 4px;
+    }
+
+    &[data-long] {
+        padding: 0 $spacer-s;
     }
 }

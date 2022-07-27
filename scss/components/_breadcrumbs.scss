@@ -2,6 +2,7 @@
 
 .breadcrumbs {
     @include flexbox(center, flex-start, $spacer-xxs);
+    flex-wrap: wrap;
 
     a:after {
         content: "/";

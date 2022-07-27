@@ -6522,7 +6522,7 @@ video:not([height]) {
 .badge {
   --badge-size: 64px;
   --badge-icon-size: 56px;
-  width: var(--badge-size);
+  min-width: var(--badge-size);
   height: var(--badge-size);
   -webkit-border-radius: var(--radius-circle);
           border-radius: var(--radius-circle);
@@ -6602,6 +6602,9 @@ video:not([height]) {
   --badge-size: 8px;
   --badge-icon-size: 4px;
 }
+.badge[data-long] {
+  padding: 0 var(--spacer-s);
+}
 
 /*=============================================== Tooltip ===============================================*/
 .tooltip {
@@ -6626,8 +6629,8 @@ video:not([height]) {
   color: var(--color-white);
   text-align: center;
   padding: var(--spacer-xs);
-  -webkit-border-radius: var(--radius-m);
-          border-radius: var(--radius-m);
+  -webkit-border-radius: var(--radius-s);
+          border-radius: var(--radius-s);
   bottom: 125%;
   left: -webkit-calc(50% - 75px);
   left: calc(50% - 75px);
@@ -6955,6 +6958,12 @@ input[type=time]::-webkit-calendar-picker-indicator {
 .input-content.input-url input {
   padding-left: 53px;
 }
+.input-content.input-url[data-icon] .url-container {
+  left: 32px;
+}
+.input-content.input-url[data-icon] input {
+  padding-left: 85px;
+}
 .input-content.input-select:after {
   content: "";
   width: 16px;
@@ -6966,8 +6975,6 @@ input[type=time]::-webkit-calendar-picker-indicator {
   display: inline-block;
   background-color: var(--color-primary-500);
   position: absolute;
-  top: 0;
-  right: 0;
   z-index: 10;
   right: var(--spacer-xs);
   top: -webkit-calc(50% - 8px);
@@ -7275,7 +7282,7 @@ input[type=checkbox]:disabled ~ label {
   background-color: var(--color-white);
   -webkit-border-radius: var(--radius-m);
           border-radius: var(--radius-m);
-  border: 1px solid transparent;
+  border: 1px solid var(--color-gray-200);
   padding: var(--spacer-s);
   width: 100%;
   -webkit-transition: var(--transition-short);
@@ -7391,6 +7398,35 @@ input[type=checkbox]:disabled ~ label {
 .selector input:disabled:checked ~ label {
   background-color: var(--color-gray-100);
 }
+.selector[data-validate=not-passed] label {
+  background-color: var(--color-danger-50);
+  color: var(--color-danger-500);
+}
+.selector[data-validate=not-passed] label:hover {
+  background-color: var(--color-danger-300);
+  color: var(--color-white);
+}
+.selector[data-validate=not-passed] label:active {
+  background-color: var(--color-danger-600);
+}
+.selector[data-validate=not-passed] input:not(:disabled):checked ~ label {
+  background-color: var(--color-danger-500);
+}
+.selector[data-validate=not-passed] input:not(:disabled):checked ~ label:hover {
+  background-color: var(--color-danger-300);
+  color: var(--color-white);
+}
+.selector[data-validate=not-passed] input:not(:disabled):checked ~ label:active {
+  background-color: var(--color-danger-600);
+}
+.selector[data-validate=not-passed] input:disabled ~ label:hover {
+  background-color: var(--color-gray-50);
+  color: var(--color-gray-500);
+}
+.selector[data-validate=not-passed] input:disabled:checked ~ label:hover {
+  color: var(--color-gray-500);
+  background-color: var(--color-gray-100);
+}
 
 /*=============================================== Form ===============================================*/
 .form {
@@ -7413,6 +7449,9 @@ input[type=checkbox]:disabled ~ label {
       -ms-flex-pack: start;
           justify-content: flex-start;
   gap: var(--spacer-xxs);
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 .breadcrumbs a:after {
   content: "/";
@@ -7529,11 +7568,6 @@ input[type=checkbox]:disabled ~ label {
   position: absolute;
   top: 42px;
   display: grid;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
   min-width: 200px;
   background-color: var(--color-white);
   -webkit-border-radius: var(--radius-m);
@@ -7990,7 +8024,6 @@ input[type=checkbox]:disabled ~ label {
 }
 .paginator button:not(:disabled):active {
   background-color: var(--color-primary-600);
-  color: var(--color-white);
 }
 .paginator button:disabled {
   color: var(--color-gray-500);
@@ -10204,9 +10237,13 @@ input[type=checkbox]:disabled ~ label {
   -webkit-animation: progress-100 5000ms 1;
           animation: progress-100 5000ms 1;
 }
-.progress-bar[data-value="1"]:before {
-  -webkit-border-radius: 100px;
-          border-radius: 100px;
+.progress-bar[data-value=i]:before {
+  -webkit-border-radius: var(--radius-circle);
+          border-radius: var(--radius-circle);
+}
+.progress-bar[data-value=i]:before {
+  -webkit-border-radius: var(--radius-circle);
+          border-radius: var(--radius-circle);
 }
 .progress-bar[data-value="0"]:before {
   width: 0%;
@@ -10855,7 +10892,6 @@ input[type=checkbox]:disabled ~ label {
 /*=============================================== Card ===============================================*/
 .card {
   width: 100%;
-  max-width: 320px;
   background-color: var(--color-background);
   -webkit-border-radius: var(--radius-m);
           border-radius: var(--radius-m);

@@ -74,8 +74,10 @@
         }
     }
 
-    &[data-value="1"]:before {
-        border-radius: 100px;
+    @for $i from 1 to 3 {
+        &[data-value="#{i}"]:before {
+            border-radius: $radius-circle;
+        }
     }
 
     @for $i from 0 through 100 {

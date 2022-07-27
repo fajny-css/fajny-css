@@ -53,10 +53,8 @@
 
             &:hover {
                 background-color: $color-gray-800;
-            }
 
-            @include touch() {
-                &:hover {
+                @include touch() {
                     background-color: transparent;
                 }
             }

@@ -133,7 +133,7 @@ input[type="checkbox"] {
     label {
         background-color: $color-white;
         border-radius: $radius-m;
-        border: 1px solid transparent;
+        border: 1px solid $color-gray-200;
         padding: $spacer-s;
         width: 100%;
         transition: $transition-short;
@@ -282,6 +282,47 @@ input[type="checkbox"] {
 
         &:checked~label {
             background-color: $color-gray-100;
+        }
+    }
+
+    &[data-validate="not-passed"] {
+        label {
+            background-color: $color-danger-50;
+            color: $color-danger-500;
+
+            &:hover {
+                background-color: $color-danger-300;
+                color: $color-white;
+            }
+
+            &:active {
+                background-color: $color-danger-600;
+            }
+        }
+
+        input:not(:disabled):checked~label {
+            background-color: $color-danger-500;
+
+            &:hover {
+                background-color: $color-danger-300;
+                color: $color-white;
+            }
+
+            &:active {
+                background-color: $color-danger-600;
+            }
+        }
+
+        input:disabled {
+            & ~ label:hover {
+                background-color: $color-gray-50;
+                color: $color-gray-500;
+            }
+
+            &:checked~label:hover {
+                    color: $color-gray-500;
+                    background-color: $color-gray-100;
+                }
         }
     }
 }
