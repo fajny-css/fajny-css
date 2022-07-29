@@ -1,17 +1,19 @@
 # Getting started
 
+Documentation here: [https://fajny-css.github.io/](https://fajny-css.github.io/)
+
 ## Via CDN
 
 Copy this in the `<head>` of your HTML:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/fajny-css-v3@3.0.3/css/fajny.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/fajny-css/css/fajny.min.css" />
 ```
 
 And add this at the end of the `<body>`:
 
 ```html
-<script src="https://unpkg.com/fajny-css-v3@3.0.3/lib/fajny.min.js"></script>
+<script src="https://unpkg.com/fajny-css/lib/fajny.min.js"></script>
 ```
 
 ## Via npm
