@@ -6,9 +6,9 @@
     a,
     button,
     span {
-        $size: 32px;
-        width: $size;
-        height: $size;
+        --button-size: 32px;
+        width: var(--button-size);
+        height: var(--button-size);
         @include inlineFlex(center, center);
         color: $color-primary-500;
         padding: 0;
@@ -38,6 +38,10 @@
 
         &:disabled {
             color: $color-gray-500;
+        }
+
+        @include mobile() {
+            --button-size: 24px;
         }
     }
 

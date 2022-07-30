@@ -7292,8 +7292,21 @@ input[type=checkbox]:disabled ~ label {
 .tile input:not(:disabled) ~ label:hover {
   border-color: var(--color-primary-300);
 }
+@media (hover: none) and (pointer: coarse) {
+  .tile input:not(:disabled) ~ label:hover {
+    border-color: var(--color-gray-200);
+  }
+}
 .tile input:checked ~ label {
   border-color: var(--color-primary-500);
+}
+@media (hover: none) and (pointer: coarse) {
+  .tile input:checked ~ label {
+    border-color: var(--color-primary-500);
+  }
+  .tile input:checked ~ label:hover {
+    border-color: var(--color-primary-500);
+  }
 }
 .tile input:disabled:checked ~ label {
   border-color: var(--color-gray-500);
@@ -7398,6 +7411,21 @@ input[type=checkbox]:disabled ~ label {
 .selector input:disabled:checked ~ label {
   background-color: var(--color-gray-100);
 }
+@media (hover: none) and (pointer: coarse) {
+  .selector:hover label, .selector:hover input:not(:disabled):checked ~ label, .selector:active label, .selector:active input:not(:disabled):checked ~ label {
+    background-color: var(--color-gray-100);
+    color: var(--color-black);
+  }
+  .selector input:not(:disabled):checked ~ label {
+    background-color: var(--color-primary-500) !important;
+    color: var(--color-white) !important;
+  }
+  .selector input:not(:disabled):checked:hover ~ label,
+.selector input:not(:disabled):checked:active ~ label {
+    background-color: var(--color-primary-500) !important;
+    color: var(--color-white) !important;
+  }
+}
 .selector[data-validate=not-passed] label {
   background-color: var(--color-danger-50);
   color: var(--color-danger-500);
@@ -7426,6 +7454,21 @@ input[type=checkbox]:disabled ~ label {
 .selector[data-validate=not-passed] input:disabled:checked ~ label:hover {
   color: var(--color-gray-500);
   background-color: var(--color-gray-100);
+}
+@media (hover: none) and (pointer: coarse) {
+  .selector[data-validate=not-passed]:hover label, .selector[data-validate=not-passed]:hover input:not(:disabled):checked ~ label, .selector[data-validate=not-passed]:active label, .selector[data-validate=not-passed]:active input:not(:disabled):checked ~ label {
+    background-color: var(--color-danger-50);
+    color: var(--color-danger-500);
+  }
+  .selector[data-validate=not-passed] input:not(:disabled):checked ~ label {
+    background-color: var(--color-danger-500) !important;
+    color: var(--color-white) !important;
+  }
+  .selector[data-validate=not-passed] input:not(:disabled):checked:hover ~ label,
+.selector[data-validate=not-passed] input:not(:disabled):checked:active ~ label {
+    background-color: var(--color-danger-500) !important;
+    color: var(--color-white) !important;
+  }
 }
 
 /*=============================================== Form ===============================================*/
@@ -7877,8 +7920,9 @@ input[type=checkbox]:disabled ~ label {
 .pagination a,
 .pagination button,
 .pagination span {
-  width: 32px;
-  height: 32px;
+  --button-size: 32px;
+  width: var(--button-size);
+  height: var(--button-size);
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -7925,6 +7969,13 @@ input[type=checkbox]:disabled ~ label {
 .pagination button:disabled,
 .pagination span:disabled {
   color: var(--color-gray-500);
+}
+@media screen and (max-width: 600px) {
+  .pagination a,
+.pagination button,
+.pagination span {
+    --button-size: 24px;
+  }
 }
 .pagination a,
 .pagination button {
