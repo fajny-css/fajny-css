@@ -139,24 +139,14 @@ input[type="checkbox"] {
         transition: $transition-short;
     }
 
-    input:not(:disabled)~label:hover {
-        border-color: $color-primary-300;
-
-        @include touch() {
-            border-color: $color-gray-200;
+    @include hover() {
+        input:not(:disabled)~label:hover {
+            border-color: $color-primary-300;
         }
     }
 
     input:checked~label {
         border-color: $color-primary-500;
-
-        @include touch() {
-            border-color: $color-primary-500;
-
-            &:hover {
-                border-color: $color-primary-500;
-            }
-        }
     }
 
     input:disabled:checked~label {
@@ -174,13 +164,9 @@ input[type="checkbox"] {
             border-color: $color-danger-500;
         }
 
-        &:hover input:not(:disabled)~label {
-            border-color: $color-danger-300;
-        }
-
-        @include touch() {
+        @include hover() {
             &:hover input:not(:disabled)~label {
-                border-color: $color-danger-500;
+                border-color: $color-danger-300;
             }
         }
     }
@@ -270,15 +256,18 @@ input[type="checkbox"] {
         background-color: $color-gray-100;
     }
 
-    &:hover label,
-    &:hover input:not(:disabled):checked~label {
-        background-color: $color-primary-300;
-        color: $color-white;
-    }
+    @include hover() {
 
-    &:active label,
-    &:active input:not(:disabled):checked~label {
-        background-color: $color-primary-600;
+        &:hover label,
+        &:hover input:not(:disabled):checked~label {
+            background-color: $color-primary-300;
+            color: $color-white;
+        }
+
+        &:active label,
+        &:active input:not(:disabled):checked~label {
+            background-color: $color-primary-600;
+        }
     }
 
     input:checked~label {
@@ -297,87 +286,49 @@ input[type="checkbox"] {
         }
     }
 
-    @include touch() {
-
-        &:hover label,
-        &:hover input:not(:disabled):checked~label,
-        &:active label,
-        &:active input:not(:disabled):checked~label {
-            background-color: $color-gray-100;
-            color: $color-black;
-        }
-
-        input:not(:disabled):checked~label {
-            background-color: $color-primary-500  !important;
-            color: $color-white  !important;
-        }
-
-        input:not(:disabled):checked:hover~label,
-        input:not(:disabled):checked:active~label {
-            background-color: $color-primary-500  !important;
-            color: $color-white  !important;
-        }
-    }
-
     &[data-validate="not-passed"] {
         label {
             background-color: $color-danger-50;
             color: $color-danger-500;
 
-            &:hover {
-                background-color: $color-danger-300;
-                color: $color-white;
-            }
+            @include hover() {
+                &:hover {
+                    background-color: $color-danger-300;
+                    color: $color-white;
+                }
 
-            &:active {
-                background-color: $color-danger-600;
+                &:active {
+                    background-color: $color-danger-600;
+                }
             }
         }
 
         input:not(:disabled):checked~label {
             background-color: $color-danger-500;
 
-            &:hover {
-                background-color: $color-danger-300;
-                color: $color-white;
-            }
+            @include hover() {
+                &:hover {
+                    background-color: $color-danger-300;
+                    color: $color-white;
+                }
 
-            &:active {
-                background-color: $color-danger-600;
+                &:active {
+                    background-color: $color-danger-600;
+                }
             }
         }
 
         input:disabled {
-            &~label:hover {
-                background-color: $color-gray-50;
-                color: $color-gray-500;
-            }
+            @include hover() {
+                &~label:hover {
+                    background-color: $color-gray-50;
+                    color: $color-gray-500;
+                }
 
-            &:checked~label:hover {
-                color: $color-gray-500;
-                background-color: $color-gray-100;
-            }
-        }
-
-        @include touch() {
-
-            &:hover label,
-            &:hover input:not(:disabled):checked~label,
-            &:active label,
-            &:active input:not(:disabled):checked~label {
-                background-color: $color-danger-50;
-                color: $color-danger-500;
-            }
-
-            input:not(:disabled):checked~label {
-                background-color: $color-danger-500  !important;
-                color: $color-white  !important;
-            }
-
-            input:not(:disabled):checked:hover~label,
-            input:not(:disabled):checked:active~label {
-                background-color: $color-danger-500  !important;
-                color: $color-white  !important;
+                &:checked~label:hover {
+                    color: $color-gray-500;
+                    background-color: $color-gray-100;
+                }
             }
         }
     }

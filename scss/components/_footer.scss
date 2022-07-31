@@ -16,12 +16,14 @@
         padding: 0;
         background-color: transparent;
 
-        &:hover {
-            color: $color-primary-300;
-        }
-
-        &:active {
-            color: $color-primary-600;
+        @include hover() {
+            &:hover {
+                    color: $color-primary-300;
+                }
+            
+                &:active {
+                    color: $color-primary-600;
+                }
         }
     }
 

@@ -118,19 +118,13 @@
                     --icon-size: 24px;
                 }
 
-                &:hover {
-                    background-color: $color-gray-300;
-                }
+                @include hover() {
+                    &:hover {
+                        background-color: $color-gray-300;
+                    }
 
-                &:active {
-                    background-color: $color-gray-100;
-                }
-
-                @include touch() {
-
-                    &:hover,
                     &:active {
-                        background-color: transparent;
+                        background-color: $color-gray-100;
                     }
                 }
 
@@ -193,13 +187,10 @@ a.card {
         font-weight: $font-weight-regular;
     }
 
-    &:hover {
-        transform: scale(1.02);
-        box-shadow: $shadow-xl;
-
-        @include touch() {
-            transform: scale(1);
-            box-shadow: $shadow-m;
+    @include hover() {
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: $shadow-xl;
         }
     }
 }

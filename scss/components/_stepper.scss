@@ -53,19 +53,13 @@
             }
 
             a.step-text {
-                &:hover {
-                    color: $color-primary-300;
-                }
+                @include hover() {
+                    &:hover {
+                        color: $color-primary-300;
+                    }
 
-                &:active {
-                    color: $color-primary-600;
-                }
-
-                @include touch() {
-
-                    &:hover,
                     &:active {
-                        color: $color-primary-500;
+                        color: $color-primary-600;
                     }
                 }
             }

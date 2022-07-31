@@ -23,6 +23,12 @@ $breakpoint-mobile: 600px;
     }
 }
 
+@mixin hover() {
+    @media (hover: hover) {
+        @content;
+    }
+}
+
 /*==================== Mixins ====================*/
 
 @mixin flexbox($align, $justify, $gap: 0) {
@@ -642,19 +648,13 @@ $breakpoint-mobile: 600px;
     &[data-#{$attribute}="primary"] {
         #{$property}: $color-primary-500;
 
-        &:hover {
-            #{$property}: $color-primary-300;
-        }
+        @include hover() {
+            &:hover {
+                #{$property}: $color-primary-300;
+            }
 
-        &:active {
-            #{$property}: $color-primary-600;
-        }
-
-        @include touch() {
-
-            &:hover,
             &:active {
-                #{$property}: $color-primary-500;
+                #{$property}: $color-primary-600;
             }
         }
     }
@@ -662,19 +662,13 @@ $breakpoint-mobile: 600px;
     &[data-#{$attribute}="secondary"] {
         #{$property}: $color-secondary-500;
 
-        &:hover {
-            #{$property}: $color-secondary-300;
-        }
+        @include hover() {
+            &:hover {
+                #{$property}: $color-secondary-300;
+            }
 
-        &:active {
-            #{$property}: $color-secondary-600;
-        }
-
-        @include touch() {
-
-            &:hover,
             &:active {
-                #{$property}: $color-secondary-500;
+                #{$property}: $color-secondary-600;
             }
         }
     }
@@ -682,19 +676,13 @@ $breakpoint-mobile: 600px;
     &[data-#{$attribute}="success"] {
         #{$property}: $color-success-500;
 
-        &:hover {
-            #{$property}: $color-success-300;
-        }
+        @include hover() {
+            &:hover {
+                #{$property}: $color-success-300;
+            }
 
-        &:active {
-            #{$property}: $color-success-600;
-        }
-
-        @include touch() {
-
-            &:hover,
             &:active {
-                #{$property}: $color-success-500;
+                #{$property}: $color-success-600;
             }
         }
     }
@@ -702,19 +690,13 @@ $breakpoint-mobile: 600px;
     &[data-#{$attribute}="danger"] {
         #{$property}: $color-danger-500;
 
-        &:hover {
-            #{$property}: $color-danger-300;
-        }
+        @include hover() {
+            &:hover {
+                #{$property}: $color-danger-300;
+            }
 
-        &:active {
-            #{$property}: $color-danger-600;
-        }
-
-        @include touch() {
-
-            &:hover,
             &:active {
-                #{$property}: $color-danger-500;
+                #{$property}: $color-danger-600;
             }
         }
     }
@@ -722,19 +704,13 @@ $breakpoint-mobile: 600px;
     &[data-#{$attribute}="warning"] {
         #{$property}: $color-warning-500;
 
-        &:hover {
-            #{$property}: $color-warning-300;
-        }
+        @include hover() {
+            &:hover {
+                #{$property}: $color-warning-300;
+            }
 
-        &:active {
-            #{$property}: $color-warning-600;
-        }
-
-        @include touch() {
-
-            &:hover,
             &:active {
-                #{$property}: $color-warning-500;
+                #{$property}: $color-warning-600;
             }
         }
     }
@@ -742,19 +718,13 @@ $breakpoint-mobile: 600px;
     &[data-#{$attribute}="white"] {
         #{$property}: $color-white;
 
-        &:hover {
-            #{$property}: $color-gray-300;
-        }
+        @include hover() {
+            &:hover {
+                #{$property}: $color-gray-300;
+            }
 
-        &:active {
-            #{$property}: $color-gray-100;
-        }
-
-        @include touch() {
-
-            &:hover,
             &:active {
-                #{$property}: $color-white;
+                #{$property}: $color-gray-100;
             }
         }
     }
@@ -764,16 +734,14 @@ $breakpoint-mobile: 600px;
     color: $color-primary-500;
     text-decoration: none;
 
-    &:hover {
-        color: $color-primary-300;
-    }
+    @include hover() {
+        &:hover {
+            color: $color-primary-300;
+        }
 
-    &:active {
-        color: $color-primary-600;
-    }
-
-    @include touch() {
-        color: $color-primary-500;
+        &:active {
+            color: $color-primary-600;
+        }
     }
 }
 

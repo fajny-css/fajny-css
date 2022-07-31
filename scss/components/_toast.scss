@@ -37,11 +37,9 @@
             border-radius: $radius-circle;
             background-color: transparent;
 
-            &:hover {
-                background-color: $color-gray-50;
-
-                @include touch() {
-                    background-color: transparent;
+            @include hover() {
+                &:hover {
+                    background-color: $color-gray-50;
                 }
             }
 

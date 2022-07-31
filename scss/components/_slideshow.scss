@@ -56,31 +56,23 @@
             background-color: $color-primary-300;
             transition: $transition-short;
 
-            &:hover {
-                background-color: $color-primary-500;
-            }
+            @include hover() {
+                &:hover {
+                    background-color: $color-primary-500;
+                }
 
-            &:active {
-                background-color: $color-primary-600;
-            }
-
-            @include touch() {
-
-                &:hover,
                 &:active {
-                    background-color: $color-primary-300;
+                    background-color: $color-primary-600;
                 }
             }
 
             &.slideshow-pagination-item-active {
                 background-color: $color-primary-500;
 
-                &:hover {
-                    background-color: $color-primary-300;
-                }
-
-                @include touch() {
-                    background-color: $color-primary-500;
+                @include hover() {
+                    &:hover {
+                        background-color: $color-primary-300;
+                    }
                 }
             }
         }
@@ -99,12 +91,14 @@
         top: calc(60vh / 2 - #{$size} / 2);
         transition: $transition-short;
 
-        &:hover {
-            background-color: $color-primary-300;
-        }
+        @include hover() {
+            &:hover {
+                background-color: $color-primary-300;
+            }
 
-        &:active {
-            background-color: $color-primary-600;
+            &:active {
+                background-color: $color-primary-600;
+            }
         }
 
         .icon {

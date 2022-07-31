@@ -11,25 +11,19 @@
     background-color: $color-primary-500;
     color: $color-white;
 
-    &:hover {
-        background-color: $color-primary-300;
-    }
+    @include hover() {
+        &:hover {
+            background-color: $color-primary-300;
+        }
 
-    &:active {
-        background-color: $color-primary-600;
+        &:active {
+            background-color: $color-primary-600;
+        }
     }
 
     &:disabled {
         background-color: $color-gray-100;
         color: $color-gray-500;
-    }
-
-    @include touch() {
-
-        &:hover,
-        &:active {
-            background-color: $color-primary-500;
-        }
     }
 
     .icon-container {

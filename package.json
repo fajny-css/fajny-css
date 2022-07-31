@@ -1,6 +1,6 @@
 {
     "name": "fajny-css",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "description": "Fajny CSS framework",
     "main": "index.js",
     "scripts": {

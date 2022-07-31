@@ -71,19 +71,15 @@ input[type="file"] {
         transition: $transition-short;
     }
 
-    &:hover::file-selector-button {
-        background-color: $color-gray-300;
-    }
-
-    &:disabled:hover::file-selector-button {
-        background-color: $color-gray-100;
-        color: $color-gray-500;
-        cursor: not-allowed;
-    }
-
-    @include touch() {
+    @include hover() {
         &:hover::file-selector-button {
+            background-color: $color-gray-300;
+        }
+
+        &:disabled:hover::file-selector-button {
             background-color: $color-gray-100;
+            color: $color-gray-500;
+            cursor: not-allowed;
         }
     }
 }
@@ -229,24 +225,18 @@ input[type="time"] {
             background-color: transparent;
             padding: 0;
 
-            &:hover {
-                color: $color-primary-300;
-            }
+            @include hover() {
+                &:hover {
+                    color: $color-primary-300;
+                }
 
-            &:active {
-                color: $color-primary-600;
+                &:active {
+                    color: $color-primary-600;
+                }
             }
 
             &:disabled {
                 color: $color-gray-500;
-            }
-
-            @include touch() {
-
-                &:hover,
-                &:active {
-                    color: $color-primary-500;
-                }
             }
         }
     }

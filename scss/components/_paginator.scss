@@ -28,26 +28,19 @@
             --icon-size: 16px;
         }
 
-        &:not(:disabled):hover {
-            background-color: $color-primary-300;
-            color: $color-white;
-        }
+        @include hover() {
+            &:not(:disabled):hover {
+                background-color: $color-primary-300;
+                color: $color-white;
+            }
 
-        &:not(:disabled):active {
-            background-color: $color-primary-600;
+            &:not(:disabled):active {
+                background-color: $color-primary-600;
+            }
         }
 
         &:disabled {
             color: $color-gray-500;
-        }
-
-        @include touch() {
-
-            &:not(:disabled):hover,
-            &:not(:disabled):active {
-                background-color: transparent;
-                color: $color-primary-500;
-            }
         }
     }
 

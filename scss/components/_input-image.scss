@@ -61,13 +61,9 @@
             }
         }
 
-        &:hover .hover-container {
-            opacity: 1;
-        }
-
-        @include touch() {
+        @include hover() {
             &:hover .hover-container {
-                opacity: 0;
+                opacity: 1;
             }
         }
 
@@ -78,8 +74,10 @@
                 color: $color-gray-500;
             }
 
-            &:hover .hover-container {
-                opacity: 0;
+            @include hover() {
+                &:hover .hover-container {
+                    opacity: 0;
+                }
             }
         }
     }

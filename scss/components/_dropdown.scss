@@ -32,22 +32,15 @@
             padding: $spacer-xs $spacer-s;
             transition: $transition-short;
 
-            &:hover {
-                background-color: $color-primary-300;
-                color: $color-white;
-            }
+            @include hover() {
+                &:hover {
+                    background-color: $color-primary-300;
+                    color: $color-white;
+                }
 
-            &:active {
-                background-color: $color-primary-600;
-                color: $color-white;
-            }
-
-            @include touch() {
-
-                &:hover,
                 &:active {
-                    background-color: transparent;
-                    color: $color-primary-500;
+                    background-color: $color-primary-600;
+                    color: $color-white;
                 }
             }
         }

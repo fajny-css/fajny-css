@@ -51,11 +51,9 @@
                 --icon-size: 32px;
             }
 
-            &:hover {
-                background-color: $color-gray-800;
-
-                @include touch() {
-                    background-color: transparent;
+            @include hover() {
+                &:hover {
+                    background-color: $color-gray-800;
                 }
             }
         }

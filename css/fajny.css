@@ -3856,7 +3856,8 @@ label a {
   color: var(--color-primary-500);
   text-decoration: none;
 }
-h1 a:hover,
+@media (hover: hover) {
+  h1 a:hover,
 h2 a:hover,
 h3 a:hover,
 h4 a:hover,
@@ -3879,9 +3880,9 @@ dl a:hover,
 dt a:hover,
 dd a:hover,
 label a:hover {
-  color: var(--color-primary-300);
-}
-h1 a:active,
+    color: var(--color-primary-300);
+  }
+  h1 a:active,
 h2 a:active,
 h3 a:active,
 h4 a:active,
@@ -3904,33 +3905,7 @@ dl a:active,
 dt a:active,
 dd a:active,
 label a:active {
-  color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a,
-p a,
-strong a,
-em a,
-small a,
-blockquote a,
-table a,
-thead a,
-tbody a,
-tr a,
-td a,
-ul a,
-ol a,
-li a,
-dl a,
-dt a,
-dd a,
-label a {
-    color: var(--color-primary-500);
+    color: var(--color-primary-600);
   }
 }
 h1[data-align=left],
@@ -5826,20 +5801,17 @@ video:not([height]) {
   background-color: var(--color-primary-500);
   color: var(--color-white);
 }
-.btn:hover {
-  background-color: var(--color-primary-300);
-}
-.btn:active {
-  background-color: var(--color-primary-600);
+@media (hover: hover) {
+  .btn:hover {
+    background-color: var(--color-primary-300);
+  }
+  .btn:active {
+    background-color: var(--color-primary-600);
+  }
 }
 .btn:disabled {
   background-color: var(--color-gray-100);
   color: var(--color-gray-500);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn:hover, .btn:active {
-    background-color: var(--color-primary-500);
-  }
 }
 .btn[data-no-padding] {
   padding: 0;
@@ -5847,85 +5819,67 @@ video:not([height]) {
 .btn[data-button-style=plain][data-color=primary] {
   background-color: var(--color-primary-500);
 }
-.btn[data-button-style=plain][data-color=primary]:hover {
-  background-color: var(--color-primary-300);
-}
-.btn[data-button-style=plain][data-color=primary]:active {
-  background-color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=plain][data-color=primary]:hover, .btn[data-button-style=plain][data-color=primary]:active {
-    background-color: var(--color-primary-500);
+@media (hover: hover) {
+  .btn[data-button-style=plain][data-color=primary]:hover {
+    background-color: var(--color-primary-300);
+  }
+  .btn[data-button-style=plain][data-color=primary]:active {
+    background-color: var(--color-primary-600);
   }
 }
 .btn[data-button-style=plain][data-color=secondary] {
   background-color: var(--color-secondary-500);
 }
-.btn[data-button-style=plain][data-color=secondary]:hover {
-  background-color: var(--color-secondary-300);
-}
-.btn[data-button-style=plain][data-color=secondary]:active {
-  background-color: var(--color-secondary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=plain][data-color=secondary]:hover, .btn[data-button-style=plain][data-color=secondary]:active {
-    background-color: var(--color-secondary-500);
+@media (hover: hover) {
+  .btn[data-button-style=plain][data-color=secondary]:hover {
+    background-color: var(--color-secondary-300);
+  }
+  .btn[data-button-style=plain][data-color=secondary]:active {
+    background-color: var(--color-secondary-600);
   }
 }
 .btn[data-button-style=plain][data-color=success] {
   background-color: var(--color-success-500);
 }
-.btn[data-button-style=plain][data-color=success]:hover {
-  background-color: var(--color-success-300);
-}
-.btn[data-button-style=plain][data-color=success]:active {
-  background-color: var(--color-success-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=plain][data-color=success]:hover, .btn[data-button-style=plain][data-color=success]:active {
-    background-color: var(--color-success-500);
+@media (hover: hover) {
+  .btn[data-button-style=plain][data-color=success]:hover {
+    background-color: var(--color-success-300);
+  }
+  .btn[data-button-style=plain][data-color=success]:active {
+    background-color: var(--color-success-600);
   }
 }
 .btn[data-button-style=plain][data-color=danger] {
   background-color: var(--color-danger-500);
 }
-.btn[data-button-style=plain][data-color=danger]:hover {
-  background-color: var(--color-danger-300);
-}
-.btn[data-button-style=plain][data-color=danger]:active {
-  background-color: var(--color-danger-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=plain][data-color=danger]:hover, .btn[data-button-style=plain][data-color=danger]:active {
-    background-color: var(--color-danger-500);
+@media (hover: hover) {
+  .btn[data-button-style=plain][data-color=danger]:hover {
+    background-color: var(--color-danger-300);
+  }
+  .btn[data-button-style=plain][data-color=danger]:active {
+    background-color: var(--color-danger-600);
   }
 }
 .btn[data-button-style=plain][data-color=warning] {
   background-color: var(--color-warning-500);
 }
-.btn[data-button-style=plain][data-color=warning]:hover {
-  background-color: var(--color-warning-300);
-}
-.btn[data-button-style=plain][data-color=warning]:active {
-  background-color: var(--color-warning-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=plain][data-color=warning]:hover, .btn[data-button-style=plain][data-color=warning]:active {
-    background-color: var(--color-warning-500);
+@media (hover: hover) {
+  .btn[data-button-style=plain][data-color=warning]:hover {
+    background-color: var(--color-warning-300);
+  }
+  .btn[data-button-style=plain][data-color=warning]:active {
+    background-color: var(--color-warning-600);
   }
 }
 .btn[data-button-style=plain][data-color=white] {
   background-color: var(--color-white);
 }
-.btn[data-button-style=plain][data-color=white]:hover {
-  background-color: var(--color-gray-300);
-}
-.btn[data-button-style=plain][data-color=white]:active {
-  background-color: var(--color-gray-100);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=plain][data-color=white]:hover, .btn[data-button-style=plain][data-color=white]:active {
-    background-color: var(--color-white);
+@media (hover: hover) {
+  .btn[data-button-style=plain][data-color=white]:hover {
+    background-color: var(--color-gray-300);
+  }
+  .btn[data-button-style=plain][data-color=white]:active {
+    background-color: var(--color-gray-100);
   }
 }
 .btn[data-button-style=plain][data-color=white] {
@@ -5939,99 +5893,78 @@ video:not([height]) {
   background-color: transparent;
   color: var(--color-primary-500);
 }
-.btn[data-button-style=text]:hover {
-  color: var(--color-primary-300);
-}
-.btn[data-button-style=text]:active {
-  color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=text]:hover, .btn[data-button-style=text]:active {
-    color: var(--color-primary-500);
+@media (hover: hover) {
+  .btn[data-button-style=text]:hover {
+    color: var(--color-primary-300);
+  }
+  .btn[data-button-style=text]:active {
+    color: var(--color-primary-600);
   }
 }
 .btn[data-button-style=text][data-color=primary] {
   color: var(--color-primary-500);
 }
-.btn[data-button-style=text][data-color=primary]:hover {
-  color: var(--color-primary-300);
-}
-.btn[data-button-style=text][data-color=primary]:active {
-  color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=text][data-color=primary]:hover, .btn[data-button-style=text][data-color=primary]:active {
-    color: var(--color-primary-500);
+@media (hover: hover) {
+  .btn[data-button-style=text][data-color=primary]:hover {
+    color: var(--color-primary-300);
+  }
+  .btn[data-button-style=text][data-color=primary]:active {
+    color: var(--color-primary-600);
   }
 }
 .btn[data-button-style=text][data-color=secondary] {
   color: var(--color-secondary-500);
 }
-.btn[data-button-style=text][data-color=secondary]:hover {
-  color: var(--color-secondary-300);
-}
-.btn[data-button-style=text][data-color=secondary]:active {
-  color: var(--color-secondary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=text][data-color=secondary]:hover, .btn[data-button-style=text][data-color=secondary]:active {
-    color: var(--color-secondary-500);
+@media (hover: hover) {
+  .btn[data-button-style=text][data-color=secondary]:hover {
+    color: var(--color-secondary-300);
+  }
+  .btn[data-button-style=text][data-color=secondary]:active {
+    color: var(--color-secondary-600);
   }
 }
 .btn[data-button-style=text][data-color=success] {
   color: var(--color-success-500);
 }
-.btn[data-button-style=text][data-color=success]:hover {
-  color: var(--color-success-300);
-}
-.btn[data-button-style=text][data-color=success]:active {
-  color: var(--color-success-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=text][data-color=success]:hover, .btn[data-button-style=text][data-color=success]:active {
-    color: var(--color-success-500);
+@media (hover: hover) {
+  .btn[data-button-style=text][data-color=success]:hover {
+    color: var(--color-success-300);
+  }
+  .btn[data-button-style=text][data-color=success]:active {
+    color: var(--color-success-600);
   }
 }
 .btn[data-button-style=text][data-color=danger] {
   color: var(--color-danger-500);
 }
-.btn[data-button-style=text][data-color=danger]:hover {
-  color: var(--color-danger-300);
-}
-.btn[data-button-style=text][data-color=danger]:active {
-  color: var(--color-danger-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=text][data-color=danger]:hover, .btn[data-button-style=text][data-color=danger]:active {
-    color: var(--color-danger-500);
+@media (hover: hover) {
+  .btn[data-button-style=text][data-color=danger]:hover {
+    color: var(--color-danger-300);
+  }
+  .btn[data-button-style=text][data-color=danger]:active {
+    color: var(--color-danger-600);
   }
 }
 .btn[data-button-style=text][data-color=warning] {
   color: var(--color-warning-500);
 }
-.btn[data-button-style=text][data-color=warning]:hover {
-  color: var(--color-warning-300);
-}
-.btn[data-button-style=text][data-color=warning]:active {
-  color: var(--color-warning-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=text][data-color=warning]:hover, .btn[data-button-style=text][data-color=warning]:active {
-    color: var(--color-warning-500);
+@media (hover: hover) {
+  .btn[data-button-style=text][data-color=warning]:hover {
+    color: var(--color-warning-300);
+  }
+  .btn[data-button-style=text][data-color=warning]:active {
+    color: var(--color-warning-600);
   }
 }
 .btn[data-button-style=text][data-color=white] {
   color: var(--color-white);
 }
-.btn[data-button-style=text][data-color=white]:hover {
-  color: var(--color-gray-300);
-}
-.btn[data-button-style=text][data-color=white]:active {
-  color: var(--color-gray-100);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=text][data-color=white]:hover, .btn[data-button-style=text][data-color=white]:active {
-    color: var(--color-white);
+@media (hover: hover) {
+  .btn[data-button-style=text][data-color=white]:hover {
+    color: var(--color-gray-300);
+  }
+  .btn[data-button-style=text][data-color=white]:active {
+    color: var(--color-gray-100);
   }
 }
 .btn[data-button-style=text]:disabled, .btn[data-button-style=text]:disabled:hover, .btn[data-button-style=text]:disabled:active {
@@ -6043,169 +5976,133 @@ video:not([height]) {
 .btn[data-button-style=outline][data-color=primary] {
   color: var(--color-primary-500);
 }
-.btn[data-button-style=outline][data-color=primary]:hover {
-  color: var(--color-primary-300);
-}
-.btn[data-button-style=outline][data-color=primary]:active {
-  color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=primary]:hover, .btn[data-button-style=outline][data-color=primary]:active {
-    color: var(--color-primary-500);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=primary]:hover {
+    color: var(--color-primary-300);
+  }
+  .btn[data-button-style=outline][data-color=primary]:active {
+    color: var(--color-primary-600);
   }
 }
 .btn[data-button-style=outline][data-color=secondary] {
   color: var(--color-secondary-500);
 }
-.btn[data-button-style=outline][data-color=secondary]:hover {
-  color: var(--color-secondary-300);
-}
-.btn[data-button-style=outline][data-color=secondary]:active {
-  color: var(--color-secondary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=secondary]:hover, .btn[data-button-style=outline][data-color=secondary]:active {
-    color: var(--color-secondary-500);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=secondary]:hover {
+    color: var(--color-secondary-300);
+  }
+  .btn[data-button-style=outline][data-color=secondary]:active {
+    color: var(--color-secondary-600);
   }
 }
 .btn[data-button-style=outline][data-color=success] {
   color: var(--color-success-500);
 }
-.btn[data-button-style=outline][data-color=success]:hover {
-  color: var(--color-success-300);
-}
-.btn[data-button-style=outline][data-color=success]:active {
-  color: var(--color-success-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=success]:hover, .btn[data-button-style=outline][data-color=success]:active {
-    color: var(--color-success-500);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=success]:hover {
+    color: var(--color-success-300);
+  }
+  .btn[data-button-style=outline][data-color=success]:active {
+    color: var(--color-success-600);
   }
 }
 .btn[data-button-style=outline][data-color=danger] {
   color: var(--color-danger-500);
 }
-.btn[data-button-style=outline][data-color=danger]:hover {
-  color: var(--color-danger-300);
-}
-.btn[data-button-style=outline][data-color=danger]:active {
-  color: var(--color-danger-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=danger]:hover, .btn[data-button-style=outline][data-color=danger]:active {
-    color: var(--color-danger-500);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=danger]:hover {
+    color: var(--color-danger-300);
+  }
+  .btn[data-button-style=outline][data-color=danger]:active {
+    color: var(--color-danger-600);
   }
 }
 .btn[data-button-style=outline][data-color=warning] {
   color: var(--color-warning-500);
 }
-.btn[data-button-style=outline][data-color=warning]:hover {
-  color: var(--color-warning-300);
-}
-.btn[data-button-style=outline][data-color=warning]:active {
-  color: var(--color-warning-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=warning]:hover, .btn[data-button-style=outline][data-color=warning]:active {
-    color: var(--color-warning-500);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=warning]:hover {
+    color: var(--color-warning-300);
+  }
+  .btn[data-button-style=outline][data-color=warning]:active {
+    color: var(--color-warning-600);
   }
 }
 .btn[data-button-style=outline][data-color=white] {
   color: var(--color-white);
 }
-.btn[data-button-style=outline][data-color=white]:hover {
-  color: var(--color-gray-300);
-}
-.btn[data-button-style=outline][data-color=white]:active {
-  color: var(--color-gray-100);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=white]:hover, .btn[data-button-style=outline][data-color=white]:active {
-    color: var(--color-white);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=white]:hover {
+    color: var(--color-gray-300);
+  }
+  .btn[data-button-style=outline][data-color=white]:active {
+    color: var(--color-gray-100);
   }
 }
 .btn[data-button-style=outline][data-color=primary] {
   border-color: var(--color-primary-500);
 }
-.btn[data-button-style=outline][data-color=primary]:hover {
-  border-color: var(--color-primary-300);
-}
-.btn[data-button-style=outline][data-color=primary]:active {
-  border-color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=primary]:hover, .btn[data-button-style=outline][data-color=primary]:active {
-    border-color: var(--color-primary-500);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=primary]:hover {
+    border-color: var(--color-primary-300);
+  }
+  .btn[data-button-style=outline][data-color=primary]:active {
+    border-color: var(--color-primary-600);
   }
 }
 .btn[data-button-style=outline][data-color=secondary] {
   border-color: var(--color-secondary-500);
 }
-.btn[data-button-style=outline][data-color=secondary]:hover {
-  border-color: var(--color-secondary-300);
-}
-.btn[data-button-style=outline][data-color=secondary]:active {
-  border-color: var(--color-secondary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=secondary]:hover, .btn[data-button-style=outline][data-color=secondary]:active {
-    border-color: var(--color-secondary-500);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=secondary]:hover {
+    border-color: var(--color-secondary-300);
+  }
+  .btn[data-button-style=outline][data-color=secondary]:active {
+    border-color: var(--color-secondary-600);
   }
 }
 .btn[data-button-style=outline][data-color=success] {
   border-color: var(--color-success-500);
 }
-.btn[data-button-style=outline][data-color=success]:hover {
-  border-color: var(--color-success-300);
-}
-.btn[data-button-style=outline][data-color=success]:active {
-  border-color: var(--color-success-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=success]:hover, .btn[data-button-style=outline][data-color=success]:active {
-    border-color: var(--color-success-500);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=success]:hover {
+    border-color: var(--color-success-300);
+  }
+  .btn[data-button-style=outline][data-color=success]:active {
+    border-color: var(--color-success-600);
   }
 }
 .btn[data-button-style=outline][data-color=danger] {
   border-color: var(--color-danger-500);
 }
-.btn[data-button-style=outline][data-color=danger]:hover {
-  border-color: var(--color-danger-300);
-}
-.btn[data-button-style=outline][data-color=danger]:active {
-  border-color: var(--color-danger-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=danger]:hover, .btn[data-button-style=outline][data-color=danger]:active {
-    border-color: var(--color-danger-500);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=danger]:hover {
+    border-color: var(--color-danger-300);
+  }
+  .btn[data-button-style=outline][data-color=danger]:active {
+    border-color: var(--color-danger-600);
   }
 }
 .btn[data-button-style=outline][data-color=warning] {
   border-color: var(--color-warning-500);
 }
-.btn[data-button-style=outline][data-color=warning]:hover {
-  border-color: var(--color-warning-300);
-}
-.btn[data-button-style=outline][data-color=warning]:active {
-  border-color: var(--color-warning-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=warning]:hover, .btn[data-button-style=outline][data-color=warning]:active {
-    border-color: var(--color-warning-500);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=warning]:hover {
+    border-color: var(--color-warning-300);
+  }
+  .btn[data-button-style=outline][data-color=warning]:active {
+    border-color: var(--color-warning-600);
   }
 }
 .btn[data-button-style=outline][data-color=white] {
   border-color: var(--color-white);
 }
-.btn[data-button-style=outline][data-color=white]:hover {
-  border-color: var(--color-gray-300);
-}
-.btn[data-button-style=outline][data-color=white]:active {
-  border-color: var(--color-gray-100);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn[data-button-style=outline][data-color=white]:hover, .btn[data-button-style=outline][data-color=white]:active {
-    border-color: var(--color-white);
+@media (hover: hover) {
+  .btn[data-button-style=outline][data-color=white]:hover {
+    border-color: var(--color-gray-300);
+  }
+  .btn[data-button-style=outline][data-color=white]:active {
+    border-color: var(--color-gray-100);
   }
 }
 .btn[data-button-style=outline]:disabled, .btn[data-button-style=outline]:disabled:hover, .btn[data-button-style=outline]:disabled:active {
@@ -6255,20 +6152,17 @@ video:not([height]) {
   background-color: var(--color-primary-500);
   color: var(--color-white);
 }
-.btn-icon:hover {
-  background-color: var(--color-primary-300);
-}
-.btn-icon:active {
-  background-color: var(--color-primary-600);
+@media (hover: hover) {
+  .btn-icon:hover {
+    background-color: var(--color-primary-300);
+  }
+  .btn-icon:active {
+    background-color: var(--color-primary-600);
+  }
 }
 .btn-icon:disabled {
   background-color: var(--color-gray-100);
   color: var(--color-gray-500);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon:hover, .btn-icon:active {
-    background-color: var(--color-primary-500);
-  }
 }
 .btn-icon .icon-container {
   width: 100%;
@@ -6292,85 +6186,67 @@ video:not([height]) {
 .btn-icon[data-button-style=plain][data-color=primary] {
   background-color: var(--color-primary-500);
 }
-.btn-icon[data-button-style=plain][data-color=primary]:hover {
-  background-color: var(--color-primary-300);
-}
-.btn-icon[data-button-style=plain][data-color=primary]:active {
-  background-color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=plain][data-color=primary]:hover, .btn-icon[data-button-style=plain][data-color=primary]:active {
-    background-color: var(--color-primary-500);
+@media (hover: hover) {
+  .btn-icon[data-button-style=plain][data-color=primary]:hover {
+    background-color: var(--color-primary-300);
+  }
+  .btn-icon[data-button-style=plain][data-color=primary]:active {
+    background-color: var(--color-primary-600);
   }
 }
 .btn-icon[data-button-style=plain][data-color=secondary] {
   background-color: var(--color-secondary-500);
 }
-.btn-icon[data-button-style=plain][data-color=secondary]:hover {
-  background-color: var(--color-secondary-300);
-}
-.btn-icon[data-button-style=plain][data-color=secondary]:active {
-  background-color: var(--color-secondary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=plain][data-color=secondary]:hover, .btn-icon[data-button-style=plain][data-color=secondary]:active {
-    background-color: var(--color-secondary-500);
+@media (hover: hover) {
+  .btn-icon[data-button-style=plain][data-color=secondary]:hover {
+    background-color: var(--color-secondary-300);
+  }
+  .btn-icon[data-button-style=plain][data-color=secondary]:active {
+    background-color: var(--color-secondary-600);
   }
 }
 .btn-icon[data-button-style=plain][data-color=success] {
   background-color: var(--color-success-500);
 }
-.btn-icon[data-button-style=plain][data-color=success]:hover {
-  background-color: var(--color-success-300);
-}
-.btn-icon[data-button-style=plain][data-color=success]:active {
-  background-color: var(--color-success-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=plain][data-color=success]:hover, .btn-icon[data-button-style=plain][data-color=success]:active {
-    background-color: var(--color-success-500);
+@media (hover: hover) {
+  .btn-icon[data-button-style=plain][data-color=success]:hover {
+    background-color: var(--color-success-300);
+  }
+  .btn-icon[data-button-style=plain][data-color=success]:active {
+    background-color: var(--color-success-600);
   }
 }
 .btn-icon[data-button-style=plain][data-color=danger] {
   background-color: var(--color-danger-500);
 }
-.btn-icon[data-button-style=plain][data-color=danger]:hover {
-  background-color: var(--color-danger-300);
-}
-.btn-icon[data-button-style=plain][data-color=danger]:active {
-  background-color: var(--color-danger-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=plain][data-color=danger]:hover, .btn-icon[data-button-style=plain][data-color=danger]:active {
-    background-color: var(--color-danger-500);
+@media (hover: hover) {
+  .btn-icon[data-button-style=plain][data-color=danger]:hover {
+    background-color: var(--color-danger-300);
+  }
+  .btn-icon[data-button-style=plain][data-color=danger]:active {
+    background-color: var(--color-danger-600);
   }
 }
 .btn-icon[data-button-style=plain][data-color=warning] {
   background-color: var(--color-warning-500);
 }
-.btn-icon[data-button-style=plain][data-color=warning]:hover {
-  background-color: var(--color-warning-300);
-}
-.btn-icon[data-button-style=plain][data-color=warning]:active {
-  background-color: var(--color-warning-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=plain][data-color=warning]:hover, .btn-icon[data-button-style=plain][data-color=warning]:active {
-    background-color: var(--color-warning-500);
+@media (hover: hover) {
+  .btn-icon[data-button-style=plain][data-color=warning]:hover {
+    background-color: var(--color-warning-300);
+  }
+  .btn-icon[data-button-style=plain][data-color=warning]:active {
+    background-color: var(--color-warning-600);
   }
 }
 .btn-icon[data-button-style=plain][data-color=white] {
   background-color: var(--color-white);
 }
-.btn-icon[data-button-style=plain][data-color=white]:hover {
-  background-color: var(--color-gray-300);
-}
-.btn-icon[data-button-style=plain][data-color=white]:active {
-  background-color: var(--color-gray-100);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=plain][data-color=white]:hover, .btn-icon[data-button-style=plain][data-color=white]:active {
-    background-color: var(--color-white);
+@media (hover: hover) {
+  .btn-icon[data-button-style=plain][data-color=white]:hover {
+    background-color: var(--color-gray-300);
+  }
+  .btn-icon[data-button-style=plain][data-color=white]:active {
+    background-color: var(--color-gray-100);
   }
 }
 .btn-icon[data-button-style=plain][data-color=white] {
@@ -6386,85 +6262,67 @@ video:not([height]) {
 .btn-icon[data-button-style=transparent][data-color=primary] {
   color: var(--color-primary-500);
 }
-.btn-icon[data-button-style=transparent][data-color=primary]:hover {
-  color: var(--color-primary-300);
-}
-.btn-icon[data-button-style=transparent][data-color=primary]:active {
-  color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=transparent][data-color=primary]:hover, .btn-icon[data-button-style=transparent][data-color=primary]:active {
-    color: var(--color-primary-500);
+@media (hover: hover) {
+  .btn-icon[data-button-style=transparent][data-color=primary]:hover {
+    color: var(--color-primary-300);
+  }
+  .btn-icon[data-button-style=transparent][data-color=primary]:active {
+    color: var(--color-primary-600);
   }
 }
 .btn-icon[data-button-style=transparent][data-color=secondary] {
   color: var(--color-secondary-500);
 }
-.btn-icon[data-button-style=transparent][data-color=secondary]:hover {
-  color: var(--color-secondary-300);
-}
-.btn-icon[data-button-style=transparent][data-color=secondary]:active {
-  color: var(--color-secondary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=transparent][data-color=secondary]:hover, .btn-icon[data-button-style=transparent][data-color=secondary]:active {
-    color: var(--color-secondary-500);
+@media (hover: hover) {
+  .btn-icon[data-button-style=transparent][data-color=secondary]:hover {
+    color: var(--color-secondary-300);
+  }
+  .btn-icon[data-button-style=transparent][data-color=secondary]:active {
+    color: var(--color-secondary-600);
   }
 }
 .btn-icon[data-button-style=transparent][data-color=success] {
   color: var(--color-success-500);
 }
-.btn-icon[data-button-style=transparent][data-color=success]:hover {
-  color: var(--color-success-300);
-}
-.btn-icon[data-button-style=transparent][data-color=success]:active {
-  color: var(--color-success-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=transparent][data-color=success]:hover, .btn-icon[data-button-style=transparent][data-color=success]:active {
-    color: var(--color-success-500);
+@media (hover: hover) {
+  .btn-icon[data-button-style=transparent][data-color=success]:hover {
+    color: var(--color-success-300);
+  }
+  .btn-icon[data-button-style=transparent][data-color=success]:active {
+    color: var(--color-success-600);
   }
 }
 .btn-icon[data-button-style=transparent][data-color=danger] {
   color: var(--color-danger-500);
 }
-.btn-icon[data-button-style=transparent][data-color=danger]:hover {
-  color: var(--color-danger-300);
-}
-.btn-icon[data-button-style=transparent][data-color=danger]:active {
-  color: var(--color-danger-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=transparent][data-color=danger]:hover, .btn-icon[data-button-style=transparent][data-color=danger]:active {
-    color: var(--color-danger-500);
+@media (hover: hover) {
+  .btn-icon[data-button-style=transparent][data-color=danger]:hover {
+    color: var(--color-danger-300);
+  }
+  .btn-icon[data-button-style=transparent][data-color=danger]:active {
+    color: var(--color-danger-600);
   }
 }
 .btn-icon[data-button-style=transparent][data-color=warning] {
   color: var(--color-warning-500);
 }
-.btn-icon[data-button-style=transparent][data-color=warning]:hover {
-  color: var(--color-warning-300);
-}
-.btn-icon[data-button-style=transparent][data-color=warning]:active {
-  color: var(--color-warning-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=transparent][data-color=warning]:hover, .btn-icon[data-button-style=transparent][data-color=warning]:active {
-    color: var(--color-warning-500);
+@media (hover: hover) {
+  .btn-icon[data-button-style=transparent][data-color=warning]:hover {
+    color: var(--color-warning-300);
+  }
+  .btn-icon[data-button-style=transparent][data-color=warning]:active {
+    color: var(--color-warning-600);
   }
 }
 .btn-icon[data-button-style=transparent][data-color=white] {
   color: var(--color-white);
 }
-.btn-icon[data-button-style=transparent][data-color=white]:hover {
-  color: var(--color-gray-300);
-}
-.btn-icon[data-button-style=transparent][data-color=white]:active {
-  color: var(--color-gray-100);
-}
-@media (hover: none) and (pointer: coarse) {
-  .btn-icon[data-button-style=transparent][data-color=white]:hover, .btn-icon[data-button-style=transparent][data-color=white]:active {
-    color: var(--color-white);
+@media (hover: hover) {
+  .btn-icon[data-button-style=transparent][data-color=white]:hover {
+    color: var(--color-gray-300);
+  }
+  .btn-icon[data-button-style=transparent][data-color=white]:active {
+    color: var(--color-gray-100);
   }
 }
 .btn-icon[data-button-style=transparent]:disabled, .btn-icon[data-button-style=transparent]:disabled:hover, .btn-icon[data-button-style=transparent]:disabled:active {
@@ -6841,28 +6699,22 @@ input[type=file]::file-selector-button {
   -o-transition: var(--transition-short);
   transition: var(--transition-short);
 }
-input[type=file]:hover::-webkit-file-upload-button {
-  background-color: var(--color-gray-300);
-}
-input[type=file]:hover::file-selector-button {
-  background-color: var(--color-gray-300);
-}
-input[type=file]:disabled:hover::-webkit-file-upload-button {
-  background-color: var(--color-gray-100);
-  color: var(--color-gray-500);
-  cursor: not-allowed;
-}
-input[type=file]:disabled:hover::file-selector-button {
-  background-color: var(--color-gray-100);
-  color: var(--color-gray-500);
-  cursor: not-allowed;
-}
-@media (hover: none) and (pointer: coarse) {
+@media (hover: hover) {
   input[type=file]:hover::-webkit-file-upload-button {
-    background-color: var(--color-gray-100);
+    background-color: var(--color-gray-300);
   }
   input[type=file]:hover::file-selector-button {
+    background-color: var(--color-gray-300);
+  }
+  input[type=file]:disabled:hover::-webkit-file-upload-button {
     background-color: var(--color-gray-100);
+    color: var(--color-gray-500);
+    cursor: not-allowed;
+  }
+  input[type=file]:disabled:hover::file-selector-button {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-500);
+    cursor: not-allowed;
   }
 }
 
@@ -7026,19 +6878,16 @@ input[type=time]::-webkit-calendar-picker-indicator {
   background-color: transparent;
   padding: 0;
 }
-.input-content .right-container button:hover {
-  color: var(--color-primary-300);
-}
-.input-content .right-container button:active {
-  color: var(--color-primary-600);
+@media (hover: hover) {
+  .input-content .right-container button:hover {
+    color: var(--color-primary-300);
+  }
+  .input-content .right-container button:active {
+    color: var(--color-primary-600);
+  }
 }
 .input-content .right-container button:disabled {
   color: var(--color-gray-500);
-}
-@media (hover: none) and (pointer: coarse) {
-  .input-content .right-container button:hover, .input-content .right-container button:active {
-    color: var(--color-primary-500);
-  }
 }
 .input-content[data-validate=not-passed] .right-container .icon {
   color: var(--color-danger-500);
@@ -7132,12 +6981,9 @@ textarea {
 .input-image label .hover-container .icon {
   --icon-size: 32px;
 }
-.input-image label:hover .hover-container {
-  opacity: 1;
-}
-@media (hover: none) and (pointer: coarse) {
+@media (hover: hover) {
   .input-image label:hover .hover-container {
-    opacity: 0;
+    opacity: 1;
   }
 }
 .input-image label.disabled {
@@ -7146,8 +6992,10 @@ textarea {
 .input-image label.disabled span {
   color: var(--color-gray-500);
 }
-.input-image label.disabled:hover .hover-container {
-  opacity: 0;
+@media (hover: hover) {
+  .input-image label.disabled:hover .hover-container {
+    opacity: 0;
+  }
 }
 .input-image[data-validate=not-passed] label .empty-container {
   background-color: var(--color-danger-50);
@@ -7289,24 +7137,13 @@ input[type=checkbox]:disabled ~ label {
   -o-transition: var(--transition-short);
   transition: var(--transition-short);
 }
-.tile input:not(:disabled) ~ label:hover {
-  border-color: var(--color-primary-300);
-}
-@media (hover: none) and (pointer: coarse) {
+@media (hover: hover) {
   .tile input:not(:disabled) ~ label:hover {
-    border-color: var(--color-gray-200);
+    border-color: var(--color-primary-300);
   }
 }
 .tile input:checked ~ label {
   border-color: var(--color-primary-500);
-}
-@media (hover: none) and (pointer: coarse) {
-  .tile input:checked ~ label {
-    border-color: var(--color-primary-500);
-  }
-  .tile input:checked ~ label:hover {
-    border-color: var(--color-primary-500);
-  }
 }
 .tile input:disabled:checked ~ label {
   border-color: var(--color-gray-500);
@@ -7318,12 +7155,9 @@ input[type=checkbox]:disabled ~ label {
 .tile[data-validate=not-passed] input:not(:disabled):checked ~ label {
   border-color: var(--color-danger-500);
 }
-.tile[data-validate=not-passed]:hover input:not(:disabled) ~ label {
-  border-color: var(--color-danger-300);
-}
-@media (hover: none) and (pointer: coarse) {
+@media (hover: hover) {
   .tile[data-validate=not-passed]:hover input:not(:disabled) ~ label {
-    border-color: var(--color-danger-500);
+    border-color: var(--color-danger-300);
   }
 }
 
@@ -7393,12 +7227,14 @@ input[type=checkbox]:disabled ~ label {
   transition: var(--transition-short);
   background-color: var(--color-gray-100);
 }
-.selector:hover label, .selector:hover input:not(:disabled):checked ~ label {
-  background-color: var(--color-primary-300);
-  color: var(--color-white);
-}
-.selector:active label, .selector:active input:not(:disabled):checked ~ label {
-  background-color: var(--color-primary-600);
+@media (hover: hover) {
+  .selector:hover label, .selector:hover input:not(:disabled):checked ~ label {
+    background-color: var(--color-primary-300);
+    color: var(--color-white);
+  }
+  .selector:active label, .selector:active input:not(:disabled):checked ~ label {
+    background-color: var(--color-primary-600);
+  }
 }
 .selector input:checked ~ label {
   background-color: var(--color-primary-500);
@@ -7411,63 +7247,39 @@ input[type=checkbox]:disabled ~ label {
 .selector input:disabled:checked ~ label {
   background-color: var(--color-gray-100);
 }
-@media (hover: none) and (pointer: coarse) {
-  .selector:hover label, .selector:hover input:not(:disabled):checked ~ label, .selector:active label, .selector:active input:not(:disabled):checked ~ label {
-    background-color: var(--color-gray-100);
-    color: var(--color-black);
-  }
-  .selector input:not(:disabled):checked ~ label {
-    background-color: var(--color-primary-500) !important;
-    color: var(--color-white) !important;
-  }
-  .selector input:not(:disabled):checked:hover ~ label,
-.selector input:not(:disabled):checked:active ~ label {
-    background-color: var(--color-primary-500) !important;
-    color: var(--color-white) !important;
-  }
-}
 .selector[data-validate=not-passed] label {
   background-color: var(--color-danger-50);
   color: var(--color-danger-500);
 }
-.selector[data-validate=not-passed] label:hover {
-  background-color: var(--color-danger-300);
-  color: var(--color-white);
-}
-.selector[data-validate=not-passed] label:active {
-  background-color: var(--color-danger-600);
+@media (hover: hover) {
+  .selector[data-validate=not-passed] label:hover {
+    background-color: var(--color-danger-300);
+    color: var(--color-white);
+  }
+  .selector[data-validate=not-passed] label:active {
+    background-color: var(--color-danger-600);
+  }
 }
 .selector[data-validate=not-passed] input:not(:disabled):checked ~ label {
   background-color: var(--color-danger-500);
 }
-.selector[data-validate=not-passed] input:not(:disabled):checked ~ label:hover {
-  background-color: var(--color-danger-300);
-  color: var(--color-white);
-}
-.selector[data-validate=not-passed] input:not(:disabled):checked ~ label:active {
-  background-color: var(--color-danger-600);
-}
-.selector[data-validate=not-passed] input:disabled ~ label:hover {
-  background-color: var(--color-gray-50);
-  color: var(--color-gray-500);
-}
-.selector[data-validate=not-passed] input:disabled:checked ~ label:hover {
-  color: var(--color-gray-500);
-  background-color: var(--color-gray-100);
-}
-@media (hover: none) and (pointer: coarse) {
-  .selector[data-validate=not-passed]:hover label, .selector[data-validate=not-passed]:hover input:not(:disabled):checked ~ label, .selector[data-validate=not-passed]:active label, .selector[data-validate=not-passed]:active input:not(:disabled):checked ~ label {
-    background-color: var(--color-danger-50);
-    color: var(--color-danger-500);
+@media (hover: hover) {
+  .selector[data-validate=not-passed] input:not(:disabled):checked ~ label:hover {
+    background-color: var(--color-danger-300);
+    color: var(--color-white);
   }
-  .selector[data-validate=not-passed] input:not(:disabled):checked ~ label {
-    background-color: var(--color-danger-500) !important;
-    color: var(--color-white) !important;
+  .selector[data-validate=not-passed] input:not(:disabled):checked ~ label:active {
+    background-color: var(--color-danger-600);
   }
-  .selector[data-validate=not-passed] input:not(:disabled):checked:hover ~ label,
-.selector[data-validate=not-passed] input:not(:disabled):checked:active ~ label {
-    background-color: var(--color-danger-500) !important;
-    color: var(--color-white) !important;
+}
+@media (hover: hover) {
+  .selector[data-validate=not-passed] input:disabled ~ label:hover {
+    background-color: var(--color-gray-50);
+    color: var(--color-gray-500);
+  }
+  .selector[data-validate=not-passed] input:disabled:checked ~ label:hover {
+    color: var(--color-gray-500);
+    background-color: var(--color-gray-100);
   }
 }
 
@@ -7640,22 +7452,16 @@ input[type=checkbox]:disabled ~ label {
   -o-transition: var(--transition-short);
   transition: var(--transition-short);
 }
-.dropdown-container .dropdown a:hover,
+@media (hover: hover) {
+  .dropdown-container .dropdown a:hover,
 .dropdown-container .dropdown button:hover {
-  background-color: var(--color-primary-300);
-  color: var(--color-white);
-}
-.dropdown-container .dropdown a:active,
+    background-color: var(--color-primary-300);
+    color: var(--color-white);
+  }
+  .dropdown-container .dropdown a:active,
 .dropdown-container .dropdown button:active {
-  background-color: var(--color-primary-600);
-  color: var(--color-white);
-}
-@media (hover: none) and (pointer: coarse) {
-  .dropdown-container .dropdown a:hover, .dropdown-container .dropdown a:active,
-.dropdown-container .dropdown button:hover,
-.dropdown-container .dropdown button:active {
-    background-color: transparent;
-    color: var(--color-primary-500);
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
   }
 }
 .dropdown-container[data-justify=right] {
@@ -7744,12 +7550,9 @@ input[type=checkbox]:disabled ~ label {
           border-radius: var(--radius-circle);
   background-color: transparent;
 }
-.toast .title-container .button-close:hover {
-  background-color: var(--color-gray-50);
-}
-@media (hover: none) and (pointer: coarse) {
+@media (hover: hover) {
   .toast .title-container .button-close:hover {
-    background-color: transparent;
+    background-color: var(--color-gray-50);
   }
 }
 .toast .title-container .button-close .icon {
@@ -7892,12 +7695,9 @@ input[type=checkbox]:disabled ~ label {
 .modal.modal-open .button-close .icon {
   --icon-size: 32px;
 }
-.modal.modal-open .button-close:hover {
-  background-color: var(--color-gray-800);
-}
-@media (hover: none) and (pointer: coarse) {
+@media (hover: hover) {
   .modal.modal-open .button-close:hover {
-    background-color: transparent;
+    background-color: var(--color-gray-800);
   }
 }
 
@@ -7955,16 +7755,6 @@ input[type=checkbox]:disabled ~ label {
   background-color: var(--color-primary-500);
   color: var(--color-white);
 }
-@media (hover: none) and (pointer: coarse) {
-  .pagination a.active:hover, .pagination a.active:active,
-.pagination button.active:hover,
-.pagination button.active:active,
-.pagination span.active:hover,
-.pagination span.active:active {
-    background-color: var(--color-primary-500);
-    color: var(--color-white);
-  }
-}
 .pagination a:disabled,
 .pagination button:disabled,
 .pagination span:disabled {
@@ -7983,27 +7773,15 @@ input[type=checkbox]:disabled ~ label {
   -o-transition: var(--transition-short);
   transition: var(--transition-short);
 }
-.pagination a:not(:disabled):hover,
+@media (hover: hover) {
+  .pagination a:not(:disabled):hover,
 .pagination button:not(:disabled):hover {
-  background-color: var(--color-primary-300);
-  color: var(--color-white);
-}
-.pagination a:not(:disabled):active,
-.pagination button:not(:disabled):active {
-  background-color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .pagination a:not(:disabled):hover, .pagination a:not(:disabled):active,
-.pagination button:not(:disabled):hover,
-.pagination button:not(:disabled):active {
-    background-color: transparent;
-    color: var(--color-primary-500);
-  }
-  .pagination a.active:hover, .pagination a.active:active,
-.pagination button.active:hover,
-.pagination button.active:active {
-    background-color: var(--color-primary-500);
+    background-color: var(--color-primary-300);
     color: var(--color-white);
+  }
+  .pagination a:not(:disabled):active,
+.pagination button:not(:disabled):active {
+    background-color: var(--color-primary-600);
   }
 }
 .pagination[data-justify=center] {
@@ -8069,21 +7847,17 @@ input[type=checkbox]:disabled ~ label {
 .paginator button .icon {
   --icon-size: 16px;
 }
-.paginator button:not(:disabled):hover {
-  background-color: var(--color-primary-300);
-  color: var(--color-white);
-}
-.paginator button:not(:disabled):active {
-  background-color: var(--color-primary-600);
+@media (hover: hover) {
+  .paginator button:not(:disabled):hover {
+    background-color: var(--color-primary-300);
+    color: var(--color-white);
+  }
+  .paginator button:not(:disabled):active {
+    background-color: var(--color-primary-600);
+  }
 }
 .paginator button:disabled {
   color: var(--color-gray-500);
-}
-@media (hover: none) and (pointer: coarse) {
-  .paginator button:not(:disabled):hover, .paginator button:not(:disabled):active {
-    background-color: transparent;
-    color: var(--color-primary-500);
-  }
 }
 .paginator[data-justify=right] {
   -webkit-box-pack: end;
@@ -8178,15 +7952,12 @@ input[type=checkbox]:disabled ~ label {
 .stepper .step.step-active .step-text {
   color: var(--color-primary-500);
 }
-.stepper .step.step-active a.step-text:hover {
-  color: var(--color-primary-300);
-}
-.stepper .step.step-active a.step-text:active {
-  color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .stepper .step.step-active a.step-text:hover, .stepper .step.step-active a.step-text:active {
-    color: var(--color-primary-500);
+@media (hover: hover) {
+  .stepper .step.step-active a.step-text:hover {
+    color: var(--color-primary-300);
+  }
+  .stepper .step.step-active a.step-text:active {
+    color: var(--color-primary-600);
   }
 }
 .stepper[data-direction=column] {
@@ -10737,26 +10508,20 @@ input[type=checkbox]:disabled ~ label {
   -o-transition: var(--transition-short);
   transition: var(--transition-short);
 }
-.slideshow .slideshow-pagination .slideshow-pagination-item:hover {
-  background-color: var(--color-primary-500);
-}
-.slideshow .slideshow-pagination .slideshow-pagination-item:active {
-  background-color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .slideshow .slideshow-pagination .slideshow-pagination-item:hover, .slideshow .slideshow-pagination .slideshow-pagination-item:active {
-    background-color: var(--color-primary-300);
+@media (hover: hover) {
+  .slideshow .slideshow-pagination .slideshow-pagination-item:hover {
+    background-color: var(--color-primary-500);
+  }
+  .slideshow .slideshow-pagination .slideshow-pagination-item:active {
+    background-color: var(--color-primary-600);
   }
 }
 .slideshow .slideshow-pagination .slideshow-pagination-item.slideshow-pagination-item-active {
   background-color: var(--color-primary-500);
 }
-.slideshow .slideshow-pagination .slideshow-pagination-item.slideshow-pagination-item-active:hover {
-  background-color: var(--color-primary-300);
-}
-@media (hover: none) and (pointer: coarse) {
-  .slideshow .slideshow-pagination .slideshow-pagination-item.slideshow-pagination-item-active {
-    background-color: var(--color-primary-500);
+@media (hover: hover) {
+  .slideshow .slideshow-pagination .slideshow-pagination-item.slideshow-pagination-item-active:hover {
+    background-color: var(--color-primary-300);
   }
 }
 .slideshow .slideshow-button {
@@ -10786,11 +10551,13 @@ input[type=checkbox]:disabled ~ label {
   -o-transition: var(--transition-short);
   transition: var(--transition-short);
 }
-.slideshow .slideshow-button:hover {
-  background-color: var(--color-primary-300);
-}
-.slideshow .slideshow-button:active {
-  background-color: var(--color-primary-600);
+@media (hover: hover) {
+  .slideshow .slideshow-button:hover {
+    background-color: var(--color-primary-300);
+  }
+  .slideshow .slideshow-button:active {
+    background-color: var(--color-primary-600);
+  }
 }
 .slideshow .slideshow-button .icon {
   --icon-size: 24px;
@@ -10811,94 +10578,78 @@ input[type=checkbox]:disabled ~ label {
   height: 24px;
   color: var(--color-primary-500);
 }
-.burger:hover {
-  color: var(--color-primary-300);
-}
-.burger:active {
-  color: var(--color-primary-600);
+@media (hover: hover) {
+  .burger:hover {
+    color: var(--color-primary-300);
+  }
+  .burger:active {
+    color: var(--color-primary-600);
+  }
 }
 .burger[data-color=primary] {
   color: var(--color-primary-500);
 }
-.burger[data-color=primary]:hover {
-  color: var(--color-primary-300);
-}
-.burger[data-color=primary]:active {
-  color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .burger[data-color=primary]:hover, .burger[data-color=primary]:active {
-    color: var(--color-primary-500);
+@media (hover: hover) {
+  .burger[data-color=primary]:hover {
+    color: var(--color-primary-300);
+  }
+  .burger[data-color=primary]:active {
+    color: var(--color-primary-600);
   }
 }
 .burger[data-color=secondary] {
   color: var(--color-secondary-500);
 }
-.burger[data-color=secondary]:hover {
-  color: var(--color-secondary-300);
-}
-.burger[data-color=secondary]:active {
-  color: var(--color-secondary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .burger[data-color=secondary]:hover, .burger[data-color=secondary]:active {
-    color: var(--color-secondary-500);
+@media (hover: hover) {
+  .burger[data-color=secondary]:hover {
+    color: var(--color-secondary-300);
+  }
+  .burger[data-color=secondary]:active {
+    color: var(--color-secondary-600);
   }
 }
 .burger[data-color=success] {
   color: var(--color-success-500);
 }
-.burger[data-color=success]:hover {
-  color: var(--color-success-300);
-}
-.burger[data-color=success]:active {
-  color: var(--color-success-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .burger[data-color=success]:hover, .burger[data-color=success]:active {
-    color: var(--color-success-500);
+@media (hover: hover) {
+  .burger[data-color=success]:hover {
+    color: var(--color-success-300);
+  }
+  .burger[data-color=success]:active {
+    color: var(--color-success-600);
   }
 }
 .burger[data-color=danger] {
   color: var(--color-danger-500);
 }
-.burger[data-color=danger]:hover {
-  color: var(--color-danger-300);
-}
-.burger[data-color=danger]:active {
-  color: var(--color-danger-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .burger[data-color=danger]:hover, .burger[data-color=danger]:active {
-    color: var(--color-danger-500);
+@media (hover: hover) {
+  .burger[data-color=danger]:hover {
+    color: var(--color-danger-300);
+  }
+  .burger[data-color=danger]:active {
+    color: var(--color-danger-600);
   }
 }
 .burger[data-color=warning] {
   color: var(--color-warning-500);
 }
-.burger[data-color=warning]:hover {
-  color: var(--color-warning-300);
-}
-.burger[data-color=warning]:active {
-  color: var(--color-warning-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .burger[data-color=warning]:hover, .burger[data-color=warning]:active {
-    color: var(--color-warning-500);
+@media (hover: hover) {
+  .burger[data-color=warning]:hover {
+    color: var(--color-warning-300);
+  }
+  .burger[data-color=warning]:active {
+    color: var(--color-warning-600);
   }
 }
 .burger[data-color=white] {
   color: var(--color-white);
 }
-.burger[data-color=white]:hover {
-  color: var(--color-gray-300);
-}
-.burger[data-color=white]:active {
-  color: var(--color-gray-100);
-}
-@media (hover: none) and (pointer: coarse) {
-  .burger[data-color=white]:hover, .burger[data-color=white]:active {
-    color: var(--color-white);
+@media (hover: hover) {
+  .burger[data-color=white]:hover {
+    color: var(--color-gray-300);
+  }
+  .burger[data-color=white]:active {
+    color: var(--color-gray-100);
   }
 }
 .burger span {
@@ -11113,15 +10864,12 @@ input[type=checkbox]:disabled ~ label {
 .card.card-action .img-container .like-button .icon {
   --icon-size: 24px;
 }
-.card.card-action .img-container .like-button:hover {
-  background-color: var(--color-gray-300);
-}
-.card.card-action .img-container .like-button:active {
-  background-color: var(--color-gray-100);
-}
-@media (hover: none) and (pointer: coarse) {
-  .card.card-action .img-container .like-button:hover, .card.card-action .img-container .like-button:active {
-    background-color: transparent;
+@media (hover: hover) {
+  .card.card-action .img-container .like-button:hover {
+    background-color: var(--color-gray-300);
+  }
+  .card.card-action .img-container .like-button:active {
+    background-color: var(--color-gray-100);
   }
 }
 .card.card-action .img-container .like-button:disabled {
@@ -11210,20 +10958,13 @@ a.card {
 a.card p {
   font-weight: var(--font-weight-regular);
 }
-a.card:hover {
-  -webkit-transform: scale(1.02);
-      -ms-transform: scale(1.02);
-          transform: scale(1.02);
-  -webkit-box-shadow: var(--shadow-xl);
-          box-shadow: var(--shadow-xl);
-}
-@media (hover: none) and (pointer: coarse) {
+@media (hover: hover) {
   a.card:hover {
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-    -webkit-box-shadow: var(--shadow-m);
-            box-shadow: var(--shadow-m);
+    -webkit-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+            transform: scale(1.02);
+    -webkit-box-shadow: var(--shadow-xl);
+            box-shadow: var(--shadow-xl);
   }
 }
 
@@ -11548,15 +11289,12 @@ a.card:hover {
   text-decoration: none;
   font-weight: var(--font-weight-regular);
 }
-.header a:hover {
-  color: var(--color-primary-300);
-}
-.header a:active {
-  color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .header a:hover, .header a:active {
-    color: var(--color-white);
+@media (hover: hover) {
+  .header a:hover {
+    color: var(--color-primary-300);
+  }
+  .header a:active {
+    color: var(--color-primary-600);
   }
 }
 .header a.active {
@@ -11620,15 +11358,12 @@ a.card:hover {
 .header[data-header-style=plain-white] a {
   color: var(--color-primary-500);
 }
-.header[data-header-style=plain-white] a:hover {
-  color: var(--color-primary-300);
-}
-.header[data-header-style=plain-white] a:active {
-  color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .header[data-header-style=plain-white] a:hover, .header[data-header-style=plain-white] a:active {
-    color: var(--color-primary-500);
+@media (hover: hover) {
+  .header[data-header-style=plain-white] a:hover {
+    color: var(--color-primary-300);
+  }
+  .header[data-header-style=plain-white] a:active {
+    color: var(--color-primary-600);
   }
 }
 @media screen and (max-width: 600px) {
@@ -11642,15 +11377,12 @@ a.card:hover {
 .header[data-header-style=transparent-primary] a {
   color: var(--color-primary-500);
 }
-.header[data-header-style=transparent-primary] a:hover {
-  color: var(--color-primary-300);
-}
-.header[data-header-style=transparent-primary] a:active {
-  color: var(--color-primary-600);
-}
-@media (hover: none) and (pointer: coarse) {
-  .header[data-header-style=transparent-primary] a:hover, .header[data-header-style=transparent-primary] a:active {
-    color: var(--color-primary-500);
+@media (hover: hover) {
+  .header[data-header-style=transparent-primary] a:hover {
+    color: var(--color-primary-300);
+  }
+  .header[data-header-style=transparent-primary] a:active {
+    color: var(--color-primary-600);
   }
 }
 @media screen and (max-width: 600px) {
@@ -11695,13 +11427,15 @@ a.card:hover {
   padding: 0;
   background-color: transparent;
 }
-.footer a:hover,
+@media (hover: hover) {
+  .footer a:hover,
 .footer button:hover {
-  color: var(--color-primary-300);
-}
-.footer a:active,
+    color: var(--color-primary-300);
+  }
+  .footer a:active,
 .footer button:active {
-  color: var(--color-primary-600);
+    color: var(--color-primary-600);
+  }
 }
 .footer .logo img {
   width: 100px;
